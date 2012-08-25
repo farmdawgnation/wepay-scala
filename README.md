@@ -99,6 +99,32 @@ val checkoutResponse = Checkout(1234, "Awesome Item", "GOODS", 10.0).save
 You should check out the full [/checkout reference](https://www.wepay.com/developer/reference/checkout)
 for more details on this. (See what I did there?)
 
+#### Retrieve information on a Checkout
+
+So, after creating a checkout object that is associated with a purchase on your store, you can and
+should store the `checkout\_id` field in your database. Later you'll want to use this to retrive
+information about the checkout (specifically if you're going to be processing IPN messages from
+WePay. Naturally, you can use this id number to retrieve information on your checkout after it
+is created on WePay's system like so:
+
+```scala
+val checkoutInstance = Checkout.find(checkoutIdNumber)
+
+checkoutInstance.foreach { checkout =>
+  // Do something with the checkout
+}
+```
+
+#### Handling Errors
+
+Sometimes, things go wrong. WePay-Scala makes heavy use of the Box class from Lift to account for
+these situations without utilizing exceptions. **Learn to love the box.** The Box is your friend,
+even though it is almost guaranteed that if you havent used it before it will make your head
+explode. Most operations on the WePay library return a Box of some kind. That Box can either be
+a Full containing an object you want to pull apart (e.g. Checkout/CheckoutResponse), an Empty
+that means nothing was found like what you were looking for, or a Failure with a WePayError
+inside.
+
 ## Who am I
 
 My name is Matt Farmer. I'm a Software Engineer at [OpenStudy](http://openstudy.com) where we're
