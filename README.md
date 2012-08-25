@@ -1,3 +1,5 @@
+**This readme is a work in progress. More work forthcoming soon!**
+
 # WePay API for Scala
 
 This project is an API for payment processing via WePay written in Scala, originally developed
