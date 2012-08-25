@@ -13,3 +13,5 @@ libraryDependencies ++= Seq(
   "net.databinder" % "dispatch-core_2.9.2" % "0.8.8",
   "net.databinder" % "dispatch-lift-json_2.9.1" % "0.8.5"
 )
+
+publishTo := Some(Resolver.file("file", new File("../wepay-scala-repository")))
