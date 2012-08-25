@@ -7,6 +7,8 @@ for [OpenStudy](http://openstudy.com) for use in [Catapult](http://catapult.open
 APIs were engineered to immitate lift-mongodb as closely as possible (because let's be honest,
 lift-mongodb is pretty elegant to work with).
 
+This project is released under the terms of the Apache License 2.0.
+
 ## Getting Started
 
 ### Overview
