@@ -1,5 +1,7 @@
 name := "wepay-scala"
 
+organization := "me.frmr"
+
 version := "0.8"
 
 scalaVersion := "2.9.2"
@@ -14,4 +16,4 @@ libraryDependencies ++= Seq(
   "net.databinder" % "dispatch-lift-json_2.9.1" % "0.8.5"
 )
 
-publishTo := Some(Resolver.file("file", new File("../wepay-scala-repository")))
+publishTo := Some(Resolver.file("file", new File("../wepay-scala-repository/releases")))
