@@ -54,28 +54,28 @@ package me.frmr.wepay {
   trait WePayImpl {
     implicit val formats = DefaultFormats
     // Authorization credentials for the application itself.
-    val clientId = Props.get("wepay.clientId") ?~! "wepay.clientId property is required."
-    val clientSecret = Props.get("wepay.clientSecret") ?~! "wepay.clientSecret property is required."
+    protected val clientId = Props.get("wepay.clientId") ?~! "wepay.clientId property is required."
+    protected val clientSecret = Props.get("wepay.clientSecret") ?~! "wepay.clientSecret property is required."
 
     // The OAuth Redirect URL (where people are sent after completeing OAuth)
-    val oauthRedirectUrl = Props.get("wepay.oauthRedirectUrl") ?~! "wepay.oauthRedirectUrl property is required."
+    protected val oauthRedirectUrl = Props.get("wepay.oauthRedirectUrl") ?~! "wepay.oauthRedirectUrl property is required."
 
     // We've got to transmit an informative User-Agent :\
-    val apiUserAgent = Props.get("wepay.userAgent") ?~! "wepay.userAgent property is required."
+    protected val apiUserAgent = Props.get("wepay.userAgent") ?~! "wepay.userAgent property is required."
 
     // The endpoints we're talking to (without trailing slash)
-    val apiEndpointBase = :/(Props.get("wepay.apiEndpointBase") openOr "stage.wepayapi.com")
-    val uiEndpointBase = :/(Props.get("wepay.uiEndpointBase") openOr "stage.wepay.com")
+    protected val apiEndpointBase = :/(Props.get("wepay.apiEndpointBase") openOr "stage.wepayapi.com")
+    protected val uiEndpointBase = :/(Props.get("wepay.uiEndpointBase") openOr "stage.wepay.com")
 
     //The permissions we're going to be requesting from users who we authenticate
     //on WePay's system.
-    val oauthPermissions = Props.get("wepay.oauthPermissions") ?~! "wepay.oauthPermissions permissions property is required."
+    protected val oauthPermissions = Props.get("wepay.oauthPermissions") ?~! "wepay.oauthPermissions permissions property is required."
 
     // API version
-    val apiVersion = "v2"
+    protected val apiVersion = "v2"
 
     // Default headers
-    def defaultHeaders = {
+    protected def defaultHeaders = {
       for {
         apiUserAgent <- apiUserAgent
       } yield {
