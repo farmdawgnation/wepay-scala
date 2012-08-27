@@ -14,6 +14,12 @@ package me.frmr.wepay.api {
     val _id = withdrawal_id
   }
 
+  /**
+   * @inheritdoc
+   *
+   * @param RESOURCE Withdrawal
+   * @param CRUDRESPONSETYPE WithdrawalResponse
+  **/
   object Withdrawal extends ImmutableWePayResourceMeta[Withdrawal, WithdrawalResponse] {
     def extract(json:JValue) = json.extract[Withdrawal]
     def extractFindResults(json:JValue) = json.extract[List[Withdrawal]]
