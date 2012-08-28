@@ -59,9 +59,9 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE AccountResponse
   **/
   object Account extends MutableWePayResourceMeta[Account, AccountResponse] {
-    def extract(json:JValue) = json.extract[Account]
-    def extractFindResults(json:JValue) = json.extract[List[Account]]
-    def extractCrudResponse(json:JValue) = json.extract[AccountResponse]
+    protected def extract(json:JValue) = json.extract[Account]
+    protected def extractFindResults(json:JValue) = json.extract[List[Account]]
+    protected def extractCrudResponse(json:JValue) = json.extract[AccountResponse]
 
     def find(name:Option[String] = None, reference_id:Option[String] = None)(implicit authorizationToken:Option[WePayToken]) = {
       findQuery(("name" -> name) ~ ("reference_id" -> reference_id))

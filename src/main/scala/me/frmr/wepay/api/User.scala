@@ -26,7 +26,7 @@ package me.frmr.wepay.api {
    * @define INSTANCE User
   **/
   object User extends WePayResourceMeta[User] {
-    def extract(json:JValue) = json.extract[User]
-    def extractFindResults(json:JValue) = json.extract[List[User]]
+    protected def extract(json:JValue) = json.extract[User]
+    protected def extractFindResults(json:JValue) = json.extract[List[User]]
   }
 }

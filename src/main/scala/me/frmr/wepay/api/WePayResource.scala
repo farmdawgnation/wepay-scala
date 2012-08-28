@@ -33,12 +33,12 @@ package me.frmr.wepay.api {
   trait WePayResourceMeta[Model <: WePayResource[Model]] {
     implicit val formats = DefaultFormats
 
-    val className = this.getClass.getName.split("\\.").last.dropRight(1)
+    protected val className = this.getClass.getName.split("\\.").last.dropRight(1)
 
-    def resource : String = className.toLowerCase
-    def resourceIdentifier : String = resource + "_id"
-    def extract(json:JValue) : Model
-    def extractFindResults(json:JValue) : List[Model]
+    protected def resource : String = className.toLowerCase
+    protected def resourceIdentifier : String = resource + "_id"
+    protected def extract(json:JValue) : Model
+    protected def extractFindResults(json:JValue) : List[Model]
 
     /**
      * Run a query against the $RESOURCE resource using a JValue that will result in a Box[JValue].
@@ -46,7 +46,7 @@ package me.frmr.wepay.api {
      * @param action The action on $RESOURCE to request.
      * @param requestBody The JValue object representing the request payload.
     **/
-    def query(action:Option[String], requestBody:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
+    protected def query(action:Option[String], requestBody:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
       for {
         resultingJson <- WePay.executeAction(authorizationToken, resource, action, requestBody)
       } yield {
@@ -59,7 +59,7 @@ package me.frmr.wepay.api {
      *
      * @param searchParameters The lift-json JValue representing the search parameters.
     **/
-    def findQuery(searchParameters:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
+    protected def findQuery(searchParameters:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
       for {
         resultingJson <- WePay.executeAction(authorizationToken, resource, Some("find"), searchParameters)
       } yield {
@@ -110,13 +110,13 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE CrudResponseType
   **/
   trait ImmutableWePayResourceMeta[Model <: ImmutableWePayResource[Model, CrudResponseType], CrudResponseType] extends WePayResourceMeta[Model] {
-    def extractCrudResponse(json:JValue) : CrudResponseType
+    protected def extractCrudResponse(json:JValue) : CrudResponseType
 
     /**
      * Run some query against WePay that will result in a a Full Box containing $CRUDRESPONSETYPE on success, or a
      * Failure on error.
     **/
-    def resultRetrievalQuery(action:Option[String], requestBody:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
+    protected def resultRetrievalQuery(action:Option[String], requestBody:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
       for {
         resultingJson <- WePay.executeAction(authorizationToken, resource, action, requestBody)
       } yield {

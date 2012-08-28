@@ -47,9 +47,9 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE PreapprovalResponse
   **/
   object Preapproval extends ImmutableWePayResourceMeta[Preapproval, PreapprovalResponse] {
-    def extract(json:JValue) = json.extract[Preapproval]
-    def extractFindResults(json:JValue) = json.extract[List[Preapproval]]
-    def extractCrudResponse(json:JValue) = json.extract[PreapprovalResponse]
+    protected def extract(json:JValue) = json.extract[Preapproval]
+    protected def extractFindResults(json:JValue) = json.extract[List[Preapproval]]
+    protected def extractCrudResponse(json:JValue) = json.extract[PreapprovalResponse]
 
     def find(state:Option[String] = None, reference_id:Option[String] = None)(implicit authorizationToken:Option[WePayToken]) = {
       findQuery(

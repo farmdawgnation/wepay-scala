@@ -36,9 +36,9 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE WithdrawalResponse
   **/
   object Withdrawal extends ImmutableWePayResourceMeta[Withdrawal, WithdrawalResponse] {
-    def extract(json:JValue) = json.extract[Withdrawal]
-    def extractFindResults(json:JValue) = json.extract[List[Withdrawal]]
-    def extractCrudResponse(json:JValue) = json.extract[WithdrawalResponse]
+    protected def extract(json:JValue) = json.extract[Withdrawal]
+    protected def extractFindResults(json:JValue) = json.extract[List[Withdrawal]]
+    protected def extractCrudResponse(json:JValue) = json.extract[WithdrawalResponse]
 
     /**
      * Search for Withdrawals matching the various parameters.

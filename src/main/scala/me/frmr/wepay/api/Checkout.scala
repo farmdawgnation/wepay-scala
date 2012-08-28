@@ -59,9 +59,9 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE CheckoutResponse
   **/
   object Checkout extends ImmutableWePayResourceMeta[Checkout, CheckoutResponse] {
-    def extract(json:JValue) = json.extract[Checkout]
-    def extractFindResults(json:JValue) = json.extract[List[Checkout]]
-    def extractCrudResponse(json:JValue) = json.extract[CheckoutResponse]
+    protected def extract(json:JValue) = json.extract[Checkout]
+    protected def extractFindResults(json:JValue) = json.extract[List[Checkout]]
+    protected def extractCrudResponse(json:JValue) = json.extract[CheckoutResponse]
 
     def find(account_id:String, start:Option[Int] = None, limit:Option[Int] = None, reference_id:Option[String] = None,
              state:Option[String] = None, preapproval_id:Option[Long] = None)(implicit authorizationToken:Option[WePayToken]) = {
