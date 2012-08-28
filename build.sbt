@@ -19,3 +19,5 @@ libraryDependencies ++= Seq(
 )
 
 publishTo := Some(Resolver.file("file", new File("../wepay-scala-repository/releases")))
+
+scalacOptions in (Compile, doc) ++= Opts.doc.title("WePay-Scala API Reference")
