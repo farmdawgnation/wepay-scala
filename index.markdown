@@ -1,0 +1,5 @@
+# WePay-Scala
+
+**WePay-Scala** is a Scala library for talking to [WePay](http://wepay.com) to process payments for the customers who use your website. Built on databinder-dispatch, and some of the components of the superb Lift Framework, WePay-Scala is designed to get to up and rolling in the easiest way possible. We've taken a play out of the lift-mongodb handbook for how we handle our management of instances of objects on the WePay system. (If you can't tell, we built this in an application that's using Lift already, but you're not required to do so - it may just take a bit for the mechanics to become familiar.)
+
+This library was originally developed for my employer, [OpenStudy](http://openstudy.com), for use on our learning-goal centric companion site [OpenStudy Catapult](http://catapult.openstudy.com). Because the people I work for are so awesome and genuinely believe in the power of Open Source, I get to share the awesomeness with everyone!","name":"Wepay-scala","tagline":"A Scala API for WePay Payment Processing","google":"","note":"Don't delete this file! It's used internally to help with page regeneration.
