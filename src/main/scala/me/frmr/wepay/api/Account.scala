@@ -4,12 +4,22 @@ package me.frmr.wepay.api {
 
   import me.frmr.wepay._
 
+  /**
+   * The response type for Account API operations that don't return an Account, or some variation thereof.
+  **/
   case class AccountResponse(account_id:Option[Long] = None, name:Option[String] = None, description:Option[String] = None,
                              reference_id:Option[String] = None, account_uri:Option[String] = None,
                              payment_limit:Option[Long] = None, gaq_domains:Option[List[String]] = None,
                              pending_balance:Option[Double] = None, available_balance:Option[Double] = None,
                              currency:Option[String] = None)
 
+  /**
+   * An instance of an Account.
+   *
+   * Users on WePay can have multiple Accounts. API Applications can only manage accounts that they have created.
+   *
+   * @define THIS Account
+  **/
   case class Account(name:String, description:String, account_id:Option[Long] = None, reference_id:Option[String] = None,
                      image_uri:Option[String] = None, payment_limit:Option[Long] = None,
                      gaq_domains:Option[List[String]] = None) extends MutableWePayResource[Account, AccountResponse] {
@@ -42,6 +52,12 @@ package me.frmr.wepay.api {
     }
   }
 
+  /**
+   * Meta object for finding and manipulating Account instances on WePay.
+   *
+   * @define INSTANCE Account
+   * @define CRUDRESPONSETYPE AccountResponse
+  **/
   object Account extends MutableWePayResourceMeta[Account, AccountResponse] {
     def extract(json:JValue) = json.extract[Account]
     def extractFindResults(json:JValue) = json.extract[List[Account]]

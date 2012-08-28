@@ -4,8 +4,17 @@ package me.frmr.wepay.api {
 
   import me.frmr.wepay._
 
+  /**
+   * The response type for API operations that don't return an instance of Checkout, or some variation
+   * thereof.
+  **/
   case class CheckoutResponse(checkout_id:Long, checkout_uri:Option[String] = None, state:Option[String] = None)
 
+  /**
+   * An instance of the Checkout class. Used to represent an actual exchange of funds between two parties.
+   *
+   * @define THIS Checkout
+  **/
   case class Checkout(account_id:Long, short_description:String, `type`:String, amount:Double, checkout_id:Option[Long] = None,
                       long_description:Option[String] = None, payer_email_message:Option[String] = None,
                       payee_email_message:Option[String] = None, reference_id:Option[String] = None,
@@ -43,6 +52,12 @@ package me.frmr.wepay.api {
     }
   }
 
+  /**
+   * Meta object for finding and manipulating Checkout instances on WePay.
+   *
+   * @define INSTANCE Checkout
+   * @define CRUDRESPONSETYPE CheckoutResponse
+  **/
   object Checkout extends ImmutableWePayResourceMeta[Checkout, CheckoutResponse] {
     def extract(json:JValue) = json.extract[Checkout]
     def extractFindResults(json:JValue) = json.extract[List[Checkout]]

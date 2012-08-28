@@ -6,9 +6,20 @@ package me.frmr.wepay.api {
 
   import me.frmr.wepay._
 
+  /**
+   * The response type for Preapproval operations that don't return an instance of Preapproval.
+  **/
   case class PreapprovalResponse(preapproval_id:Long, preapproval_uri:Option[String] = None,
                                  state:Option[String] = None)
 
+  /**
+   * An instance of a WePay Preapproval.
+   *
+   * Preapprovals are used to, well, preapprove payments within a certain date range and amount.
+   * Useful for kickstarter-like applications or subscription-based services.
+   *
+   * @define THIS Preapproval
+  **/
   case class Preapproval(account_id:Long, amount:Double, short_description:String, period:String,
                          preapproval_id:Option[Long] = None, reference_id:Option[String] = None,
                          app_fee:Option[Double] = None, fee_payer:Option[String] = None,
@@ -29,6 +40,12 @@ package me.frmr.wepay.api {
     }
   }
 
+  /**
+   * The meta object for finding and manipulating Preapproval instances.
+   *
+   * @define INSTANCE Preapproval
+   * @define CRUDRESPONSETYPE PreapprovalResponse
+  **/
   object Preapproval extends ImmutableWePayResourceMeta[Preapproval, PreapprovalResponse] {
     def extract(json:JValue) = json.extract[Preapproval]
     def extractFindResults(json:JValue) = json.extract[List[Preapproval]]
