@@ -1,5 +1,6 @@
 ---
 title: WePay-Scala
+layout: default
 ---
 
 # WePay-Scala
