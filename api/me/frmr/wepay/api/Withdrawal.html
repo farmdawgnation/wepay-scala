@@ -29,7 +29,9 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Represents an instance of a Withdrawal.
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The WePay Account ID associated with the Withdrawal.</p></dd><dt class="param">amount</dt><dd class="cmt"><p>The withdrawal amount.</p></dd><dt class="param">redirect_uri</dt><dd class="cmt"><p>The URI to redirect users to when finishing the Withdraw flow.</p></dd><dt class="param">callback_uri</dt><dd class="cmt"><p>The URI for WePay to send IPN messages to.</p></dd><dt class="param">note</dt><dd class="cmt"><p>The note to be attached to the withdrawal.</p></dd><dt class="param">withdrawal_id</dt><dd class="cmt"><p>The ID of the Withdrawal on WePay's system. This should only be populated by WePay.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The current state of the Withdrawal.</p></dd><dt class="param">withdrawal_uri</dt><dd class="cmt"><p>URI to view the Withdrawal on WePay's site.</p></dd><dt class="param">recipient_confirmed</dt><dd class="cmt"><p>Actually, I'm not entirely sure what this represents. Ooops.</p></dd><dt class="param">create_time</dt><dd class="cmt"><p>The time of creation, ya dig?
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a>[<a name="me.frmr.wepay.api.Withdrawal" class="extype" href="">Withdrawal</a>, <a name="me.frmr.wepay.api.WithdrawalResponse" class="extype" href="WithdrawalResponse.html">WithdrawalResponse</a>], <a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[<a name="me.frmr.wepay.api.Withdrawal" class="extype" href="">Withdrawal</a>], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -68,7 +70,8 @@
         <span class="name">Withdrawal</span><span class="params">(<span name="account_id">account_id: <span name="scala.Long" class="extype">Long</span></span>, <span name="amount">amount: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="redirect_uri">redirect_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="callback_uri">callback_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="note">note: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="withdrawal_id">withdrawal_id: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="withdrawal_uri">withdrawal_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="recipient_confirmed">recipient_confirmed: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="create_time">create_time: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The WePay Account ID associated with the Withdrawal.</p></dd><dt class="param">amount</dt><dd class="cmt"><p>The withdrawal amount.</p></dd><dt class="param">redirect_uri</dt><dd class="cmt"><p>The URI to redirect users to when finishing the Withdraw flow.</p></dd><dt class="param">callback_uri</dt><dd class="cmt"><p>The URI for WePay to send IPN messages to.</p></dd><dt class="param">note</dt><dd class="cmt"><p>The note to be attached to the withdrawal.</p></dd><dt class="param">withdrawal_id</dt><dd class="cmt"><p>The ID of the Withdrawal on WePay's system. This should only be populated by WePay.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The current state of the Withdrawal.</p></dd><dt class="param">withdrawal_uri</dt><dd class="cmt"><p>URI to view the Withdrawal on WePay's site.</p></dd><dt class="param">recipient_confirmed</dt><dd class="cmt"><p>Actually, I'm not entirely sure what this represents. Ooops.</p></dd><dt class="param">create_time</dt><dd class="cmt"><p>The time of creation, ya dig?
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -161,7 +164,7 @@
         <span class="name">account_id</span><span class="result">: <span name="scala.Long" class="extype">Long</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The WePay Account ID associated with the Withdrawal.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Withdrawal#amount" data-isabs="false">
       <a id="amount:Option[Double]"></a>
       <h4 class="signature">
@@ -173,7 +176,7 @@
         <span class="name">amount</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The withdrawal amount.</p>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -197,7 +200,7 @@
         <span class="name">callback_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI for WePay to send IPN messages to.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Withdrawal#canEqual" data-isabs="false">
       <a id="canEqual(Any):Boolean"></a>
       <h4 class="signature">
@@ -236,7 +239,8 @@
         <span class="name">create_time</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The time of creation, ya dig?
+</p>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -347,7 +351,7 @@
         <span class="name">note</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The note to be attached to the withdrawal.</p>
     </li><li visbl="pub" name="scala.AnyRef#notify" data-isabs="false">
       <a id="notify():Unit"></a>
       <h4 class="signature">
@@ -431,7 +435,7 @@
         <span class="name">recipient_confirmed</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Actually, I'm not entirely sure what this represents.</p><div class="fullcomment"><div class="comment cmt"><p>Actually, I'm not entirely sure what this represents. Ooops.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Withdrawal#redirect_uri" data-isabs="false">
       <a id="redirect_uri:Option[String]"></a>
       <h4 class="signature">
@@ -443,7 +447,7 @@
         <span class="name">redirect_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI to redirect users to when finishing the Withdraw flow.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResource#save" data-isabs="false">
       <a id="save(Option[WePayToken]):Box[WithdrawalResponse]"></a>
       <h4 class="signature">
@@ -455,8 +459,7 @@
         <span class="name">save</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.WithdrawalResponse" class="extype" href="WithdrawalResponse.html">WithdrawalResponse</a>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Save an instance of the ImmutableWePayResource to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the ImmutableWePayResource to WePay's server. If the ImmutableWePayResource already exists, this will
-result in a Failure.
+      <p class="shortcomment cmt">Save an instance of the Withdrawal to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the Withdrawal to WePay's server. If the Withdrawal already exists, this will result in a Failure.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Withdrawal#state" data-isabs="false">
       <a id="state:Option[String]"></a>
@@ -469,7 +472,7 @@ result in a Failure.
         <span class="name">state</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The current state of the Withdrawal.</p>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -550,7 +553,7 @@ result in a Failure.
         <span class="name">withdrawal_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The ID of the Withdrawal on WePay's system.</p><div class="fullcomment"><div class="comment cmt"><p>The ID of the Withdrawal on WePay's system. This should only be populated by WePay.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Withdrawal#withdrawal_uri" data-isabs="false">
       <a id="withdrawal_uri:Option[String]"></a>
       <h4 class="signature">
@@ -562,7 +565,7 @@ result in a Failure.
         <span class="name">withdrawal_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">URI to view the Withdrawal on WePay's site.</p>
     </li></ol>
             </div>
 

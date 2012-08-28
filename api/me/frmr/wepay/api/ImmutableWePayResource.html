@@ -29,8 +29,12 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Children of this trait are instances of resources that cannot be modified by the application after their
-creation on the server.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd>MyType</dd></dl><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>This is the parent class of WePayResources that can be saved to the server, but cannot be modified after
+their initial save.</p><p>This class of resources included Checkout, Preapproval, and Withdrawal. These objects cannot be changed via
+the API and are deemed ImmutableWePayResources for the purposes of this API. An additional property of these
+resources is the addition of the <code>CrudResponseType</code>, which is an additional type of response you can receive
+from the server. While many operations result in the delivery of an instance, some result in the delivery
+of some other, smaller object containing basic information you need to finish a workflow.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd>MyType</dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[MyType], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div><div class="toggleContainer block">
@@ -303,8 +307,7 @@ creation on the server.</p></div><dl class="attributes block"> <dt>Self Type</dt
         <span class="name">save</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[CrudResponseType]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Save an instance of the ImmutableWePayResource to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the ImmutableWePayResource to WePay's server. If the ImmutableWePayResource already exists, this will
-result in a Failure.
+      <p class="shortcomment cmt">Save an instance of the ImmutableWePayResource to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the ImmutableWePayResource to WePay's server. If the ImmutableWePayResource already exists, this will result in a Failure.
 </p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>

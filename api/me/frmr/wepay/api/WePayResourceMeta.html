@@ -30,7 +30,10 @@
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>The Meta trait paired with the base WePayResource.</p><p>This Meta trait should be used in Meta Objects that are used in the
-retreival or manipulation of instances of WePay resources.</p></div><div class="toggleContainer block">
+retreival or manipulation of instances of WePay resources. This trait
+provides functionality for a meta object that is able to run a search based
+on some search parameters provided in the form of a lift-json object, run some
+arbitrary query, or retrieve an instance directly by its ID.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div><div class="toggleContainer block">
@@ -65,7 +68,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
 
         <div class="values members" id="values">
               <h3>Abstract Value Members</h3>
-              <ol><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#extract" data-isabs="true">
+              <ol><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#extract" data-isabs="true">
       <a id="extract(JValue):Model"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -76,8 +79,8 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
         <span class="name">extract</span><span class="params">(<span name="json">json: JValue</span>)</span><span class="result">: Model</span>
       </span>
       </h4>
-      
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#extractFindResults" data-isabs="true">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#extractFindResults" data-isabs="true">
       <a id="extractFindResults(JValue):List[Model]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -88,7 +91,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
         <span class="name">extractFindResults</span><span class="params">(<span name="json">json: JValue</span>)</span><span class="result">: List[Model]</span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li></ol>
             </div>
 
@@ -166,7 +169,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
       <a id="className:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -177,7 +180,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
         <span class="name">className</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -244,7 +247,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
       </span>
       </h4>
       <p class="shortcomment cmt">Find a WePayResource in WePay's system by ID.</p>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#findQuery" data-isabs="false">
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#findQuery" data-isabs="false">
       <a id="findQuery(JValue)(Option[WePayToken]):Box[List[Model]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -257,7 +260,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
       </h4>
       <p class="shortcomment cmt">Run a search for all WePayResource matching the searchParameters.</p><div class="fullcomment"><div class="comment cmt"><p>Run a search for all WePayResource matching the searchParameters.
 </p></div><dl class="paramcmts block"><dt class="param">searchParameters</dt><dd class="cmt"><p>The lift-json JValue representing the search parameters.
-</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#formats" data-isabs="false">
       <a id="formats:net.liftweb.json.DefaultFormats.type"></a>
       <h4 class="signature">
@@ -342,7 +345,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#query" data-isabs="false">
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#query" data-isabs="false">
       <a id="query(Option[String],JValue)(Option[WePayToken]):Box[Model]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -355,8 +358,8 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
       </h4>
       <p class="shortcomment cmt">Run a query against the the child class resource using a JValue that will result in a Box[JValue].</p><div class="fullcomment"><div class="comment cmt"><p>Run a query against the the child class resource using a JValue that will result in a Box[JValue].
 </p></div><dl class="paramcmts block"><dt class="param">action</dt><dd class="cmt"><p>The action on the child class to request.</p></dd><dt class="param">requestBody</dt><dd class="cmt"><p>The JValue object representing the request payload.
-</p></dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#resource" data-isabs="false">
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#resource" data-isabs="false">
       <a id="resource:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -367,8 +370,8 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
         <span class="name">resource</span><span class="result">: String</span>
       </span>
       </h4>
-      
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#resourceIdentifier" data-isabs="false">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#resourceIdentifier" data-isabs="false">
       <a id="resourceIdentifier:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -379,7 +382,7 @@ retreival or manipulation of instances of WePay resources.</p></div><div class="
         <span class="name">resourceIdentifier</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

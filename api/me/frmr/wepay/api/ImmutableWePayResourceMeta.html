@@ -30,7 +30,9 @@
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Children of this trait are meta objects used to find or save resource instances that cannot be modified
-after their creation.</p></div><div class="toggleContainer block">
+after their creation.</p><p>This class of resources include Checkout, Preapproval, and Withdrawal. Additionally, this Meta object
+also introduced the CrudResponseType for operations such as save that return JSON of a different type
+than those that return an instance of the object.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a>[Model], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div><div class="toggleContainer block">
@@ -65,7 +67,7 @@ after their creation.</p></div><div class="toggleContainer block">
 
         <div class="values members" id="values">
               <h3>Abstract Value Members</h3>
-              <ol><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#extract" data-isabs="true">
+              <ol><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#extract" data-isabs="true">
       <a id="extract(JValue):Model"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -76,8 +78,8 @@ after their creation.</p></div><div class="toggleContainer block">
         <span class="name">extract</span><span class="params">(<span name="json">json: JValue</span>)</span><span class="result">: Model</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResourceMeta#extractCrudResponse" data-isabs="true">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.ImmutableWePayResourceMeta#extractCrudResponse" data-isabs="true">
       <a id="extractCrudResponse(JValue):CrudResponseType"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -88,8 +90,8 @@ after their creation.</p></div><div class="toggleContainer block">
         <span class="name">extractCrudResponse</span><span class="params">(<span name="json">json: JValue</span>)</span><span class="result">: CrudResponseType</span>
       </span>
       </h4>
-      
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#extractFindResults" data-isabs="true">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#extractFindResults" data-isabs="true">
       <a id="extractFindResults(JValue):List[Model]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -100,7 +102,7 @@ after their creation.</p></div><div class="toggleContainer block">
         <span class="name">extractFindResults</span><span class="params">(<span name="json">json: JValue</span>)</span><span class="result">: List[Model]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
     </li></ol>
             </div>
 
@@ -178,7 +180,7 @@ after their creation.</p></div><div class="toggleContainer block">
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
       <a id="className:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -189,7 +191,7 @@ after their creation.</p></div><div class="toggleContainer block">
         <span class="name">className</span><span class="result">: String</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -269,7 +271,7 @@ after their creation.</p></div><div class="toggleContainer block">
       </h4>
       <p class="shortcomment cmt">Find a ImmutableWePayResource in WePay's system by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Find a ImmutableWePayResource in WePay's system by ID.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#findQuery" data-isabs="false">
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#findQuery" data-isabs="false">
       <a id="findQuery(JValue)(Option[WePayToken]):Box[List[Model]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -282,7 +284,7 @@ after their creation.</p></div><div class="toggleContainer block">
       </h4>
       <p class="shortcomment cmt">Run a search for all ImmutableWePayResource matching the searchParameters.</p><div class="fullcomment"><div class="comment cmt"><p>Run a search for all ImmutableWePayResource matching the searchParameters.
 </p></div><dl class="paramcmts block"><dt class="param">searchParameters</dt><dd class="cmt"><p>The lift-json JValue representing the search parameters.
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#formats" data-isabs="false">
       <a id="formats:net.liftweb.json.DefaultFormats.type"></a>
       <h4 class="signature">
@@ -367,7 +369,7 @@ after their creation.</p></div><div class="toggleContainer block">
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#query" data-isabs="false">
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#query" data-isabs="false">
       <a id="query(Option[String],JValue)(Option[WePayToken]):Box[Model]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -380,8 +382,8 @@ after their creation.</p></div><div class="toggleContainer block">
       </h4>
       <p class="shortcomment cmt">Run a query against the the child class resource using a JValue that will result in a Box[JValue].</p><div class="fullcomment"><div class="comment cmt"><p>Run a query against the the child class resource using a JValue that will result in a Box[JValue].
 </p></div><dl class="paramcmts block"><dt class="param">action</dt><dd class="cmt"><p>The action on the child class to request.</p></dd><dt class="param">requestBody</dt><dd class="cmt"><p>The JValue object representing the request payload.
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#resource" data-isabs="false">
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#resource" data-isabs="false">
       <a id="resource:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -392,8 +394,8 @@ after their creation.</p></div><div class="toggleContainer block">
         <span class="name">resource</span><span class="result">: String</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#resourceIdentifier" data-isabs="false">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#resourceIdentifier" data-isabs="false">
       <a id="resourceIdentifier:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -404,8 +406,8 @@ after their creation.</p></div><div class="toggleContainer block">
         <span class="name">resourceIdentifier</span><span class="result">: String</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
-    </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResourceMeta#resultRetrievalQuery" data-isabs="false">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a></dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.ImmutableWePayResourceMeta#resultRetrievalQuery" data-isabs="false">
       <a id="resultRetrievalQuery(Option[String],JValue)(Option[WePayToken]):Box[CrudResponseType]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -417,7 +419,9 @@ after their creation.</p></div><div class="toggleContainer block">
       </span>
       </h4>
       <p class="shortcomment cmt">Run some query against WePay that will result in a a Full Box containing CrudResponseType on success, or a
-Failure on error.</p>
+Failure on error.</p><div class="fullcomment"><div class="comment cmt"><p>Run some query against WePay that will result in a a Full Box containing CrudResponseType on success, or a
+Failure on error.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResourceMeta#save" data-isabs="false">
       <a id="save(Model)(Option[WePayToken]):Box[CrudResponseType]"></a>
       <h4 class="signature">
@@ -429,8 +433,8 @@ Failure on error.</p>
         <span class="name">save</span><span class="params">(<span name="instance">instance: Model</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[CrudResponseType]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Save an instance of the child class to the WePay server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the child class to the WePay server.</p><p>You probably shouldn't call this directly. Call on the child class.save instead, for good form.
-</p></div><dl class="paramcmts block"><dt class="param">instance</dt><dd class="cmt"><p>The the child class to save.
+      <p class="shortcomment cmt">Save an instance of ImmutableWePayResource to the WePay server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of ImmutableWePayResource to the WePay server.</p><p>You probably shouldn't call this directly. Call on the child class.save instead, for good form.
+</p></div><dl class="paramcmts block"><dt class="param">instance</dt><dd class="cmt"><p>The ImmutableWePayResource to save.
 </p></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>

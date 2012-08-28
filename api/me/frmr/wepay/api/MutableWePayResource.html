@@ -29,7 +29,7 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Self Type</dt><dd>MyType</dd></dl><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>This trait defines those resources that can be altered and deleted after creation.</p><p>Currently, this just includes the Account resource.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd>MyType</dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a>[MyType, CrudResponseType], <a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[MyType], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div><div class="toggleContainer block">
@@ -191,7 +191,7 @@
         <span class="name">delete</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[CrudResponseType]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Delete the MutableWePayResource object this class represents.</p>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -314,8 +314,7 @@
         <span class="name">save</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[CrudResponseType]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Save an instance of the ImmutableWePayResource to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the ImmutableWePayResource to WePay's server. If the ImmutableWePayResource already exists, this will
-result in a Failure.
+      <p class="shortcomment cmt">Save an instance of the MutableWePayResource to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the MutableWePayResource to WePay's server. If the MutableWePayResource already exists, this will update the existing object.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>

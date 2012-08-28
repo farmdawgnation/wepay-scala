@@ -59,7 +59,7 @@
         <a href="Account.html"><span class="name">Account</span></a><span class="params">(<span name="name">name: String</span>, <span name="description">description: String</span>, <span name="account_id">account_id: Option[Long]</span>, <span name="reference_id">reference_id: Option[String]</span>, <span name="image_uri">image_uri: Option[String]</span>, <span name="payment_limit">payment_limit: Option[Long]</span>, <span name="gaq_domains">gaq_domains: Option[List[String]]</span>)</span><span class="result"> extends MutableWePayResource[Account, AccountResponse] with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">An instance of an Account.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.AccountResponse" data-isabs="false">
       <a id="AccountResponse:AccountResponse"></a>
       <h4 class="signature">
@@ -71,7 +71,7 @@
         <a href="AccountResponse.html"><span class="name">AccountResponse</span></a><span class="params">(<span name="account_id">account_id: Option[Long]</span>, <span name="name">name: Option[String]</span>, <span name="description">description: Option[String]</span>, <span name="reference_id">reference_id: Option[String]</span>, <span name="account_uri">account_uri: Option[String]</span>, <span name="payment_limit">payment_limit: Option[Long]</span>, <span name="gaq_domains">gaq_domains: Option[List[String]]</span>, <span name="pending_balance">pending_balance: Option[Double]</span>, <span name="available_balance">available_balance: Option[Double]</span>, <span name="currency">currency: Option[String]</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">The response type for Account API operations that don't return an Account, or some variation thereof.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout" data-isabs="false">
       <a id="Checkout:Checkout"></a>
       <h4 class="signature">
@@ -83,7 +83,7 @@
         <a href="Checkout.html"><span class="name">Checkout</span></a><span class="params">(<span name="account_id">account_id: Long</span>, <span name="short_description">short_description: String</span>, <span name="type">type: String</span>, <span name="amount">amount: Double</span>, <span name="checkout_id">checkout_id: Option[Long]</span>, <span name="long_description">long_description: Option[String]</span>, <span name="payer_email_message">payer_email_message: Option[String]</span>, <span name="payee_email_message">payee_email_message: Option[String]</span>, <span name="reference_id">reference_id: Option[String]</span>, <span name="app_fee">app_fee: Option[Double]</span>, <span name="fee_payer">fee_payer: Option[String]</span>, <span name="redirect_uri">redirect_uri: Option[String]</span>, <span name="callback_uri">callback_uri: Option[String]</span>, <span name="auto_capture">auto_capture: Option[Boolean]</span>, <span name="require_shipping">require_shipping: Option[Boolean]</span>, <span name="shipping_fee">shipping_fee: Option[Double]</span>, <span name="charge_tax">charge_tax: Option[Boolean]</span>, <span name="mode">mode: Option[String]</span>, <span name="preapproval_id">preapproval_id: Option[Long]</span>, <span name="prefill_info">prefill_info: Option[JObject]</span>, <span name="funding_sources">funding_sources: Option[String]</span>, <span name="state">state: Option[String]</span>)</span><span class="result"> extends ImmutableWePayResource[Checkout, CheckoutResponse] with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">An instance of the Checkout class.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.CheckoutResponse" data-isabs="false">
       <a id="CheckoutResponse:CheckoutResponse"></a>
       <h4 class="signature">
@@ -95,7 +95,8 @@
         <a href="CheckoutResponse.html"><span class="name">CheckoutResponse</span></a><span class="params">(<span name="checkout_id">checkout_id: Long</span>, <span name="checkout_uri">checkout_uri: Option[String]</span>, <span name="state">state: Option[String]</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">The response type for API operations that don't return an instance of Checkout, or some variation
+thereof.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResource" data-isabs="true">
       <a id="ImmutableWePayResource:ImmutableWePayResource[MyType, CrudResponseType]"></a>
       <h4 class="signature">
@@ -107,8 +108,8 @@
         <a href="ImmutableWePayResource.html"><span class="name">ImmutableWePayResource</span></a><span class="tparams">[<span name="MyType">MyType &lt;: ImmutableWePayResource[MyType, CrudResponseType]</span>, <span name="CrudResponseType">CrudResponseType</span>]</span><span class="result"> extends WePayResource[MyType]</span>
       </span>
       </h4>
-      <p class="comment cmt">Children of this trait are instances of resources that cannot be modified by the application after their
-creation on the server.</p>
+      <p class="comment cmt">This is the parent class of WePayResources that can be saved to the server, but cannot be modified after
+their initial save.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResourceMeta" data-isabs="true">
       <a id="ImmutableWePayResourceMeta:ImmutableWePayResourceMeta[Model, CrudResponseType]"></a>
       <h4 class="signature">
@@ -133,7 +134,7 @@ after their creation.</p>
         <a href="MutableWePayResource.html"><span class="name">MutableWePayResource</span></a><span class="tparams">[<span name="MyType">MyType &lt;: MutableWePayResource[MyType, CrudResponseType]</span>, <span name="CrudResponseType">CrudResponseType</span>]</span><span class="result"> extends ImmutableWePayResource[MyType, CrudResponseType]</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">This trait defines those resources that can be altered and deleted after creation.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.MutableWePayResourceMeta" data-isabs="true">
       <a id="MutableWePayResourceMeta:MutableWePayResourceMeta[Model, CrudResponseType]"></a>
       <h4 class="signature">
@@ -145,7 +146,7 @@ after their creation.</p>
         <a href="MutableWePayResourceMeta.html"><span class="name">MutableWePayResourceMeta</span></a><span class="tparams">[<span name="Model">Model &lt;: MutableWePayResource[Model, CrudResponseType]</span>, <span name="CrudResponseType">CrudResponseType</span>]</span><span class="result"> extends ImmutableWePayResourceMeta[Model, CrudResponseType]</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">This trait defined the meta behavior for MutableWePayResources, and can be used to find and manipulate them.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval" data-isabs="false">
       <a id="Preapproval:Preapproval"></a>
       <h4 class="signature">
@@ -157,7 +158,7 @@ after their creation.</p>
         <a href="Preapproval.html"><span class="name">Preapproval</span></a><span class="params">(<span name="account_id">account_id: Long</span>, <span name="amount">amount: Double</span>, <span name="short_description">short_description: String</span>, <span name="period">period: String</span>, <span name="preapproval_id">preapproval_id: Option[Long]</span>, <span name="reference_id">reference_id: Option[String]</span>, <span name="app_fee">app_fee: Option[Double]</span>, <span name="fee_payer">fee_payer: Option[String]</span>, <span name="redirect_uri">redirect_uri: Option[String]</span>, <span name="callback_uri">callback_uri: Option[String]</span>, <span name="require_shipping">require_shipping: Option[Boolean]</span>, <span name="shipping_fee">shipping_fee: Option[Double]</span>, <span name="charge_tax">charge_tax: Option[Boolean]</span>, <span name="payer_email_message">payer_email_message: Option[String]</span>, <span name="payee_email_message">payee_email_message: Option[String]</span>, <span name="long_description">long_description: Option[String]</span>, <span name="frequency">frequency: Option[Int]</span>, <span name="start_time">start_time: Option[DateTime]</span>, <span name="end_time">end_time: Option[DateTime]</span>, <span name="auto_recur">auto_recur: Option[Boolean]</span>, <span name="state">state: Option[String]</span>, <span name="mode">mode: Option[String]</span>)</span><span class="result"> extends ImmutableWePayResource[Preapproval, PreapprovalResponse] with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">An instance of a WePay Preapproval.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.PreapprovalResponse" data-isabs="false">
       <a id="PreapprovalResponse:PreapprovalResponse"></a>
       <h4 class="signature">
@@ -169,7 +170,7 @@ after their creation.</p>
         <a href="PreapprovalResponse.html"><span class="name">PreapprovalResponse</span></a><span class="params">(<span name="preapproval_id">preapproval_id: Long</span>, <span name="preapproval_uri">preapproval_uri: Option[String]</span>, <span name="state">state: Option[String]</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">The response type for Preapproval operations that don't return an instance of Preapproval.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.User" data-isabs="false">
       <a id="User:User"></a>
       <h4 class="signature">
@@ -181,7 +182,7 @@ after their creation.</p>
         <a href="User.html"><span class="name">User</span></a><span class="params">(<span name="user_id">user_id: Long</span>, <span name="first_name">first_name: String</span>, <span name="last_name">last_name: String</span>, <span name="email">email: String</span>, <span name="state">state: String</span>)</span><span class="result"> extends WePayResource[User] with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">A class representing a User object on WePay's server.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.WePayResource" data-isabs="true">
       <a id="WePayResource:WePayResource[MyType]"></a>
       <h4 class="signature">
@@ -217,7 +218,7 @@ after their creation.</p>
         <a href="Withdrawal.html"><span class="name">Withdrawal</span></a><span class="params">(<span name="account_id">account_id: Long</span>, <span name="amount">amount: Option[Double]</span>, <span name="redirect_uri">redirect_uri: Option[String]</span>, <span name="callback_uri">callback_uri: Option[String]</span>, <span name="note">note: Option[String]</span>, <span name="withdrawal_id">withdrawal_id: Option[Long]</span>, <span name="state">state: Option[String]</span>, <span name="withdrawal_uri">withdrawal_uri: Option[String]</span>, <span name="recipient_confirmed">recipient_confirmed: Option[Boolean]</span>, <span name="create_time">create_time: Option[Long]</span>)</span><span class="result"> extends ImmutableWePayResource[Withdrawal, WithdrawalResponse] with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Represents an instance of a Withdrawal.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.WithdrawalResponse" data-isabs="false">
       <a id="WithdrawalResponse:WithdrawalResponse"></a>
       <h4 class="signature">
@@ -248,7 +249,7 @@ after their creation.</p>
         <a href="Account$.html"><span class="name">Account</span></a><span class="result"> extends MutableWePayResourceMeta[Account, AccountResponse] with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Meta object for finding and manipulating Account instances on WePay.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout" data-isabs="false">
       <a id="Checkout:Checkout"></a>
       <h4 class="signature">
@@ -260,7 +261,7 @@ after their creation.</p>
         <a href="Checkout$.html"><span class="name">Checkout</span></a><span class="result"> extends ImmutableWePayResourceMeta[Checkout, CheckoutResponse] with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Meta object for finding and manipulating Checkout instances on WePay.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval" data-isabs="false">
       <a id="Preapproval:Preapproval"></a>
       <h4 class="signature">
@@ -272,7 +273,7 @@ after their creation.</p>
         <a href="Preapproval$.html"><span class="name">Preapproval</span></a><span class="result"> extends ImmutableWePayResourceMeta[Preapproval, PreapprovalResponse] with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">The meta object for finding and manipulating Preapproval instances.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.User" data-isabs="false">
       <a id="User:User"></a>
       <h4 class="signature">
@@ -284,7 +285,7 @@ after their creation.</p>
         <a href="User$.html"><span class="name">User</span></a><span class="result"> extends WePayResourceMeta[User] with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Meta object for retrieving Users from WePay.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Withdrawal" data-isabs="false">
       <a id="Withdrawal:Withdrawal"></a>
       <h4 class="signature">
@@ -296,8 +297,7 @@ after their creation.</p>
         <a href="Withdrawal$.html"><span class="name">Withdrawal</span></a><span class="result"> extends ImmutableWePayResourceMeta[Withdrawal, WithdrawalResponse] with Serializable</span>
       </span>
       </h4>
-      <p class="comment cmt">@inheritdoc
-</p>
+      <p class="comment cmt">Manupluates, retrieves, and searches for Withdrawal objects on WePay's system.</p>
     </li></ol>
             </div>
 

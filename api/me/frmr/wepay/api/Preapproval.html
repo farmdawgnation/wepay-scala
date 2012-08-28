@@ -29,7 +29,8 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>An instance of a WePay Preapproval.</p><p>Preapprovals are used to, well, preapprove payments within a certain date range and amount.
+Useful for kickstarter-like applications or subscription-based services.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a>[<a name="me.frmr.wepay.api.Preapproval" class="extype" href="">Preapproval</a>, <a name="me.frmr.wepay.api.PreapprovalResponse" class="extype" href="PreapprovalResponse.html">PreapprovalResponse</a>], <a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[<a name="me.frmr.wepay.api.Preapproval" class="extype" href="">Preapproval</a>], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -599,8 +600,7 @@
         <span class="name">save</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.PreapprovalResponse" class="extype" href="PreapprovalResponse.html">PreapprovalResponse</a>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Save an instance of the ImmutableWePayResource to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the ImmutableWePayResource to WePay's server. If the ImmutableWePayResource already exists, this will
-result in a Failure.
+      <p class="shortcomment cmt">Save an instance of the Preapproval to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the Preapproval to WePay's server. If the Preapproval already exists, this will result in a Failure.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#shipping_fee" data-isabs="false">
       <a id="shipping_fee:Option[Double]"></a>
