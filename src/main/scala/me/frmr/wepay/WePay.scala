@@ -11,7 +11,9 @@ package me.frmr.wepay {
 
   /**
    * This class represents an error condition returned while
-   * attempting to run an operation against WePay's API.
+   * attempting to run an operation against WePay's API. When Failures
+   * are returned as a result of a WePay operation, they will usually
+   * contain a WePayError.
    *
    * @param error The error type.
    * @param error_description A friendlier, user readable error message.
