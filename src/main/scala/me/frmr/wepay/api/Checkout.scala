@@ -28,7 +28,7 @@ package me.frmr.wepay.api {
    * @param payee_email_message A message from you that will be included in the confirmation email to the payee.
    * @param reference_id The reference ID for the checkout. Should be unique per checkout per app.
    * @param app_fee The fee, in dollars and cents, your application will collect on this transaction. Limited to 20% of total amount.
-   * @param fee_payer The person who pays transaction feed. One of "Payee" or "Payer". Defaults to "Payer".
+   * @param fee_payer The person who pays transaction fee. One of "Payee" or "Payer". Defaults to "Payer".
    * @param redirect_uri The URI that the user should be sent to after completing the WePay flow.
    * @param callback_uri The URI that IPN notifications should be sent to.
    * @param auto_capture Sets whether or not the payment should be captured instantly. Defaults to true.
