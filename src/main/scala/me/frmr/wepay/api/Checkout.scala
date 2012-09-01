@@ -18,7 +18,6 @@ package me.frmr.wepay.api {
   /**
    * An instance of the Checkout class. Used to represent an actual exchange of funds between two parties.
    *
-   * @define THIS Checkout
    * @param account_id The Account ID the checkout is associated with.
    * @param short_description Short description of the purchase.
    * @param type The type of transaction. One of: GOODS, SERVICE, DONATION, or PERSONAL.
@@ -41,6 +40,7 @@ package me.frmr.wepay.api {
    * @param prefill_info A JObject containing any information to prepopulate on WePay. Fields are: 'name', 'email', 'phone_number', 'address', 'city', 'state', 'zip'.
    * @param funding_sources Setting to determine what funding sources are allowed. Values are "bank,cc", "bank", or "cc".
    * @param state The state of the checkout.
+   * @define THIS Checkout
   **/
   case class Checkout(account_id:Long, short_description:String, `type`:String, amount:Double, checkout_id:Option[Long] = None,
                       long_description:Option[String] = None, payer_email_message:Option[String] = None,

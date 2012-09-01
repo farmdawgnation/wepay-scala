@@ -30,7 +30,6 @@ package me.frmr.wepay.api {
    *
    * Users on WePay can have multiple Accounts. API Applications can only manage accounts that they have created.
    *
-   * @define THIS Account
    * @param name The name of the account.
    * @param description The description of the account.
    * @param account_id The Account ID, as determined by WePay. Your application should rarely need to set this value itself.
@@ -38,6 +37,7 @@ package me.frmr.wepay.api {
    * @param image_uri The URI to an image for the account.
    * @param payment_limit The maximum individual payment that can be made to this account. (deprecated, I think)
    * @param gaq_domains Domain for analytics tracking.
+   * @define THIS Account
   **/
   case class Account(name:String, description:String, account_id:Option[Long] = None, reference_id:Option[String] = None,
                      image_uri:Option[String] = None, payment_limit:Option[Long] = None,

@@ -23,7 +23,6 @@ package me.frmr.wepay.api {
    * Preapprovals are used to, well, preapprove payments within a certain date range and amount.
    * Useful for kickstarter-like applications or subscription-based services.
    *
-   * @define THIS Preapproval
    * @param account_id The Account ID that will be receiving the payment from this preapproval.
    * @param short_description The short description of what the user will be paying for.
    * @param period How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.
@@ -45,6 +44,7 @@ package me.frmr.wepay.api {
    * @param auto_recur Determines whether or not this is an auto-recurring Peapproval.
    * @param state The state of the Preapproval.
    * @param mode The mode the preapproval will run in. Can be "regular" or "iframe". Defaults to "regular".
+   * @define THIS Preapproval
   **/
   case class Preapproval(account_id:Long, amount:Double, short_description:String, period:String,
                          preapproval_id:Option[Long] = None, reference_id:Option[String] = None,
