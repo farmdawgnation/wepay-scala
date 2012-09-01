@@ -2,7 +2,7 @@ name := "wepay-scala"
 
 organization := "me.frmr"
 
-version := "0.8"
+version := "0.8.1-SNAPSHOT"
 
 scalaVersion := "2.9.2"
 
