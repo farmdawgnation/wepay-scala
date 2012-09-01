@@ -6,8 +6,8 @@ package me.frmr.wepay {
     import JsonDSL._
 
   import dispatch._
-    import liftjson.Js._
-    import Http._
+
+  import com.ning.http.client.{Request, RequestBuilder, Response}
 
   /**
    * This class represents an error condition returned while
@@ -98,28 +98,32 @@ package me.frmr.wepay {
         val oauth_url = uiEndpointBase / apiVersion / "oauth2" / "authorize" <<?
           Map("client_id" -> clientId, "redirect_uri" -> oauthRedirectUrl, "scope" -> oauthPermissions)
 
-        (oauth_url.secure to_uri) toString
+        (oauth_url.secure) toString
       }
     }
 
     // Handler for contacting the WePay server and getting a response
     // that we can parse.
-    protected def responseForRequest[T](request:Request, handler:(JValue)=>T) = {
+    protected def responseForRequest[T](request:RequestBuilder, handler:(JValue)=>T) = {
+      object CodeAndWePayResponse extends (Response => WePayResponse) {
+        def apply(r:Response) = {
+          WePayResponse(
+            r.getStatusCode(),
+            as.lift.Json(r)
+          )
+        }
+      }
+
       // Our HTTP transport
-      val http = new Http
+      val response = Http(request > CodeAndWePayResponse).either
 
-      val codeHandler = Handler(request, (code, r, e) => code)
-
-      val response =
-        WePayResponse.tupled(http.x(request >+ { (request) =>
-          (codeHandler, (request ># (json => json)))
-        }))
-
-      response.code match {
-        case 200 => Full(handler(response.json))
-        case _ =>
-          val error = response.json.extract[WePayError]
+      response() match {
+        case Right(WePayResponse(200, json)) => Full(handler(json))
+        case Right(WePayResponse(_, json)) =>
+          val error = json.extract[WePayError]
           ParamFailure(error.toString, Empty, Empty, error)
+        case Left(error) =>
+          Failure("Error from dispatch: " + error)
       }
     }
 
