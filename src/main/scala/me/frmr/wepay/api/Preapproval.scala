@@ -1,6 +1,7 @@
 package me.frmr.wepay.api {
   import net.liftweb.json._
     import JsonDSL._
+  import net.liftweb.common.Box
 
   import org.joda.time.DateTime
 
@@ -64,7 +65,12 @@ package me.frmr.wepay.api {
      * Cancel the preapproval.
     **/
     def cancel(implicit authorizationToken:Option[WePayToken]) = {
-      meta.cancel(preapproval_id getOrElse 0)
+      for {
+        id <- (preapproval_id:Box[Long]) ?~! "You can't cancel a preapproval with no ID."
+        response <- meta.cancel(id)
+      } yield {
+        response
+      }
     }
   }
 
