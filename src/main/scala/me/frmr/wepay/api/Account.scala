@@ -1,6 +1,7 @@
 package me.frmr.wepay.api {
   import net.liftweb.json._
     import JsonDSL._
+  import net.liftweb.common.Box
 
   import me.frmr.wepay._
 
@@ -50,9 +51,10 @@ package me.frmr.wepay.api {
     **/
     def balance(implicit authorizationToken:Option[WePayToken]) = {
       for {
-        account_id <- account_id
-      } {
-        meta.balance(account_id)
+        account_id <- (account_id:Box[Long]) ?~! "You can't retrieve the balance of an account with no ID."
+        result <- meta.balance(account_id)
+      } yield {
+        result
       }
     }
 
@@ -76,9 +78,10 @@ package me.frmr.wepay.api {
     **/
     def setTax(taxes:JArray)(implicit authorizationToken:Option[WePayToken]) = {
       for {
-        account_id <- account_id
-      } {
-        meta.setTax(account_id, taxes)
+        account_id <- (account_id:Box[Long]) ?~! "You can't set tax information on an account with no ID."
+        result <- meta.setTax(account_id, taxes)
+      } yield {
+        result
       }
     }
 
@@ -90,9 +93,10 @@ package me.frmr.wepay.api {
     **/
     def getTax(implicit authorizationToken:Option[WePayToken]) = {
       for {
-        account_id <- account_id
-      } {
-        meta.getTax(account_id)
+        account_id <- (account_id:Box[Long]) ?~! "You can't get tax information on an account with no ID."
+        result <- meta.getTax(account_id)
+      } yield {
+        result
       }
     }
   }
