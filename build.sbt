@@ -1,6 +1,6 @@
 name := "wepay-scala"
 
-organization := "me.frmr"
+organization := "me.frmr.wepay-scala"
 
 version := "0.8.1-SNAPSHOT"
 
