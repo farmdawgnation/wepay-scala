@@ -1,6 +1,7 @@
 package me.frmr.wepay.api {
   import net.liftweb.json._
     import JsonDSL._
+  import net.liftweb.common.Box
 
   import me.frmr.wepay._
 
@@ -60,9 +61,10 @@ package me.frmr.wepay.api {
     **/
     def cancel(cancel_reason:String)(implicit authorizationToken:Option[WePayToken]) = {
       for {
-        checkout_id <- checkout_id
-      } {
-        meta.cancel(checkout_id, cancel_reason)
+        checkout_id <- (checkout_id:Box[Long]) ?~! "You can't cancel a checkout with no ID."
+        response <- meta.cancel(checkout_id, cancel_reason)
+      } yield {
+        response
       }
     }
 
@@ -74,9 +76,10 @@ package me.frmr.wepay.api {
     **/
     def refund(refund_reason:String, amount:Option[Double])(implicit authorizationToken:Option[WePayToken]) = {
       for {
-        checkout_id <- checkout_id
-      } {
-        meta.refund(checkout_id, refund_reason, amount)
+        checkout_id <- (checkout_id:Box[Long]) ?~! "You can't refund a checkout with no ID."
+        response <- meta.refund(checkout_id, refund_reason, amount)
+      } yield {
+        response
       }
     }
 
@@ -85,9 +88,10 @@ package me.frmr.wepay.api {
     **/
     def capture(implicit authorizationToken:Option[WePayToken]) = {
       for {
-        checkout_id <- checkout_id
-      } {
-        meta.capture(checkout_id)
+        checkout_id <- (checkout_id:Box[Long]) ?~! "You can't cancel a checkout with no ID."
+        response <- meta.capture(checkout_id)
+      } yield {
+        response
       }
     }
   }
