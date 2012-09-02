@@ -19,15 +19,15 @@ To get rolling in SBT 0.11, the first thing you need to do is add my makeshift r
 
 	resolvers += "WePay-Scala" at "https://raw.github.com/farmdawgnation/wepay-scala-repository/master/releases"
 
-Next, you'll want to add the library to your list of dependencies so it gets pullt down during the SBT update process.
+Next, you'll want to add the library to your list of dependencies so it gets pulled down during the SBT update process.
 
-	libraryDependencies += "me.frmr" % "wepay-scala_2.9.2" % "0.8"
+	libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.8.1"
 
 Now when you compile your project the WePay-Scala library should be in the classpath. All you should have to do is import the `me.frmr.wepay._` and `me.frmr.wepay.api_` packages. After you've got the library, you'll want to try getting started by running some operations on the API. The [GitHub Project Page](htttp://github.com/farmdawgnation/wepay-scala) has a decent description of how to do this for the time being. More work is forthcoming on that front, of course. Also of interest is the (now much more complete) [API Documentation](http://farmdawgnation.github.com/wepay-scala/api), which is also still a Work-in-Progress, but should give you a decent starting point.
 
 ## Roadmap Moving Forward
 
-Although this library is stable and being actively used in production, there are a few things left to be done, hence the version designation 0.8. Specificially:
+Although this library is stable and being actively used in production, there are a few things left to be done, hence the version designation < 1.0. Specificially:
 
 1. Better, more complete documentation.
 2. Unit Tests (complete with TravisCI-ness).
