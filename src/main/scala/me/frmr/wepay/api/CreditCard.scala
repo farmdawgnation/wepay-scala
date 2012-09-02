@@ -4,7 +4,7 @@ package me.frmr.wepay.api {
     import JsonDSL._
     import Extraction._
 
-  import me.frmr.wepay.WePayToken
+  import me.frmr.wepay.{WePay, WePayToken}
 
   /**
    * Models a response from the credit_card API endpoints that don't
@@ -96,10 +96,16 @@ package me.frmr.wepay.api {
      * @param credit_card_id The ID of the credit card to authorize.
     **/
     def authorize(credit_card_id:Long) = {
-      resultRetrievalQuery(Some("authorize"),
-        ("client_id" -> "TODO") ~
-        ("client_secret" -> "TODO") ~
-        ("credit_card_id" -> credit_card_id))
+      for {
+        clientId <- WePay.clientId
+        clientSecret <- WePay.clientSecret
+        result <- resultRetrievalQuery(Some("authorize"),
+                    ("client_id" -> clientId) ~
+                    ("client_secret" -> clientSecret) ~
+                    ("credit_card_id" -> credit_card_id))
+      } yield {
+        result
+      }
     }
 
     override def create(instance:CreditCard)(implicit authorizationToken:Option[WePayToken]) = {
@@ -108,8 +114,13 @@ package me.frmr.wepay.api {
         case _ => JObject(Nil)
       }
 
-      val request = ("client_id" -> "TODO") ~ decomposedObject
-      resultRetrievalQuery(Some("create"), request)
+      for {
+        clientId <- WePay.clientId
+        request = ("client_id" -> clientId) ~ decomposedObject
+        result <- resultRetrievalQuery(Some("create"), request)
+      } yield {
+        result
+      }
     }
   }
 }
