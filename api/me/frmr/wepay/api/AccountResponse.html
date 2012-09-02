@@ -30,7 +30,8 @@
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>The response type for Account API operations that don't return an Account, or some variation thereof.
-</p></div><div class="toggleContainer block">
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID of the account being considered.</p></dd><dt class="param">name</dt><dd class="cmt"><p>The name of the account being considered.</p></dd><dt class="param">description</dt><dd class="cmt"><p>The description attached to the account.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID assigne to the account by your application. Reference IDs must be unique per user per app.</p></dd><dt class="param">account_uri</dt><dd class="cmt"><p>The URI to redirect the user to to view their account.</p></dd><dt class="param">payment_limit</dt><dd class="cmt"><p>The maximum individual payment that can be made to this account. (deprecated, I think)</p></dd><dt class="param">gaq_domains</dt><dd class="cmt"><p>A list of analytics domains assigned to this account, if any.</p></dd><dt class="param">pending_balance</dt><dd class="cmt"><p>The amount on the account that is pending.</p></dd><dt class="param">available_balance</dt><dd class="cmt"><p>The amount on the account that is available.</p></dd><dt class="param">currency</dt><dd class="cmt"><p>The currency of the account.
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -69,7 +70,8 @@
         <span class="name">AccountResponse</span><span class="params">(<span name="account_id">account_id: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="name">name: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="description">description: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="reference_id">reference_id: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="account_uri">account_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="payment_limit">payment_limit: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="gaq_domains">gaq_domains: <span name="scala.Option" class="extype">Option</span>[List[String]] = <span class="symbol">scala.None</span></span>, <span name="pending_balance">pending_balance: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="available_balance">available_balance: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="currency">currency: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID of the account being considered.</p></dd><dt class="param">name</dt><dd class="cmt"><p>The name of the account being considered.</p></dd><dt class="param">description</dt><dd class="cmt"><p>The description attached to the account.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID assigne to the account by your application. Reference IDs must be unique per user per app.</p></dd><dt class="param">account_uri</dt><dd class="cmt"><p>The URI to redirect the user to to view their account.</p></dd><dt class="param">payment_limit</dt><dd class="cmt"><p>The maximum individual payment that can be made to this account. (deprecated, I think)</p></dd><dt class="param">gaq_domains</dt><dd class="cmt"><p>A list of analytics domains assigned to this account, if any.</p></dd><dt class="param">pending_balance</dt><dd class="cmt"><p>The amount on the account that is pending.</p></dd><dt class="param">available_balance</dt><dd class="cmt"><p>The amount on the account that is available.</p></dd><dt class="param">currency</dt><dd class="cmt"><p>The currency of the account.
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -150,7 +152,7 @@
         <span class="name">account_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The Account ID of the account being considered.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.AccountResponse#account_uri" data-isabs="false">
       <a id="account_uri:Option[String]"></a>
       <h4 class="signature">
@@ -162,7 +164,7 @@
         <span class="name">account_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI to redirect the user to to view their account.</p>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -186,7 +188,7 @@
         <span class="name">available_balance</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The amount on the account that is available.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.AccountResponse#canEqual" data-isabs="false">
       <a id="canEqual(Any):Boolean"></a>
       <h4 class="signature">
@@ -225,7 +227,7 @@
         <span class="name">currency</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The currency of the account.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.AccountResponse#description" data-isabs="false">
       <a id="description:Option[String]"></a>
       <h4 class="signature">
@@ -237,7 +239,7 @@
         <span class="name">description</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The description attached to the account.</p>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -288,7 +290,7 @@
         <span class="name">gaq_domains</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[List[String]]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A list of analytics domains assigned to this account, if any.</p>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -336,7 +338,7 @@
         <span class="name">name</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The name of the account being considered.</p>
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -384,7 +386,7 @@
         <span class="name">payment_limit</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The maximum individual payment that can be made to this account.</p><div class="fullcomment"><div class="comment cmt"><p>The maximum individual payment that can be made to this account. (deprecated, I think)</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.AccountResponse#pending_balance" data-isabs="false">
       <a id="pending_balance:Option[Double]"></a>
       <h4 class="signature">
@@ -396,7 +398,7 @@
         <span class="name">pending_balance</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The amount on the account that is pending.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.AccountResponse#productArity" data-isabs="false">
       <a id="productArity:Int"></a>
       <h4 class="signature">
@@ -456,7 +458,7 @@
         <span class="name">reference_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The reference ID assigne to the account by your application.</p><div class="fullcomment"><div class="comment cmt"><p>The reference ID assigne to the account by your application. Reference IDs must be unique per user per app.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

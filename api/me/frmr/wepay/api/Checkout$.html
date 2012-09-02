@@ -146,7 +146,9 @@
         <span class="name">cancel</span><span class="params">(<span name="checkout_id">checkout_id: <span name="scala.Long" class="extype">Long</span></span>, <span name="cancel_reason">cancel_reason: String</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.CheckoutResponse" class="extype" href="CheckoutResponse.html">CheckoutResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Cancel a checkout by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Cancel a checkout by ID. Useful if you don't already have the checkout in memory.
+</p></div><dl class="paramcmts block"><dt class="param">checkout_id</dt><dd class="cmt"><p>The ID of the checkout to cancel.</p></dd><dt class="param">cancel_reason</dt><dd class="cmt"><p>The reason for canceling the checkout.
+</p></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#capture" data-isabs="false">
       <a id="capture(Long)(Option[WePayToken]):Box[CheckoutResponse]"></a>
       <h4 class="signature">
@@ -158,7 +160,9 @@
         <span class="name">capture</span><span class="params">(<span name="checkout_id">checkout_id: <span name="scala.Long" class="extype">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.CheckoutResponse" class="extype" href="CheckoutResponse.html">CheckoutResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Capture funds for a checkout that was not previously captured.</p><div class="fullcomment"><div class="comment cmt"><p>Capture funds for a checkout that was not previously captured.
+</p></div><dl class="paramcmts block"><dt class="param">checkout_id</dt><dd class="cmt"><p>The ID of the checkout to capture.
+</p></dd></dl></div>
     </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
       <a id="className:String"></a>
       <h4 class="signature">
@@ -284,7 +288,9 @@
         <span class="name">find</span><span class="params">(<span name="account_id">account_id: String</span>, <span name="start">start: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Int" class="extype">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>, <span name="limit">limit: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Int" class="extype">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>, <span name="reference_id">reference_id: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>, <span name="state">state: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>, <span name="preapproval_id">preapproval_id: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[List[<a name="me.frmr.wepay.api.Checkout" class="extype" href="Checkout.html">Checkout</a>]]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Find a checkout within an account searching on various parameters.</p><div class="fullcomment"><div class="comment cmt"><p>Find a checkout within an account searching on various parameters.
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The account to search.</p></dd><dt class="param">start</dt><dd class="cmt"><p>The start index to search from.</p></dd><dt class="param">limit</dt><dd class="cmt"><p>The maximum number of results to return.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID of the checkout to find.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The state of the checkout to find.</p></dd><dt class="param">preapproval_id</dt><dd class="cmt"><p>The preapproval used with the checkout you're looking for.
+</p></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#find" data-isabs="false">
       <a id="find(Long)(Option[WePayToken]):Box[Checkout]"></a>
       <h4 class="signature">
@@ -433,7 +439,9 @@
         <span class="name">refund</span><span class="params">(<span name="checkout_id">checkout_id: <span name="scala.Long" class="extype">Long</span></span>, <span name="refund_reason">refund_reason: String</span>, <span name="amount">amount: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.CheckoutResponse" class="extype" href="CheckoutResponse.html">CheckoutResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Refund a checkout by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Refund a checkout by ID. Useful if you don't already have the checkout in memory.
+</p></div><dl class="paramcmts block"><dt class="param">checkout_id</dt><dd class="cmt"><p>The ID of the checkout to refund.</p></dd><dt class="param">refund_reason</dt><dd class="cmt"><p>The reason for refunding the checkout.</p></dd><dt class="param">amount</dt><dd class="cmt"><p>The amount of the refund, if this is a partial refund.
+</p></dd></dl></div>
     </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#resource" data-isabs="false">
       <a id="resource:String"></a>
       <h4 class="signature">

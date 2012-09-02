@@ -30,7 +30,9 @@
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>An instance of a WePay Preapproval.</p><p>Preapprovals are used to, well, preapprove payments within a certain date range and amount.
-Useful for kickstarter-like applications or subscription-based services.</p></div><div class="toggleContainer block">
+Useful for kickstarter-like applications or subscription-based services.
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID that will be receiving the payment from this preapproval.</p></dd><dt class="param">short_description</dt><dd class="cmt"><p>The short description of what the user will be paying for.</p></dd><dt class="param">period</dt><dd class="cmt"><p>How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.</p></dd><dt class="param">preapproval_id</dt><dd class="cmt"><p>The preapproval ID assigned by WePay. Should rarely ever be set by your app.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID of the preapproval. Should be unique per app per account.</p></dd><dt class="param">app_fee</dt><dd class="cmt"><p>The fee your application will take on this transaction.</p></dd><dt class="param">fee_payer</dt><dd class="cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></dd><dt class="param">redirect_uri</dt><dd class="cmt"><p>The URI that the user will be redirected to for completing the Preapproval flow.</p></dd><dt class="param">callback_uri</dt><dd class="cmt"><p>The URI that IPN notifications will be directed to.</p></dd><dt class="param">require_shipping</dt><dd class="cmt"><p>If true, the user will be required to enter shipping information.</p></dd><dt class="param">shipping_fee</dt><dd class="cmt"><p>The fee for shipping.</p></dd><dt class="param">charge_tax</dt><dd class="cmt"><p>If set to true, tax will be charged.</p></dd><dt class="param">payer_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payer.</p></dd><dt class="param">payee_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payee.</p></dd><dt class="param">long_description</dt><dd class="cmt"><p>The long description of the transaction.</p></dd><dt class="param">frequency</dt><dd class="cmt"><p>The number of times this preapproval can be used per period.</p></dd><dt class="param">start_time</dt><dd class="cmt"><p>When the API can start charging using this preapproval.</p></dd><dt class="param">end_time</dt><dd class="cmt"><p>The date the API can no longer charge using this preapproval.</p></dd><dt class="param">auto_recur</dt><dd class="cmt"><p>Determines whether or not this is an auto-recurring Peapproval.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The state of the Preapproval.</p></dd><dt class="param">mode</dt><dd class="cmt"><p>The mode the preapproval will run in. Can be &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a>[<a name="me.frmr.wepay.api.Preapproval" class="extype" href="">Preapproval</a>, <a name="me.frmr.wepay.api.PreapprovalResponse" class="extype" href="PreapprovalResponse.html">PreapprovalResponse</a>], <a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[<a name="me.frmr.wepay.api.Preapproval" class="extype" href="">Preapproval</a>], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -69,7 +71,8 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">Preapproval</span><span class="params">(<span name="account_id">account_id: <span name="scala.Long" class="extype">Long</span></span>, <span name="amount">amount: <span name="scala.Double" class="extype">Double</span></span>, <span name="short_description">short_description: String</span>, <span name="period">period: String</span>, <span name="preapproval_id">preapproval_id: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="reference_id">reference_id: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="app_fee">app_fee: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="fee_payer">fee_payer: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="redirect_uri">redirect_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="callback_uri">callback_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="require_shipping">require_shipping: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="shipping_fee">shipping_fee: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="charge_tax">charge_tax: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="payer_email_message">payer_email_message: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="payee_email_message">payee_email_message: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="long_description">long_description: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="frequency">frequency: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Int" class="extype">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="start_time">start_time: <span name="scala.Option" class="extype">Option</span>[<span name="org.joda.time.DateTime" class="extype">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="end_time">end_time: <span name="scala.Option" class="extype">Option</span>[<span name="org.joda.time.DateTime" class="extype">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="auto_recur">auto_recur: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="mode">mode: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID that will be receiving the payment from this preapproval.</p></dd><dt class="param">short_description</dt><dd class="cmt"><p>The short description of what the user will be paying for.</p></dd><dt class="param">period</dt><dd class="cmt"><p>How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.</p></dd><dt class="param">preapproval_id</dt><dd class="cmt"><p>The preapproval ID assigned by WePay. Should rarely ever be set by your app.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID of the preapproval. Should be unique per app per account.</p></dd><dt class="param">app_fee</dt><dd class="cmt"><p>The fee your application will take on this transaction.</p></dd><dt class="param">fee_payer</dt><dd class="cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></dd><dt class="param">redirect_uri</dt><dd class="cmt"><p>The URI that the user will be redirected to for completing the Preapproval flow.</p></dd><dt class="param">callback_uri</dt><dd class="cmt"><p>The URI that IPN notifications will be directed to.</p></dd><dt class="param">require_shipping</dt><dd class="cmt"><p>If true, the user will be required to enter shipping information.</p></dd><dt class="param">shipping_fee</dt><dd class="cmt"><p>The fee for shipping.</p></dd><dt class="param">charge_tax</dt><dd class="cmt"><p>If set to true, tax will be charged.</p></dd><dt class="param">payer_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payer.</p></dd><dt class="param">payee_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payee.</p></dd><dt class="param">long_description</dt><dd class="cmt"><p>The long description of the transaction.</p></dd><dt class="param">frequency</dt><dd class="cmt"><p>The number of times this preapproval can be used per period.</p></dd><dt class="param">start_time</dt><dd class="cmt"><p>When the API can start charging using this preapproval.</p></dd><dt class="param">end_time</dt><dd class="cmt"><p>The date the API can no longer charge using this preapproval.</p></dd><dt class="param">auto_recur</dt><dd class="cmt"><p>Determines whether or not this is an auto-recurring Peapproval.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The state of the Preapproval.</p></dd><dt class="param">mode</dt><dd class="cmt"><p>The mode the preapproval will run in. Can be &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -162,7 +165,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">account_id</span><span class="result">: <span name="scala.Long" class="extype">Long</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The Account ID that will be receiving the payment from this preapproval.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#amount" data-isabs="false">
       <a id="amount:Double"></a>
       <h4 class="signature">
@@ -186,7 +189,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">app_fee</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The fee your application will take on this transaction.</p>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -210,7 +213,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">auto_recur</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Determines whether or not this is an auto-recurring Peapproval.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#callback_uri" data-isabs="false">
       <a id="callback_uri:Option[String]"></a>
       <h4 class="signature">
@@ -222,7 +225,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">callback_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI that IPN notifications will be directed to.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#canEqual" data-isabs="false">
       <a id="canEqual(Any):Boolean"></a>
       <h4 class="signature">
@@ -246,7 +249,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">cancel</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.PreapprovalResponse" class="extype" href="PreapprovalResponse.html">PreapprovalResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Cancel the preapproval.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#charge_tax" data-isabs="false">
       <a id="charge_tax:Option[Boolean]"></a>
       <h4 class="signature">
@@ -258,7 +261,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">charge_tax</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">If set to true, tax will be charged.</p>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -285,7 +288,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">end_time</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="org.joda.time.DateTime" class="extype">DateTime</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The date the API can no longer charge using this preapproval.</p>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -321,7 +324,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">fee_payer</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The person who pays transaction fee.</p><div class="fullcomment"><div class="comment cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></div></div>
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -348,7 +351,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">frequency</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Int" class="extype">Int</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The number of times this preapproval can be used per period.</p>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -396,7 +399,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">long_description</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The long description of the transaction.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#meta" data-isabs="false">
       <a id="meta:me.frmr.wepay.api.Preapproval.type"></a>
       <h4 class="signature">
@@ -420,7 +423,8 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">mode</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The mode the preapproval will run in.</p><div class="fullcomment"><div class="comment cmt"><p>The mode the preapproval will run in. Can be &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.
+</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -468,7 +472,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">payee_email_message</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A message from you that will be included in the confirmation email to the payee.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#payer_email_message" data-isabs="false">
       <a id="payer_email_message:Option[String]"></a>
       <h4 class="signature">
@@ -480,7 +484,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">payer_email_message</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A message from you that will be included in the confirmation email to the payer.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#period" data-isabs="false">
       <a id="period:String"></a>
       <h4 class="signature">
@@ -492,7 +496,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">period</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">How frequently the user can be charged.</p><div class="fullcomment"><div class="comment cmt"><p>How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#preapproval_id" data-isabs="false">
       <a id="preapproval_id:Option[Long]"></a>
       <h4 class="signature">
@@ -504,7 +508,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">preapproval_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The preapproval ID assigned by WePay.</p><div class="fullcomment"><div class="comment cmt"><p>The preapproval ID assigned by WePay. Should rarely ever be set by your app.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#productArity" data-isabs="false">
       <a id="productArity:Int"></a>
       <h4 class="signature">
@@ -564,7 +568,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">redirect_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI that the user will be redirected to for completing the Preapproval flow.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#reference_id" data-isabs="false">
       <a id="reference_id:Option[String]"></a>
       <h4 class="signature">
@@ -576,7 +580,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">reference_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The reference ID of the preapproval.</p><div class="fullcomment"><div class="comment cmt"><p>The reference ID of the preapproval. Should be unique per app per account.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#require_shipping" data-isabs="false">
       <a id="require_shipping:Option[Boolean]"></a>
       <h4 class="signature">
@@ -588,7 +592,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">require_shipping</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">If true, the user will be required to enter shipping information.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResource#save" data-isabs="false">
       <a id="save(Option[WePayToken]):Box[PreapprovalResponse]"></a>
       <h4 class="signature">
@@ -613,7 +617,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">shipping_fee</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The fee for shipping.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#short_description" data-isabs="false">
       <a id="short_description:String"></a>
       <h4 class="signature">
@@ -625,7 +629,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">short_description</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The short description of what the user will be paying for.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#start_time" data-isabs="false">
       <a id="start_time:Option[DateTime]"></a>
       <h4 class="signature">
@@ -637,7 +641,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">start_time</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="org.joda.time.DateTime" class="extype">DateTime</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">When the API can start charging using this preapproval.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Preapproval#state" data-isabs="false">
       <a id="state:Option[String]"></a>
       <h4 class="signature">
@@ -649,7 +653,7 @@ Useful for kickstarter-like applications or subscription-based services.</p></di
         <span class="name">state</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The state of the Preapproval.</p>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

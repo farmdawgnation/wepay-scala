@@ -146,7 +146,9 @@
         <span class="name">cancel</span><span class="params">(<span name="preapproval_id">preapproval_id: <span name="scala.Long" class="extype">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.PreapprovalResponse" class="extype" href="PreapprovalResponse.html">PreapprovalResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Cancel a preapproval by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Cancel a preapproval by ID. Useful if you don't already have an instance avaialable.
+</p></div><dl class="paramcmts block"><dt class="param">preapproval_id</dt><dd class="cmt"><p>The ID of the preapproval to cancel.
+</p></dd></dl></div>
     </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
       <a id="className:String"></a>
       <h4 class="signature">
@@ -272,7 +274,9 @@
         <span class="name">find</span><span class="params">(<span name="state">state: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>, <span name="reference_id">reference_id: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[List[<a name="me.frmr.wepay.api.Preapproval" class="extype" href="Preapproval.html">Preapproval</a>]]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Find a preapproval based on some search parameters.</p><div class="fullcomment"><div class="comment cmt"><p>Find a preapproval based on some search parameters.
+</p></div><dl class="paramcmts block"><dt class="param">state</dt><dd class="cmt"><p>The state of the preapproval you're looking for.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID of the preapproval you're looking for.
+</p></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#find" data-isabs="false">
       <a id="find(Long)(Option[WePayToken]):Box[Preapproval]"></a>
       <h4 class="signature">

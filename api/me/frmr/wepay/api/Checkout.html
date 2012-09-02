@@ -29,7 +29,9 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>An instance of the Checkout class. Used to represent an actual exchange of funds between two parties.</p></div><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>An instance of the Checkout class. Used to represent an actual exchange of funds between two parties.
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID the checkout is associated with.</p></dd><dt class="param">short_description</dt><dd class="cmt"><p>Short description of the purchase.</p></dd><dt class="param">type</dt><dd class="cmt"><p>The type of transaction. One of: GOODS, SERVICE, DONATION, or PERSONAL.</p></dd><dt class="param">amount</dt><dd class="cmt"><p>The amount of the trnasaction.</p></dd><dt class="param">checkout_id</dt><dd class="cmt"><p>The ID assigned to the checkout by WePay. Your app should almost never set this value.</p></dd><dt class="param">long_description</dt><dd class="cmt"><p>A long description of the purchase.</p></dd><dt class="param">payer_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payer.</p></dd><dt class="param">payee_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payee.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID for the checkout. Should be unique per checkout per app.</p></dd><dt class="param">app_fee</dt><dd class="cmt"><p>The fee, in dollars and cents, your application will collect on this transaction. Limited to 20% of total amount.</p></dd><dt class="param">fee_payer</dt><dd class="cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></dd><dt class="param">redirect_uri</dt><dd class="cmt"><p>The URI that the user should be sent to after completing the WePay flow.</p></dd><dt class="param">callback_uri</dt><dd class="cmt"><p>The URI that IPN notifications should be sent to.</p></dd><dt class="param">auto_capture</dt><dd class="cmt"><p>Sets whether or not the payment should be captured instantly. Defaults to true.</p></dd><dt class="param">require_shipping</dt><dd class="cmt"><p>If true, payer will be required to enter a shipping address. Defaults to false.</p></dd><dt class="param">shipping_fee</dt><dd class="cmt"><p>The fee for shipping.</p></dd><dt class="param">charge_tax</dt><dd class="cmt"><p>Determines whether or not tax will be charged.</p></dd><dt class="param">mode</dt><dd class="cmt"><p>The mode the checkout will be displayed in. One of &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.</p></dd><dt class="param">preapproval_id</dt><dd class="cmt"><p>The preapproval ID associated with the checkout, if any.</p></dd><dt class="param">prefill_info</dt><dd class="cmt"><p>A JObject containing any information to prepopulate on WePay. Fields are: 'name', 'email', 'phone_number', 'address', 'city', 'state', 'zip'.</p></dd><dt class="param">funding_sources</dt><dd class="cmt"><p>Setting to determine what funding sources are allowed. Values are &quot;bank,cc&quot;, &quot;bank&quot;, or &quot;cc&quot;.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The state of the checkout.
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a>[<a name="me.frmr.wepay.api.Checkout" class="extype" href="">Checkout</a>, <a name="me.frmr.wepay.api.CheckoutResponse" class="extype" href="CheckoutResponse.html">CheckoutResponse</a>], <a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[<a name="me.frmr.wepay.api.Checkout" class="extype" href="">Checkout</a>], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -68,7 +70,8 @@
         <span class="name">Checkout</span><span class="params">(<span name="account_id">account_id: <span name="scala.Long" class="extype">Long</span></span>, <span name="short_description">short_description: String</span>, <span name="type">type: String</span>, <span name="amount">amount: <span name="scala.Double" class="extype">Double</span></span>, <span name="checkout_id">checkout_id: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="long_description">long_description: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="payer_email_message">payer_email_message: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="payee_email_message">payee_email_message: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="reference_id">reference_id: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="app_fee">app_fee: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="fee_payer">fee_payer: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="redirect_uri">redirect_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="callback_uri">callback_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="auto_capture">auto_capture: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="require_shipping">require_shipping: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="shipping_fee">shipping_fee: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="charge_tax">charge_tax: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="mode">mode: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="preapproval_id">preapproval_id: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="prefill_info">prefill_info: <span name="scala.Option" class="extype">Option</span>[JObject] = <span class="symbol">scala.None</span></span>, <span name="funding_sources">funding_sources: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID the checkout is associated with.</p></dd><dt class="param">short_description</dt><dd class="cmt"><p>Short description of the purchase.</p></dd><dt class="param">type</dt><dd class="cmt"><p>The type of transaction. One of: GOODS, SERVICE, DONATION, or PERSONAL.</p></dd><dt class="param">amount</dt><dd class="cmt"><p>The amount of the trnasaction.</p></dd><dt class="param">checkout_id</dt><dd class="cmt"><p>The ID assigned to the checkout by WePay. Your app should almost never set this value.</p></dd><dt class="param">long_description</dt><dd class="cmt"><p>A long description of the purchase.</p></dd><dt class="param">payer_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payer.</p></dd><dt class="param">payee_email_message</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payee.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The reference ID for the checkout. Should be unique per checkout per app.</p></dd><dt class="param">app_fee</dt><dd class="cmt"><p>The fee, in dollars and cents, your application will collect on this transaction. Limited to 20% of total amount.</p></dd><dt class="param">fee_payer</dt><dd class="cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></dd><dt class="param">redirect_uri</dt><dd class="cmt"><p>The URI that the user should be sent to after completing the WePay flow.</p></dd><dt class="param">callback_uri</dt><dd class="cmt"><p>The URI that IPN notifications should be sent to.</p></dd><dt class="param">auto_capture</dt><dd class="cmt"><p>Sets whether or not the payment should be captured instantly. Defaults to true.</p></dd><dt class="param">require_shipping</dt><dd class="cmt"><p>If true, payer will be required to enter a shipping address. Defaults to false.</p></dd><dt class="param">shipping_fee</dt><dd class="cmt"><p>The fee for shipping.</p></dd><dt class="param">charge_tax</dt><dd class="cmt"><p>Determines whether or not tax will be charged.</p></dd><dt class="param">mode</dt><dd class="cmt"><p>The mode the checkout will be displayed in. One of &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.</p></dd><dt class="param">preapproval_id</dt><dd class="cmt"><p>The preapproval ID associated with the checkout, if any.</p></dd><dt class="param">prefill_info</dt><dd class="cmt"><p>A JObject containing any information to prepopulate on WePay. Fields are: 'name', 'email', 'phone_number', 'address', 'city', 'state', 'zip'.</p></dd><dt class="param">funding_sources</dt><dd class="cmt"><p>Setting to determine what funding sources are allowed. Values are &quot;bank,cc&quot;, &quot;bank&quot;, or &quot;cc&quot;.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The state of the checkout.
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -161,7 +164,7 @@
         <span class="name">account_id</span><span class="result">: <span name="scala.Long" class="extype">Long</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The Account ID the checkout is associated with.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#amount" data-isabs="false">
       <a id="amount:Double"></a>
       <h4 class="signature">
@@ -173,7 +176,7 @@
         <span class="name">amount</span><span class="result">: <span name="scala.Double" class="extype">Double</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The amount of the trnasaction.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#app_fee" data-isabs="false">
       <a id="app_fee:Option[Double]"></a>
       <h4 class="signature">
@@ -185,7 +188,7 @@
         <span class="name">app_fee</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The fee, in dollars and cents, your application will collect on this transaction.</p><div class="fullcomment"><div class="comment cmt"><p>The fee, in dollars and cents, your application will collect on this transaction. Limited to 20% of total amount.</p></div></div>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -209,7 +212,7 @@
         <span class="name">auto_capture</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Sets whether or not the payment should be captured instantly.</p><div class="fullcomment"><div class="comment cmt"><p>Sets whether or not the payment should be captured instantly. Defaults to true.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#callback_uri" data-isabs="false">
       <a id="callback_uri:Option[String]"></a>
       <h4 class="signature">
@@ -221,7 +224,7 @@
         <span class="name">callback_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI that IPN notifications should be sent to.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#canEqual" data-isabs="false">
       <a id="canEqual(Any):Boolean"></a>
       <h4 class="signature">
@@ -235,29 +238,31 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.Checkout" class="extype" href="">Checkout</a> → Equals</dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#cancel" data-isabs="false">
-      <a id="cancel(String)(Option[WePayToken]):Unit"></a>
+      <a id="cancel(String)(Option[WePayToken]):Box[CheckoutResponse]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">cancel</span><span class="params">(<span name="cancel_reason">cancel_reason: String</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">cancel</span><span class="params">(<span name="cancel_reason">cancel_reason: String</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.CheckoutResponse" class="extype" href="CheckoutResponse.html">CheckoutResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Cancel the checkout, specifying a reason why.</p><div class="fullcomment"><div class="comment cmt"><p>Cancel the checkout, specifying a reason why.
+</p></div><dl class="paramcmts block"><dt class="param">cancel_reason</dt><dd class="cmt"><p>The reason the checkout is being canceled.
+</p></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#capture" data-isabs="false">
-      <a id="capture(Option[WePayToken]):Unit"></a>
+      <a id="capture(Option[WePayToken]):Box[CheckoutResponse]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">capture</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">capture</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.CheckoutResponse" class="extype" href="CheckoutResponse.html">CheckoutResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Capture the payment for this checkout, if auto_capture was set to false when it was created.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#charge_tax" data-isabs="false">
       <a id="charge_tax:Option[Boolean]"></a>
       <h4 class="signature">
@@ -269,7 +274,7 @@
         <span class="name">charge_tax</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Determines whether or not tax will be charged.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#checkout_id" data-isabs="false">
       <a id="checkout_id:Option[Long]"></a>
       <h4 class="signature">
@@ -281,7 +286,7 @@
         <span class="name">checkout_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The ID assigned to the checkout by WePay.</p><div class="fullcomment"><div class="comment cmt"><p>The ID assigned to the checkout by WePay. Your app should almost never set this value.</p></div></div>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -332,7 +337,7 @@
         <span class="name">fee_payer</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The person who pays transaction fee.</p><div class="fullcomment"><div class="comment cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></div></div>
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -359,7 +364,7 @@
         <span class="name">funding_sources</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Setting to determine what funding sources are allowed.</p><div class="fullcomment"><div class="comment cmt"><p>Setting to determine what funding sources are allowed. Values are &quot;bank,cc&quot;, &quot;bank&quot;, or &quot;cc&quot;.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -407,7 +412,7 @@
         <span class="name">long_description</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A long description of the purchase.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#meta" data-isabs="false">
       <a id="meta:me.frmr.wepay.api.Checkout.type"></a>
       <h4 class="signature">
@@ -431,7 +436,7 @@
         <span class="name">mode</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The mode the checkout will be displayed in.</p><div class="fullcomment"><div class="comment cmt"><p>The mode the checkout will be displayed in. One of &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -479,7 +484,7 @@
         <span class="name">payee_email_message</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A message from you that will be included in the confirmation email to the payee.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#payer_email_message" data-isabs="false">
       <a id="payer_email_message:Option[String]"></a>
       <h4 class="signature">
@@ -491,7 +496,7 @@
         <span class="name">payer_email_message</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A message from you that will be included in the confirmation email to the payer.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#preapproval_id" data-isabs="false">
       <a id="preapproval_id:Option[Long]"></a>
       <h4 class="signature">
@@ -503,7 +508,7 @@
         <span class="name">preapproval_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The preapproval ID associated with the checkout, if any.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#prefill_info" data-isabs="false">
       <a id="prefill_info:Option[JObject]"></a>
       <h4 class="signature">
@@ -515,7 +520,7 @@
         <span class="name">prefill_info</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[JObject]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A JObject containing any information to prepopulate on WePay.</p><div class="fullcomment"><div class="comment cmt"><p>A JObject containing any information to prepopulate on WePay. Fields are: 'name', 'email', 'phone_number', 'address', 'city', 'state', 'zip'.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#productArity" data-isabs="false">
       <a id="productArity:Int"></a>
       <h4 class="signature">
@@ -575,7 +580,7 @@
         <span class="name">redirect_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI that the user should be sent to after completing the WePay flow.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#reference_id" data-isabs="false">
       <a id="reference_id:Option[String]"></a>
       <h4 class="signature">
@@ -587,19 +592,21 @@
         <span class="name">reference_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The reference ID for the checkout.</p><div class="fullcomment"><div class="comment cmt"><p>The reference ID for the checkout. Should be unique per checkout per app.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#refund" data-isabs="false">
-      <a id="refund(String,Option[Double])(Option[WePayToken]):Unit"></a>
+      <a id="refund(String,Option[Double])(Option[WePayToken]):Box[CheckoutResponse]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">refund</span><span class="params">(<span name="refund_reason">refund_reason: String</span>, <span name="amount">amount: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">refund</span><span class="params">(<span name="refund_reason">refund_reason: String</span>, <span name="amount">amount: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.CheckoutResponse" class="extype" href="CheckoutResponse.html">CheckoutResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Refund the checkout, specifying the reason and possibly an amount for a partial refund.</p><div class="fullcomment"><div class="comment cmt"><p>Refund the checkout, specifying the reason and possibly an amount for a partial refund.
+</p></div><dl class="paramcmts block"><dt class="param">refund_reason</dt><dd class="cmt"><p>The reason the checkout is being refunded.</p></dd><dt class="param">amount</dt><dd class="cmt"><p>The amount of the refund. If set to None, it will be a full refund.
+</p></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#require_shipping" data-isabs="false">
       <a id="require_shipping:Option[Boolean]"></a>
       <h4 class="signature">
@@ -611,7 +618,7 @@
         <span class="name">require_shipping</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">If true, payer will be required to enter a shipping address.</p><div class="fullcomment"><div class="comment cmt"><p>If true, payer will be required to enter a shipping address. Defaults to false.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResource#save" data-isabs="false">
       <a id="save(Option[WePayToken]):Box[CheckoutResponse]"></a>
       <h4 class="signature">
@@ -636,7 +643,7 @@
         <span class="name">shipping_fee</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The fee for shipping.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#short_description" data-isabs="false">
       <a id="short_description:String"></a>
       <h4 class="signature">
@@ -648,7 +655,7 @@
         <span class="name">short_description</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Short description of the purchase.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Checkout#state" data-isabs="false">
       <a id="state:Option[String]"></a>
       <h4 class="signature">
@@ -660,7 +667,7 @@
         <span class="name">state</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The state of the checkout.</p>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -696,7 +703,7 @@
         <span class="name">type</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The type of transaction.</p><div class="fullcomment"><div class="comment cmt"><p>The type of transaction. One of: GOODS, SERVICE, DONATION, or PERSONAL.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">

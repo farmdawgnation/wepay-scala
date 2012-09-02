@@ -29,7 +29,9 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>An instance of an Account.</p><p>Users on WePay can have multiple Accounts. API Applications can only manage accounts that they have created.</p></div><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>An instance of an Account.</p><p>Users on WePay can have multiple Accounts. API Applications can only manage accounts that they have created.
+</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>The name of the account.</p></dd><dt class="param">description</dt><dd class="cmt"><p>The description of the account.</p></dd><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID, as determined by WePay. Your application should rarely need to set this value itself.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>A unique identifier of the account to your application. Must be unique per user per app.</p></dd><dt class="param">image_uri</dt><dd class="cmt"><p>The URI to an image for the account.</p></dd><dt class="param">payment_limit</dt><dd class="cmt"><p>The maximum individual payment that can be made to this account. (deprecated, I think)</p></dd><dt class="param">gaq_domains</dt><dd class="cmt"><p>Domain for analytics tracking.
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <a name="me.frmr.wepay.api.MutableWePayResource" class="extype" href="MutableWePayResource.html">MutableWePayResource</a>[<a name="me.frmr.wepay.api.Account" class="extype" href="">Account</a>, <a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>], <a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a>[<a name="me.frmr.wepay.api.Account" class="extype" href="">Account</a>, <a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>], <a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[<a name="me.frmr.wepay.api.Account" class="extype" href="">Account</a>], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -68,7 +70,8 @@
         <span class="name">Account</span><span class="params">(<span name="name">name: String</span>, <span name="description">description: String</span>, <span name="account_id">account_id: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="reference_id">reference_id: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="image_uri">image_uri: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol">scala.None</span></span>, <span name="payment_limit">payment_limit: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="gaq_domains">gaq_domains: <span name="scala.Option" class="extype">Option</span>[List[String]] = <span class="symbol">scala.None</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>The name of the account.</p></dd><dt class="param">description</dt><dd class="cmt"><p>The description of the account.</p></dd><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID, as determined by WePay. Your application should rarely need to set this value itself.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>A unique identifier of the account to your application. Must be unique per user per app.</p></dd><dt class="param">image_uri</dt><dd class="cmt"><p>The URI to an image for the account.</p></dd><dt class="param">payment_limit</dt><dd class="cmt"><p>The maximum individual payment that can be made to this account. (deprecated, I think)</p></dd><dt class="param">gaq_domains</dt><dd class="cmt"><p>Domain for analytics tracking.
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -161,7 +164,7 @@
         <span class="name">account_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The Account ID, as determined by WePay.</p><div class="fullcomment"><div class="comment cmt"><p>The Account ID, as determined by WePay. Your application should rarely need to set this value itself.</p></div></div>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -175,17 +178,17 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Account#balance" data-isabs="false">
-      <a id="balance(Option[WePayToken]):Unit"></a>
+      <a id="balance(Option[WePayToken]):Box[AccountResponse]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">balance</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">balance</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Retrieve the current balance on the account.</p>
     </li><li visbl="pub" name="me.frmr.wepay.api.Account#canEqual" data-isabs="false">
       <a id="canEqual(Any):Boolean"></a>
       <h4 class="signature">
@@ -237,7 +240,7 @@
         <span class="name">description</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The description of the account.</p>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -288,7 +291,7 @@
         <span class="name">gaq_domains</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[List[String]]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Domain for analytics tracking.</p>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -302,17 +305,19 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Account#getTax" data-isabs="false">
-      <a id="getTax(Option[WePayToken]):Unit"></a>
+      <a id="getTax(Option[WePayToken]):Box[AccountResponse]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getTax</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">getTax</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Retrieve tax information for an account.</p><div class="fullcomment"><div class="comment cmt"><p>Retrieve tax information for an account.</p><p>Tax information will be returned as a JArray of JObjects in the same format that
+the information is passed in for setTax.
+</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Account#hashCode" data-isabs="false">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -336,7 +341,7 @@
         <span class="name">image_uri</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The URI to an image for the account.</p>
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
@@ -372,7 +377,7 @@
         <span class="name">name</span><span class="result">: String</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The name of the account.</p>
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -420,7 +425,7 @@
         <span class="name">payment_limit</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">The maximum individual payment that can be made to this account.</p><div class="fullcomment"><div class="comment cmt"><p>The maximum individual payment that can be made to this account. (deprecated, I think)</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Account#productArity" data-isabs="false">
       <a id="productArity:Int"></a>
       <h4 class="signature">
@@ -480,7 +485,7 @@
         <span class="name">reference_id</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A unique identifier of the account to your application.</p><div class="fullcomment"><div class="comment cmt"><p>A unique identifier of the account to your application. Must be unique per user per app.</p></div></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.ImmutableWePayResource#save" data-isabs="false">
       <a id="save(Option[WePayToken]):Box[AccountResponse]"></a>
       <h4 class="signature">
@@ -495,17 +500,27 @@
       <p class="shortcomment cmt">Save an instance of the Account to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the Account to WePay's server. If the Account already exists, this will update the existing object.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.Account#setTax" data-isabs="false">
-      <a id="setTax(JArray)(Option[WePayToken]):Unit"></a>
+      <a id="setTax(JArray)(Option[WePayToken]):Box[AccountResponse]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">setTax</span><span class="params">(<span name="taxes">taxes: JArray</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">setTax</span><span class="params">(<span name="taxes">taxes: JArray</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Set the tax settings for the account.</p><div class="fullcomment"><div class="comment cmt"><p>Set the tax settings for the account.</p><p>The taxes object should be a List of JObjects containing the relevant tax percentage and what
+locale, if any, it applies to. To implement the example presented in the
+<a href="https://www.wepay.com/developer/reference/account#set_tax">WePay documentation for set_tax</a>,
+you would make the following call.</p><pre>
+  accountInstance.setTax(<span class="std">List</span>(
+    (<span class="lit">"percent"</span> -&gt; <span class="num">10</span>) ~ (<span class="lit">"country"</span> -&gt; <span class="lit">"US"</span>) ~ (<span class="lit">"state"</span> -&gt; <span class="lit">"CA"</span>) ~ (<span class="lit">"zip"</span> -&gt; <span class="lit">"94025"</span>),
+    (<span class="lit">"percent"</span> -&gt; <span class="num">7</span>) ~ (<span class="lit">"country"</span> -&gt; <span class="lit">"US"</span>) ~ (<span class="lit">"state"</span> -&gt; <span class="lit">"CA"</span>),
+    (<span class="lit">"percent"</span> -&gt; <span class="num">5</span>) ~ (<span class="lit">"country"</span> -&gt; <span class="lit">"US"</span>)
+  ))
+</pre></div><dl class="paramcmts block"><dt class="param">taxes</dt><dd class="cmt"><p>The List describing the taxes you want to set for the account.
+</p></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

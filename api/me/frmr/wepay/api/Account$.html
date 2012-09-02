@@ -146,7 +146,10 @@
         <span class="name">balance</span><span class="params">(<span name="account_id">account_id: <span name="scala.Long" class="extype">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Retrieve the balance of an account by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Retrieve the balance of an account by ID.</p><p>This method is useful if you don't already have an account instance prepared, but still
+want to check the account balance.
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The ID of the account you wish to check.
+</p></dd></dl></div>
     </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
       <a id="className:String"></a>
       <h4 class="signature">
@@ -285,7 +288,10 @@
         <span class="name">find</span><span class="params">(<span name="name">name: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>, <span name="reference_id">reference_id: <span name="scala.Option" class="extype">Option</span>[String] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[List[<a name="me.frmr.wepay.api.Account" class="extype" href="Account.html">Account</a>]]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Find an account by name or reference_id.</p><div class="fullcomment"><div class="comment cmt"><p>Find an account by name or reference_id. One of the two fields must be specified, or WePay
+will return a failure.
+</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>The name of the account to search for.</p></dd><dt class="param">reference_id</dt><dd class="cmt"><p>The Reference ID of the account to search for.
+</p></dd></dl></div>
     </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#find" data-isabs="false">
       <a id="find(Long)(Option[WePayToken]):Box[Account]"></a>
       <h4 class="signature">
@@ -348,7 +354,10 @@
         <span class="name">getTax</span><span class="params">(<span name="account_id">account_id: <span name="scala.Long" class="extype">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Retrieve tax settings for an account by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Retrieve tax settings for an account by ID.</p><p>This method is useful for checking the tax settings on an account when all
+you have is the ID.
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The Account ID for which you would like to check the tax settings.
+</p></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#hashCode" data-isabs="false">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -511,7 +520,10 @@ Failure on error.
         <span class="name">setTax</span><span class="params">(<span name="account_id">account_id: <span name="scala.Long" class="extype">Long</span></span>, <span name="taxes">taxes: JArray</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[<a name="me.frmr.wepay.api.AccountResponse" class="extype" href="AccountResponse.html">AccountResponse</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Set the tax settings on an account by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Set the tax settings on an account by ID.</p><p>This method is useful if you don't already have an account instance prepared, but still
+want to set the tax settings. Tax settings are passed in as described in Account.setTax().
+</p></div><dl class="paramcmts block"><dt class="param">account_id</dt><dd class="cmt"><p>The account ID for which you would like to set the tax settings.</p></dd><dt class="param">taxes</dt><dd class="cmt"><p>The tax settings you wish to set.
+</p></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
