@@ -66,8 +66,8 @@ package me.frmr.wepay {
     protected val apiUserAgent = Props.get("wepay.userAgent") ?~! "wepay.userAgent property is required."
 
     // The endpoints we're talking to (without trailing slash)
-    protected val apiEndpointBase = :/(Props.get("wepay.apiEndpointBase") openOr "stage.wepayapi.com")
-    protected val uiEndpointBase = :/(Props.get("wepay.uiEndpointBase") openOr "stage.wepay.com")
+    protected val apiEndpointBase = Props.get("wepay.apiEndpointBase") openOr "stage.wepayapi.com"
+    protected val uiEndpointBase = Props.get("wepay.uiEndpointBase") openOr "stage.wepay.com"
 
     //The permissions we're going to be requesting from users who we authenticate
     //on WePay's system.
@@ -95,7 +95,7 @@ package me.frmr.wepay {
         oauthRedirectUrl <- oauthRedirectUrl
         oauthPermissions <- oauthPermissions
       } yield {
-        val oauth_url = uiEndpointBase / apiVersion / "oauth2" / "authorize" <<?
+        val oauth_url = host(uiEndpointBase) / apiVersion / "oauth2" / "authorize" <<?
           Map("client_id" -> clientId, "redirect_uri" -> oauthRedirectUrl, "scope" -> oauthPermissions)
 
         oauth_url.secure.build.getRawUrl
@@ -142,7 +142,7 @@ package me.frmr.wepay {
           ("code" -> oauthCode)
         ))
 
-        val tokenRequest = (uiEndpointBase / apiVersion / "oauth2" / "token" <:< defaultHeaders << requestBody).secure
+        val tokenRequest = (host(uiEndpointBase) / apiVersion / "oauth2" / "token" <:< defaultHeaders << requestBody).secure
         responseForRequest[WePayToken](tokenRequest, (json) => json.extract[WePayToken])
       }
 
@@ -170,7 +170,7 @@ package me.frmr.wepay {
     **/
     def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue) : Box[JValue] = {
       def doRequest(defaultHeaders:Map[String, String]) = {
-        val requestTarget = action.toList.foldLeft(apiEndpointBase / apiVersion / module)(_ / _).secure
+        val requestTarget = action.toList.foldLeft(host(apiEndpointBase) / apiVersion / module)(_ / _).secure
         val requestBody = compact(render(requestJson))
         val headers = accessToken.map { token =>
           Map("Authorization" -> token.httpHeader)
