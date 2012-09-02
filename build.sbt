@@ -1,8 +1,10 @@
 name := "wepay-scala"
 
+description := "A scala library for WePay payments processing."
+
 organization := "me.frmr.wepay-scala"
 
-version := "0.8.1-SNAPSHOT"
+version := "0.8.2-SNAPSHOT"
 
 scalaVersion := "2.9.2"
 
