@@ -98,7 +98,7 @@ package me.frmr.wepay {
         val oauth_url = uiEndpointBase / apiVersion / "oauth2" / "authorize" <<?
           Map("client_id" -> clientId, "redirect_uri" -> oauthRedirectUrl, "scope" -> oauthPermissions)
 
-        (oauth_url.secure) toString
+        oauth_url.secure.build.getRawUrl
       }
     }
 
