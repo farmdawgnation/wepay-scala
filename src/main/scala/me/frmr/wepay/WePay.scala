@@ -116,8 +116,14 @@ package me.frmr.wepay {
       }
     }
 
-    // Handler for contacting the WePay server and getting a response
-    // that we can parse.
+    /**
+     * Runs a query against the WePay API and passes the resulting JSON, if successful
+     * to a handler that transforms the response into the appropreate type.
+     *
+     * @param request The RequestBuilder object that should be used to make the request.
+     * @param handler The function that will translate a Lift-JSON object to whatever type it should be.
+     * @return A Full[T] on success. A ParamFailure in the event of an API error, and a Failure in the event of a Dispatch error.
+    **/
     protected def responseForRequest[T](request:RequestBuilder, handler:(JValue)=>T) = {
       // Run the query and then transform that into a WePay Response.
       val response = Http(request > AsWePayResponse).either
