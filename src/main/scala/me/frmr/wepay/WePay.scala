@@ -76,6 +76,20 @@ package me.frmr.wepay {
     // API version
     protected val apiVersion = "v2"
 
+    /**
+     * This object transforms an incoming HTTP response from dispatch into
+     * a WePay Response, which gives us the status code and raw JSON as a
+     * Lift-JSON object.
+    **/
+    protected object AsWePayResponse extends (Response => WePayResponse) {
+      def apply(r:Response) = {
+        WePayResponse(
+          r.getStatusCode(),
+          as.lift.Json(r)
+        )
+      }
+    }
+
     // Default headers
     protected def defaultHeaders = {
       for {
@@ -105,18 +119,11 @@ package me.frmr.wepay {
     // Handler for contacting the WePay server and getting a response
     // that we can parse.
     protected def responseForRequest[T](request:RequestBuilder, handler:(JValue)=>T) = {
-      object CodeAndWePayResponse extends (Response => WePayResponse) {
-        def apply(r:Response) = {
-          WePayResponse(
-            r.getStatusCode(),
-            as.lift.Json(r)
-          )
-        }
-      }
+      // Run the query and then transform that into a WePay Response.
+      val response = Http(request > AsWePayResponse).either
 
-      // Our HTTP transport
-      val response = Http(request > CodeAndWePayResponse).either
-
+      // Force the Promise to materialize, blocking this thread if need be.
+      // We may be able to delay the manifestation of this Promise.
       response() match {
         case Right(WePayResponse(200, json)) => Full(handler(json))
         case Right(WePayResponse(_, json)) =>
