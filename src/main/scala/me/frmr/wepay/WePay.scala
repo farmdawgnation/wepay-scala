@@ -1,6 +1,7 @@
 package me.frmr.wepay {
   import net.liftweb.common._
   import net.liftweb.util._
+    import Helpers._
   import net.liftweb.json._
     import Extraction._
     import JsonDSL._
@@ -132,9 +133,17 @@ package me.frmr.wepay {
       // We may be able to delay the manifestation of this Promise.
       response() match {
         case Right(WePayResponse(200, json)) => Full(handler(json))
-        case Right(WePayResponse(_, json)) =>
-          val error = json.extract[WePayError]
+
+        case Right(WePayResponse(code, json)) =>
+          val error =
+            {
+              tryo(json.extract[WePayError])
+            } openOr {
+              "WePay returned a " + code + " without valid JSON."
+            }
+
           ParamFailure(error.toString, Empty, Empty, error)
+
         case Left(error) =>
           Failure("Error from dispatch: " + error)
       }
