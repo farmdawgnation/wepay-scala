@@ -1,5 +1,3 @@
-**This readme is a work in progress. More work forthcoming soon!**
-
 # WePay API for Scala
 
 This project is an API for payment processing via WePay written in Scala, originally developed
@@ -29,6 +27,34 @@ the one exception being that you'll need to interact directly with the WePay sin
 flow.
 
 More details on this below.
+
+### Requirements
+
+There are a few requirements to using this library.
+
+* You must be using Scala 2.9.1 or 2.9.2.
+* If you are working with a Lift project, you may want to add an exclusion rule to exclude items in net.liftweb
+* If you are using dispatch in your project, you must be using 0.8.8, as that's the version this library is built against.
+
+Also worth nothing, the next release - or the one immediately after - will see us make the jump
+from Dispatch 0.8.8 to 0.9.1. So if you're already using Dispatch 0.9.1, we're comin' for you. I won't
+be making that jump until after the Lift 2.5-M1 release comes out though.
+
+### Getting the Library
+
+I'm working on having this library added to the Maven Central repository. Until that's done, you'll need
+to add a resolver for the pseudo repository I've set up on my GitHub account. That can be done by adding the
+following line to your build.sbt file.
+
+```scala
+resolvers += "WePay-Scala" at "https://raw.github.com/farmdawgnation/wepay-scala-repository/master/releases"
+```
+
+Then, you'll want to add the actual dependency to your dependency list.
+
+```scala
+libraryDependencies += "me.frmr" %% "wepay-scala" % "0.8.1"
+```
 
 ### Defining the Required Properties
 
