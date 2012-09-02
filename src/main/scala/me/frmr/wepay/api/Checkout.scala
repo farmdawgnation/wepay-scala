@@ -16,6 +16,22 @@ package me.frmr.wepay.api {
   case class CheckoutResponse(checkout_id:Long, checkout_uri:Option[String] = None, state:Option[String] = None)
 
   /**
+   * Case class representing a payment method for use with the tokenization API (CreditCard).
+   *
+   * @param payment_method_id The ID of the payment method. Should be the credit_card_id of the CC.
+   * @param payment_method_type Defaulted to "credit_card" for now. (I don't know of any other values.)
+  **/
+  case class CheckoutPaymentMethod(payment_method_id:Long, payment_method_type:String = "credit_card")
+
+  /**
+   * Case class describing the URIs used by a checkout.
+   *
+   * @param redirect_uri The URI the user will be directed to after Checkout is completed.
+   * @param callback_uri The URI that IPN notifications will be sent to.
+  **/
+  case class CheckoutUris(redirect_uri:Option[String] = None, callback_uri:Option[String] = None)
+
+  /**
    * An instance of the Checkout class. Used to represent an actual exchange of funds between two parties.
    *
    * @param account_id The Account ID the checkout is associated with.
@@ -29,8 +45,7 @@ package me.frmr.wepay.api {
    * @param reference_id The reference ID for the checkout. Should be unique per checkout per app.
    * @param app_fee The fee, in dollars and cents, your application will collect on this transaction. Limited to 20% of total amount.
    * @param fee_payer The person who pays transaction fee. One of "Payee" or "Payer". Defaults to "Payer".
-   * @param redirect_uri The URI that the user should be sent to after completing the WePay flow.
-   * @param callback_uri The URI that IPN notifications should be sent to.
+   * @param uris A specification of the redirect_uri and callback_uri, if needed.
    * @param auto_capture Sets whether or not the payment should be captured instantly. Defaults to true.
    * @param require_shipping If true, payer will be required to enter a shipping address. Defaults to false.
    * @param shipping_fee The fee for shipping.
@@ -40,16 +55,18 @@ package me.frmr.wepay.api {
    * @param prefill_info A JObject containing any information to prepopulate on WePay. Fields are: 'name', 'email', 'phone_number', 'address', 'city', 'state', 'zip'.
    * @param funding_sources Setting to determine what funding sources are allowed. Values are "bank,cc", "bank", or "cc".
    * @param state The state of the checkout.
+   * @param payment_method The payment method information.
    * @define THIS Checkout
   **/
   case class Checkout(account_id:Long, short_description:String, `type`:String, amount:Double, checkout_id:Option[Long] = None,
                       long_description:Option[String] = None, payer_email_message:Option[String] = None,
                       payee_email_message:Option[String] = None, reference_id:Option[String] = None,
-                      app_fee:Option[Double] = None, fee_payer:Option[String] = None, redirect_uri:Option[String] = None,
-                      callback_uri:Option[String] = None, auto_capture:Option[Boolean] = None,
+                      app_fee:Option[Double] = None, fee_payer:Option[String] = None, uris:Option[CheckoutUris] = None,
+                      auto_capture:Option[Boolean] = None,
                       require_shipping:Option[Boolean] = None, shipping_fee:Option[Double] = None,
                       charge_tax:Option[Boolean] = None, mode:Option[String] = None, preapproval_id:Option[Long] = None,
                       prefill_info:Option[JObject] = None, funding_sources:Option[String] = None,
+                      payment_method:Option[CheckoutPaymentMethod] = None,
                       state:Option[String] = None) extends ImmutableWePayResource[Checkout, CheckoutResponse] {
     val meta = Checkout
     val _id = checkout_id
