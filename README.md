@@ -53,7 +53,7 @@ resolvers += "WePay-Scala" at "https://raw.github.com/farmdawgnation/wepay-scala
 Then, you'll want to add the actual dependency to your dependency list.
 
 ```scala
-libraryDependencies += "me.frmr" %% "wepay-scala" % "0.8.1"
+libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.8.1"
 ```
 
 ### Defining the Required Properties
