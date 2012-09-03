@@ -1,6 +1,7 @@
 package me.frmr.wepay.api {
   import net.liftweb.json._
     import JsonDSL._
+    import Serialization._
   import net.liftweb.common.Box
 
   import me.frmr.wepay._
@@ -30,6 +31,50 @@ package me.frmr.wepay.api {
    * @param callback_uri The URI that IPN notifications will be sent to.
   **/
   case class CheckoutUris(redirect_uri:Option[String] = None, callback_uri:Option[String] = None)
+
+  /**
+   * The JSON Serializer and deserializer for the Checkout case class.
+   *
+   * Unfortunately, this is a side effect of having more than 22 parameters and needing to split things
+   * up a bit.
+  **/
+  object CheckoutSerializer extends Serializer[Checkout] {
+    private val Class = classOf[Checkout]
+
+    def deserialize(implicit format: Formats): PartialFunction[(TypeInfo, JValue), Checkout] = {
+      case (TypeInfo(Class, _), json) =>
+        //TODO
+        Checkout(1234, "test", "blah", 10)
+    }
+
+    def serialize(implicit format: Formats): PartialFunction[Any, JValue] = {
+      case x:Checkout =>
+        ("account_id" -> x.account_id) ~
+        ("short_description" -> x.short_description) ~
+        ("type" -> x.`type`) ~
+        ("amount" -> x.amount) ~
+        ("checkout_id" -> x.checkout_id) ~
+        ("long_description" -> x.long_description) ~
+        ("payer_email_message" -> x.payer_email_message) ~
+        ("payee_email_message" -> x.payee_email_message) ~
+        ("reference_id" -> x.reference_id) ~
+        ("app_fee" -> x.app_fee) ~
+        ("fee_payer" -> x.fee_payer) ~
+        ("redirect_uri" -> x.uris.map(_.redirect_uri)) ~
+        ("callback_uri" -> x.uris.map(_.callback_uri)) ~
+        ("auto_capture" -> x.auto_capture) ~
+        ("require_shipping" -> x.require_shipping) ~
+        ("shipping_fee" -> x.shipping_fee) ~
+        ("charge_tax" -> x.charge_tax) ~
+        ("mode" -> x.mode) ~
+        ("preapproval_id" -> x.preapproval_id) ~
+        ("prefill_info" -> x.prefill_info) ~
+        ("funding_sources" -> x.funding_sources) ~
+        ("state" -> x.state) ~
+        ("payment_method_id" -> x.payment_method.map(_.payment_method_id)) ~
+        ("payment_method_type" -> x.payment_method.map(_.payment_method_type))
+    }
+  }
 
   /**
    * An instance of the Checkout class. Used to represent an actual exchange of funds between two parties.
