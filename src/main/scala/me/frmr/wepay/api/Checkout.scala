@@ -43,8 +43,46 @@ package me.frmr.wepay.api {
 
     def deserialize(implicit format: Formats): PartialFunction[(TypeInfo, JValue), Checkout] = {
       case (TypeInfo(Class, _), json) =>
-        //TODO
-        Checkout(1234, "test", "blah", 10)
+        val checkoutUris = {
+          ((json \ "redirect_uri").extract[Option[String]], (json \ "callback_uri").extract[Option[String]]) match {
+            case (None, None) =>
+              None
+            case (redirect, callback) =>
+              Some(CheckoutUris(redirect, callback))
+          }
+        }
+
+        val paymentMethod = {
+          ((json \ "payment_method_id").extract[Option[Long]], (json \ "payment_method_type").extract[Option[String]]) match {
+            case (Some(payment_method_id), Some(payment_method_type)) =>
+              Some(CheckoutPaymentMethod(payment_method_id, payment_method_type))
+            case _ => None
+          }
+        }
+
+        Checkout(
+          account_id = (json \ "account_id").extract[Long],
+          short_description = (json \ "short_description").extract[String],
+          `type` = (json \ "type").extract[String],
+          amount = (json \ "amount").extract[Double],
+          checkout_id = (json \ "checkout_id").extract[Option[Long]],
+          long_description = (json \ "long_description").extract[Option[String]],
+          payer_email_message = (json \ "payer_email_message").extract[Option[String]],
+          payee_email_message = (json \ "payee_email_message").extract[Option[String]],
+          reference_id = (json \ "reference_id").extract[Option[String]],
+          app_fee = (json \ "app_fee").extract[Option[Double]],
+          fee_payer = (json \ "fee_payer").extract[Option[String]],
+          uris = checkoutUris,
+          require_shipping = (json \ "require_shipping").extract[Option[Boolean]],
+          shipping_fee = (json \ "shipping_fee").extract[Option[Double]],
+          charge_tax = (json \ "charge_tax").extract[Option[Boolean]],
+          mode = (json \ "mode").extract[Option[String]],
+          preapproval_id = (json \ "preapproval_id").extract[Option[Long]],
+          prefill_info = (json \ "prefill_info").extract[Option[JObject]],
+          funding_sources = (json \ "funding_sources").extract[Option[String]],
+          state = (json \ "state").extract[Option[String]],
+          payment_method = paymentMethod
+        )
     }
 
     def serialize(implicit format: Formats): PartialFunction[Any, JValue] = {
