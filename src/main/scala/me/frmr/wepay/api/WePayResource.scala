@@ -31,7 +31,7 @@ package me.frmr.wepay.api {
    * @define INSTANCE WePayResource
   **/
   trait WePayResourceMeta[Model <: WePayResource[Model]] {
-    implicit val formats = DefaultFormats
+    implicit val formats : Formats = DefaultFormats
 
     protected val className = this.getClass.getName.split("\\.").last.dropRight(1)
 

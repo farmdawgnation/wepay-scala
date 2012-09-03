@@ -203,6 +203,8 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE CheckoutResponse
   **/
   object Checkout extends ImmutableWePayResourceMeta[Checkout, CheckoutResponse] {
+    override implicit val formats = DefaultFormats + CheckoutSerializer
+
     protected def extract(json:JValue) = json.extract[Checkout]
     protected def extractFindResults(json:JValue) = json.extract[List[Checkout]]
     protected def extractCrudResponse(json:JValue) = json.extract[CheckoutResponse]
