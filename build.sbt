@@ -6,6 +6,27 @@ organization := "me.frmr.wepay-scala"
 
 version := "0.8.2-SNAPSHOT"
 
+pomExtra :=
+<url>http://wepay-scala.frmr.me</url>
+<licenses>
+  <license>
+    <name>Apache 2</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    <distribution>repo</distribution>
+  </license>
+</licenses>
+<scm>
+  <url>https://github.com/farmdawgnation/wepay-scala.git</url>
+  <connection>https://github.com/farmdawgnation/wepay-scala.git</connection>
+</scm>
+<developers>
+  <developer>
+    <id>farmdawgnation</id>
+    <name>Matt Farmer</name>
+    <email>matt@frmr.me</email>
+  </developer>
+</developers>
+
 scalaVersion := "2.9.2"
 
 crossScalaVersions := Seq("2.9.1", "2.9.2")
@@ -22,6 +43,14 @@ libraryDependencies ++= Seq(
   "org.joda" % "joda-convert" % "1.1"
 )
 
-publishTo := Some(Resolver.file("file", new File("../wepay-scala-repository/releases")))
-
 scalacOptions in (Compile, doc) ++= Opts.doc.title("WePay-Scala API Reference")
+
+publishTo <<= version { (v: String) =>
+  val nexus = "https://oss.sonatype.org/"
+  if (v.trim.endsWith("SNAPSHOT")) 
+    Some("snapshots" at nexus + "content/repositories/snapshots") 
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+
+credentials += Credentials(Path.userHome / ".sonatype")
