@@ -1,7 +1,7 @@
 before_script:
 #  - secret=`openssl rsautl -decrypt -inkey ~/.ssh/id_rsa -in secret`
 #  - openssl aes-256-cbc -k "$secret" -in src/test/resources/props/test.default.props.enc -d -a -out src/test/resources/props/test.default.props
-  - ls -al ~
+  - ls -al ~/.ssh
 
 language: scala
 scala:
