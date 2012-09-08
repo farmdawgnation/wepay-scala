@@ -40,7 +40,8 @@ libraryDependencies ++= Seq(
   "net.databinder" %% "dispatch-core" % "0.8.8",
   "net.databinder" % "dispatch-lift-json_2.9.1" % "0.8.5" exclude("net.liftweb", "lift-json_2.9.0-1"),
   "joda-time" % "joda-time" % "2.1",
-  "org.joda" % "joda-convert" % "1.1"
+  "org.joda" % "joda-convert" % "1.1",
+  "org.scalatest" %% "scalatest" % "1.8" % "test"
 )
 
 scalacOptions in (Compile, doc) ++= Opts.doc.title("WePay-Scala API Reference")
