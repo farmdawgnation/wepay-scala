@@ -46,6 +46,18 @@ package me.frmr.wepay.api {
             false
         })
       }
+
+      it("should not be mutable after creation") {
+        val saveResponse = testCheckoutId.flatMap { checkoutId =>
+          val testCheckout = Checkout.find(checkoutId)
+          testCheckout.flatMap(_.save)
+        }
+
+        assert(saveResponse match {
+          case Failure(_, _, _) => true
+          case _ => false
+        })
+      }
     }
   }
 }
