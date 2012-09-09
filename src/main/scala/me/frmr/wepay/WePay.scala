@@ -1,13 +1,14 @@
 package me.frmr.wepay {
   import net.liftweb.common._
   import net.liftweb.util._
+    import Helpers._
   import net.liftweb.json._
     import Extraction._
     import JsonDSL._
 
   import dispatch._
-    import liftjson.Js._
-    import Http._
+
+  import com.ning.http.client.{Request, RequestBuilder, Response}
 
   /**
    * This class represents an error condition returned while
@@ -66,8 +67,8 @@ package me.frmr.wepay {
     protected val apiUserAgent = Props.get("wepay.userAgent") ?~! "wepay.userAgent property is required."
 
     // The endpoints we're talking to (without trailing slash)
-    protected val apiEndpointBase = :/(Props.get("wepay.apiEndpointBase") openOr "stage.wepayapi.com")
-    protected val uiEndpointBase = :/(Props.get("wepay.uiEndpointBase") openOr "stage.wepay.com")
+    protected val apiEndpointBase = Props.get("wepay.apiEndpointBase") openOr "stage.wepayapi.com"
+    protected val uiEndpointBase = Props.get("wepay.uiEndpointBase") openOr "stage.wepay.com"
 
     //The permissions we're going to be requesting from users who we authenticate
     //on WePay's system.
@@ -75,6 +76,20 @@ package me.frmr.wepay {
 
     // API version
     protected val apiVersion = "v2"
+
+    /**
+     * This object transforms an incoming HTTP response from dispatch into
+     * a WePay Response, which gives us the status code and raw JSON as a
+     * Lift-JSON object.
+    **/
+    protected object AsWePayResponse extends (Response => WePayResponse) {
+      def apply(r:Response) = {
+        WePayResponse(
+          r.getStatusCode(),
+          as.lift.Json(r)
+        )
+      }
+    }
 
     // Default headers
     protected def defaultHeaders = {
@@ -95,31 +110,42 @@ package me.frmr.wepay {
         oauthRedirectUrl <- oauthRedirectUrl
         oauthPermissions <- oauthPermissions
       } yield {
-        val oauth_url = uiEndpointBase / apiVersion / "oauth2" / "authorize" <<?
+        val oauth_url = host(uiEndpointBase) / apiVersion / "oauth2" / "authorize" <<?
           Map("client_id" -> clientId, "redirect_uri" -> oauthRedirectUrl, "scope" -> oauthPermissions)
 
-        (oauth_url.secure to_uri) toString
+        oauth_url.secure.build.getRawUrl
       }
     }
 
-    // Handler for contacting the WePay server and getting a response
-    // that we can parse.
-    protected def responseForRequest[T](request:Request, handler:(JValue)=>T) = {
-      // Our HTTP transport
-      val http = new Http
+    /**
+     * Runs a query against the WePay API and passes the resulting JSON, if successful
+     * to a handler that transforms the response into the appropreate type.
+     *
+     * @param request The RequestBuilder object that should be used to make the request.
+     * @param handler The function that will translate a Lift-JSON object to whatever type it should be.
+     * @return A Full[T] on success. A ParamFailure in the event of an API error, and a Failure in the event of a Dispatch error.
+    **/
+    protected def responseForRequest[T](request:RequestBuilder, handler:(JValue)=>T) = {
+      // Run the query and then transform that into a WePay Response.
+      val response = Http(request > AsWePayResponse).either
 
-      val codeHandler = Handler(request, (code, r, e) => code)
+      // Force the Promise to materialize, blocking this thread if need be.
+      // We may be able to delay the manifestation of this Promise.
+      response() match {
+        case Right(WePayResponse(200, json)) => Full(handler(json))
 
-      val response =
-        WePayResponse.tupled(http.x(request >+ { (request) =>
-          (codeHandler, (request ># (json => json)))
-        }))
+        case Right(WePayResponse(code, json)) =>
+          val error =
+            {
+              tryo(json.extract[WePayError])
+            } openOr {
+              "WePay returned a " + code + " without valid JSON."
+            }
 
-      response.code match {
-        case 200 => Full(handler(response.json))
-        case _ =>
-          val error = response.json.extract[WePayError]
           ParamFailure(error.toString, Empty, Empty, error)
+
+        case Left(error) =>
+          Failure("Error from dispatch: " + error)
       }
     }
 
@@ -138,7 +164,7 @@ package me.frmr.wepay {
           ("code" -> oauthCode)
         ))
 
-        val tokenRequest = (uiEndpointBase / apiVersion / "oauth2" / "token" <:< defaultHeaders << requestBody).secure
+        val tokenRequest = (host(uiEndpointBase) / apiVersion / "oauth2" / "token" <:< defaultHeaders << requestBody).secure
         responseForRequest[WePayToken](tokenRequest, (json) => json.extract[WePayToken])
       }
 
@@ -166,7 +192,7 @@ package me.frmr.wepay {
     **/
     def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue) : Box[JValue] = {
       def doRequest(defaultHeaders:Map[String, String]) = {
-        val requestTarget = action.toList.foldLeft(apiEndpointBase / apiVersion / module)(_ / _).secure
+        val requestTarget = action.toList.foldLeft(host(apiEndpointBase) / apiVersion / module)(_ / _).secure
         val requestBody = compact(render(requestJson))
         val headers = accessToken.map { token =>
           Map("Authorization" -> token.httpHeader)
