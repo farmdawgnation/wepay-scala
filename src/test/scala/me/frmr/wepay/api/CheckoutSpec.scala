@@ -2,21 +2,13 @@ package me.frmr.wepay.api {
   import org.scalatest.FunSpec
 
   import net.liftweb.common._
-  import net.liftweb.util.Props
 
   import me.frmr.wepay._
+    import WePayTestHelpers._
   import me.frmr.wepay.api._
 
   class CheckoutSpec extends FunSpec {
-    implicit val authorizationToken : Option[WePayToken] =
-      (Props.get("wepay.testAuthUserId"), Props.get("wepay.testAuthAccessToken")) match {
-        case (Full(userId), Full(accessToken)) =>
-          Some(WePayToken(userId.toLong, accessToken, "BEARER", None))
-        case _ =>
-          None
-      }
-
-    val testAccountId = Props.get("wepay.testAccountId").openOr("0").toLong
+    implicit val authorizationToken = testAuthorizationToken
 
     describe("A Checkout") {
       var testCheckoutId:Box[Long] = None
