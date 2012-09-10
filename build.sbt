@@ -57,3 +57,5 @@ publishTo <<= version { (v: String) =>
 }
 
 credentials += Credentials(Path.userHome / ".sonatype")
+
+parallelExecution in Test := false
