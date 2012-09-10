@@ -14,7 +14,7 @@ package me.frmr.wepay.api {
       var unitPreapprovalId = 0l
 
       it("should be creatable") {
-        val saveResponse = Preapproval(testAccountId, 10, "Unit Test Preapproval", "ONCE").save
+        val saveResponse = Preapproval(testAccountId, 10, "Unit Test Preapproval", "once").save
 
         assert(saveResponse match {
           case Full(preapprovalResp:PreapprovalResponse) =>
