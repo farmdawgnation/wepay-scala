@@ -162,7 +162,7 @@ package me.frmr.wepay {
      * @param accessToken The WePayToken associated with this request, if any.
      * @param module The module associated with this request. So if the URL you wanted to hit was /checkout/create, this would be "checkout".
      * @param action The action associated wiht this request. For "/checkout/create" it would be "create". Set to None for no action.
-     * @param requestJson The request JSON to be transmitted in the body of the post, if any.
+     * @param requestJson The request JSON to be transmitted in the body of the post. Provide JObject(Nil) for no request body.
     **/
     def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue) : Box[JValue] = {
       def doRequest(defaultHeaders:Map[String, String]) = {
