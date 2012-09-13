@@ -44,18 +44,11 @@ be making that jump until after the Lift 2.5-M1 release comes out though.
 
 ### Getting the Library
 
-I'm working on having this library added to the Maven Central repository. Until that's done, you'll need
-to add a resolver for the pseudo repository I've set up on my GitHub account. That can be done by adding the
-following line to your build.sbt file.
+WePay-Scala should be available in the Maven Central repository shortly. At which point it will be available by adding
+the following line to the build.sbt file in your project.
 
 ```scala
-resolvers += "WePay-Scala" at "https://raw.github.com/farmdawgnation/wepay-scala-repository/master/releases"
-```
-
-Then, you'll want to add the actual dependency to your dependency list.
-
-```scala
-libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.8.1"
+libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.8.2"
 ```
 
 ### Defining the Required Properties
