@@ -172,7 +172,14 @@ package me.frmr.wepay {
           Map("Authorization" -> token.httpHeader)
         }.toList.foldLeft(defaultHeaders)(_ ++ _)
 
-        val request = requestTarget <:< headers << requestBody
+        val request = {
+          requestJson match {
+            case JObject(Nil) =>
+              requestTarget <:< headers
+            case _ =>
+              requestTarget <:< headers << requestBody
+          }
+        }
         responseForRequest[JValue](request, (json) => json)
       }
 
