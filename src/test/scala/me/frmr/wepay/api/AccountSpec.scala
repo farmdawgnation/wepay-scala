@@ -23,7 +23,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, saveResponse)
       }
 
       it("should be retrievable after creation") {
@@ -35,7 +35,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, retrieval)
       }
 
       it("should return a balance") {
@@ -46,7 +46,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, balanceRetrieval)
       }
 
       it("should be deleteable") {
@@ -57,7 +57,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, deletionResult)
       }
     }
   }

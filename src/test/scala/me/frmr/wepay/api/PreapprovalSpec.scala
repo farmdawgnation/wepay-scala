@@ -22,7 +22,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, saveResponse)
       }
 
       it("should be retrievable after creation") {
@@ -33,7 +33,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, retrieval)
       }
 
       it("should be cancelable") {
@@ -44,7 +44,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, cancelResponse)
       }
     }
   }

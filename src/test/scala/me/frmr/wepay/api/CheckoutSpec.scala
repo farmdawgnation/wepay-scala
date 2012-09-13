@@ -21,9 +21,8 @@ package me.frmr.wepay.api {
             testCheckoutId = Full(checkoutId)
             true
           case resp @ _ =>
-            println(resp)
             false
-        })
+        }, saveResponse)
       }
 
       it("should be retrievable after creation") {
@@ -36,7 +35,7 @@ package me.frmr.wepay.api {
             true
           case _ =>
             false
-        })
+        }, retrieval)
       }
 
       it("should not be mutable after creation") {
@@ -48,7 +47,7 @@ package me.frmr.wepay.api {
         assert(saveResponse match {
           case Failure(_, _, _) => true
           case _ => false
-        })
+        }, saveResponse)
       }
     }
   }
