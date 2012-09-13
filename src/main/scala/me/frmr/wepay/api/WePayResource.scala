@@ -46,7 +46,7 @@ package me.frmr.wepay.api {
      * @param action The action on $RESOURCE to request.
      * @param requestBody The JValue object representing the request payload.
     **/
-    protected def query(action:Option[String], requestBody:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
+    protected def query(action:Option[String], requestBody:JValue = JObject(Nil))(implicit authorizationToken:Option[WePayToken] = None) = {
       for {
         resultingJson <- WePay.executeAction(authorizationToken, resource, action, requestBody)
       } yield {
