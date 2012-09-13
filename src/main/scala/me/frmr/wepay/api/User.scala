@@ -34,6 +34,6 @@ package me.frmr.wepay.api {
     /**
      * Retrieve the current user based on the authorization token provided.
     **/
-    def apply()(implicit authorizationToken:Option[WePayToken]) = query(None, JObject(Nil))
+    def apply()(implicit authorizationToken:Option[WePayToken]) = query(None)
   }
 }
