@@ -1,6 +1,8 @@
 package me.frmr.wepay.api {
   import net.liftweb.json._
 
+  import me.frmr.wepay._
+
   /**
    * A class representing a User object on WePay's server.
    *
@@ -28,5 +30,10 @@ package me.frmr.wepay.api {
   object User extends WePayResourceMeta[User] {
     protected def extract(json:JValue) = json.extract[User]
     protected def extractFindResults(json:JValue) = json.extract[List[User]]
+
+    /**
+     * Retrieve the current user based on the authorization token provided.
+    **/
+    def apply()(implicit authorizationToken:Option[WePayToken]) = query(None)
   }
 }

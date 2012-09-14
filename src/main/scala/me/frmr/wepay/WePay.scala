@@ -188,9 +188,9 @@ package me.frmr.wepay {
      * @param accessToken The WePayToken associated with this request, if any.
      * @param module The module associated with this request. So if the URL you wanted to hit was /checkout/create, this would be "checkout".
      * @param action The action associated wiht this request. For "/checkout/create" it would be "create". Set to None for no action.
-     * @param requestJson The request JSON to be transmitted in the body of the post, if any.
+     * @param requestJson The request JSON to be transmitted in the body of the post. Defaults to JObject(Nil), which represents an empty request body.
     **/
-    def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue) : Box[JValue] = {
+    def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue = JObject(Nil)) : Box[JValue] = {
       def doRequest(defaultHeaders:Map[String, String]) = {
         val requestTarget = action.toList.foldLeft(host(apiEndpointBase) / apiVersion / module)(_ / _).secure
         val requestBody = compact(render(requestJson))
@@ -198,7 +198,14 @@ package me.frmr.wepay {
           Map("Authorization" -> token.httpHeader)
         }.toList.foldLeft(defaultHeaders)(_ ++ _)
 
-        val request = requestTarget <:< headers << requestBody
+        val request = {
+          requestJson match {
+            case JObject(Nil) =>
+              requestTarget <:< headers
+            case _ =>
+              requestTarget <:< headers << requestBody
+          }
+        }
         responseForRequest[JValue](request, (json) => json)
       }
 
