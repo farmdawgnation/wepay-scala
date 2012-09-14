@@ -44,7 +44,7 @@ be making that jump until after the Lift 2.5-M1 release comes out though.
 
 ### Getting the Library
 
-WePay-Scala should be available in the Maven Central repository shortly. At which point it will be available by adding
+WePay-Scala is available in the Maven Central repository. You can use it by adding
 the following line to the build.sbt file in your project.
 
 ```scala
