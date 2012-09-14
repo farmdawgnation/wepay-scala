@@ -4,7 +4,7 @@ description := "A scala library for WePay payments processing."
 
 organization := "me.frmr.wepay-scala"
 
-version := "0.8.2"
+version := "0.8.3-SNAPSHOT"
 
 pomExtra :=
 <url>http://wepay-scala.frmr.me</url>
