@@ -1,0 +1,14 @@
+before_script:
+  - openssl aes-256-cbc -k "$password" -in src/test/resources/props/test.default.props.enc -d -a -out src/test/resources/props/test.default.props
+env:
+  - secure: CG0X5gouuG7+4S0cAIhTYTf27jKXECIPPxcuU4xaDrNgXRlV9l8+3doPx7tqCMklw/1IyvPjXJhHbMWLFudM/Z8DwMZHAvIng+NVivGc4b3oeYCVu5ropNxXLpUQqr3d1l7D/UtsViTaeOCfgTIyuhfyR4jJ5Llwf3GvvViFh9g=
+language: scala
+scala:
+  - 2.9.1
+  - 2.9.2
+jdk:
+  - oraclejdk7
+branches:
+  only:
+    - master
+    - /^.*-SNAPSHOT$/
