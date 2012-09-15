@@ -57,8 +57,8 @@ package me.frmr.wepay {
   trait WePayImpl {
     implicit val formats = DefaultFormats
     // Authorization credentials for the application itself.
-    protected val clientId = Props.get("wepay.clientId") ?~! "wepay.clientId property is required."
-    protected val clientSecret = Props.get("wepay.clientSecret") ?~! "wepay.clientSecret property is required."
+    private[wepay] val clientId = Props.get("wepay.clientId") ?~! "wepay.clientId property is required."
+    private[wepay] val clientSecret = Props.get("wepay.clientSecret") ?~! "wepay.clientSecret property is required."
 
     // The OAuth Redirect URL (where people are sent after completeing OAuth)
     protected val oauthRedirectUrl = Props.get("wepay.oauthRedirectUrl") ?~! "wepay.oauthRedirectUrl property is required."
