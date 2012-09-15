@@ -1,6 +1,7 @@
 package me.frmr.wepay.api {
   import net.liftweb.json._
     import JsonDSL._
+    import Serialization._
   import net.liftweb.common.Box
 
   import me.frmr.wepay._
@@ -16,6 +17,96 @@ package me.frmr.wepay.api {
   case class CheckoutResponse(checkout_id:Long, checkout_uri:Option[String] = None, state:Option[String] = None)
 
   /**
+   * Case class representing a payment authorization from the preapproval or tokenization API.
+   *
+   * @param preapproval_id The ID of the preapproval that authorizes this checkout.
+   * @param payment_method_id The ID of the payment method from CC tokenization. Should be the credit_card_id of the CC.
+   * @param payment_method_type The type used for CC tokenization API (should be "credit_card").
+  **/
+  case class CheckoutAuthorization(preapproval_id:Option[Long] = None,
+                                   payment_method_id:Option[Long] = None,
+                                   payment_method_type:Option[String] = None)
+
+  /**
+   * The JSON Serializer and deserializer for the Checkout case class.
+   *
+   * Unfortunately, this is a side effect of having more than 22 parameters and needing to split things
+   * up a bit.
+  **/
+  object CheckoutSerializer extends Serializer[Checkout] {
+    private val Class = classOf[Checkout]
+
+    def deserialize(implicit format: Formats): PartialFunction[(TypeInfo, JValue), Checkout] = {
+      case (TypeInfo(Class, _), json) =>
+        val authorization = {
+          val preapproval_id = (json \ "preapproval_id").extract[Option[Long]]
+          val payment_method_id = (json \ "payment_method_id").extract[Option[Long]]
+          val payment_method_type = (json \ "payment_method_type").extract[Option[String]]
+
+          (preapproval_id, payment_method_id, payment_method_type) match {
+            case (None, payment_method_id:Some[Long], payment_method_type:Some[String]) =>
+              Some(CheckoutAuthorization(None, payment_method_id, payment_method_type))
+            case (preapproval_id:Some[Long], None, None) =>
+              Some(CheckoutAuthorization(preapproval_id, None, None))
+            case _ => None
+          }
+        }
+
+        Checkout(
+          account_id = (json \ "account_id").extract[Long],
+          short_description = (json \ "short_description").extract[String],
+          `type` = (json \ "type").extract[String],
+          amount = (json \ "amount").extract[Double],
+          checkout_id = (json \ "checkout_id").extract[Option[Long]],
+          long_description = (json \ "long_description").extract[Option[String]],
+          payer_email_message = (json \ "payer_email_message").extract[Option[String]],
+          payee_email_message = (json \ "payee_email_message").extract[Option[String]],
+          reference_id = (json \ "reference_id").extract[Option[String]],
+          app_fee = (json \ "app_fee").extract[Option[Double]],
+          fee_payer = (json \ "fee_payer").extract[Option[String]],
+          redirect_uri = (json \ "redirect_uri").extract[Option[String]],
+          callback_uri = (json \ "callback_uri").extract[Option[String]],
+          require_shipping = (json \ "require_shipping").extract[Option[Boolean]],
+          shipping_fee = (json \ "shipping_fee").extract[Option[Double]],
+          charge_tax = (json \ "charge_tax").extract[Option[Boolean]],
+          mode = (json \ "mode").extract[Option[String]],
+          prefill_info = (json \ "prefill_info").extract[Option[JObject]],
+          funding_sources = (json \ "funding_sources").extract[Option[String]],
+          state = (json \ "state").extract[Option[String]],
+          authorization = authorization
+        )
+    }
+
+    def serialize(implicit format: Formats): PartialFunction[Any, JValue] = {
+      case x:Checkout =>
+        ("account_id" -> x.account_id) ~
+        ("short_description" -> x.short_description) ~
+        ("type" -> x.`type`) ~
+        ("amount" -> x.amount) ~
+        ("checkout_id" -> x.checkout_id) ~
+        ("long_description" -> x.long_description) ~
+        ("payer_email_message" -> x.payer_email_message) ~
+        ("payee_email_message" -> x.payee_email_message) ~
+        ("reference_id" -> x.reference_id) ~
+        ("app_fee" -> x.app_fee) ~
+        ("fee_payer" -> x.fee_payer) ~
+        ("redirect_uri" -> x.redirect_uri) ~
+        ("callback_uri" -> x.callback_uri) ~
+        ("auto_capture" -> x.auto_capture) ~
+        ("require_shipping" -> x.require_shipping) ~
+        ("shipping_fee" -> x.shipping_fee) ~
+        ("charge_tax" -> x.charge_tax) ~
+        ("mode" -> x.mode) ~
+        ("preapproval_id" -> x.authorization.flatMap(_.preapproval_id)) ~
+        ("prefill_info" -> x.prefill_info) ~
+        ("funding_sources" -> x.funding_sources) ~
+        ("state" -> x.state) ~
+        ("payment_method_id" -> x.authorization.flatMap(_.payment_method_id)) ~
+        ("payment_method_type" -> x.authorization.flatMap(_.payment_method_type))
+    }
+  }
+
+  /**
    * An instance of the Checkout class. Used to represent an actual exchange of funds between two parties.
    *
    * @param account_id The Account ID the checkout is associated with.
@@ -29,27 +120,29 @@ package me.frmr.wepay.api {
    * @param reference_id The reference ID for the checkout. Should be unique per checkout per app.
    * @param app_fee The fee, in dollars and cents, your application will collect on this transaction. Limited to 20% of total amount.
    * @param fee_payer The person who pays transaction fee. One of "Payee" or "Payer". Defaults to "Payer".
-   * @param redirect_uri The URI that the user should be sent to after completing the WePay flow.
-   * @param callback_uri The URI that IPN notifications should be sent to.
+   * @param redirect_uri The URI the user will be redirected to upon completing or canceling the checkout.
+   * @param callback_uri The URI that IPNs will be sent to.
    * @param auto_capture Sets whether or not the payment should be captured instantly. Defaults to true.
    * @param require_shipping If true, payer will be required to enter a shipping address. Defaults to false.
    * @param shipping_fee The fee for shipping.
    * @param charge_tax Determines whether or not tax will be charged.
    * @param mode The mode the checkout will be displayed in. One of "regular" or "iframe". Defaults to "regular".
-   * @param preapproval_id The preapproval ID associated with the checkout, if any.
    * @param prefill_info A JObject containing any information to prepopulate on WePay. Fields are: 'name', 'email', 'phone_number', 'address', 'city', 'state', 'zip'.
    * @param funding_sources Setting to determine what funding sources are allowed. Values are "bank,cc", "bank", or "cc".
    * @param state The state of the checkout.
+   * @param authorization The authorization information for pre-authorized checkouts.
    * @define THIS Checkout
   **/
   case class Checkout(account_id:Long, short_description:String, `type`:String, amount:Double, checkout_id:Option[Long] = None,
                       long_description:Option[String] = None, payer_email_message:Option[String] = None,
                       payee_email_message:Option[String] = None, reference_id:Option[String] = None,
-                      app_fee:Option[Double] = None, fee_payer:Option[String] = None, redirect_uri:Option[String] = None,
-                      callback_uri:Option[String] = None, auto_capture:Option[Boolean] = None,
+                      app_fee:Option[Double] = None, fee_payer:Option[String] = None,
+                      redirect_uri:Option[String] = None, callback_uri:Option[String] = None,
+                      auto_capture:Option[Boolean] = None,
                       require_shipping:Option[Boolean] = None, shipping_fee:Option[Double] = None,
-                      charge_tax:Option[Boolean] = None, mode:Option[String] = None, preapproval_id:Option[Long] = None,
+                      charge_tax:Option[Boolean] = None, mode:Option[String] = None,
                       prefill_info:Option[JObject] = None, funding_sources:Option[String] = None,
+                      authorization:Option[CheckoutAuthorization] = None,
                       state:Option[String] = None) extends ImmutableWePayResource[Checkout, CheckoutResponse] {
     val meta = Checkout
     val _id = checkout_id
@@ -103,6 +196,8 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE CheckoutResponse
   **/
   object Checkout extends ImmutableWePayResourceMeta[Checkout, CheckoutResponse] {
+    override implicit val formats = DefaultFormats + CheckoutSerializer
+
     protected def extract(json:JValue) = json.extract[Checkout]
     protected def extractFindResults(json:JValue) = json.extract[List[Checkout]]
     protected def extractCrudResponse(json:JValue) = json.extract[CheckoutResponse]
