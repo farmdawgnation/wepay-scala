@@ -17,7 +17,7 @@ The first step is to add the library to your build.sbt file. You can do that by 
 
 	libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.8.2"
 
-Now when you compile your project the WePay-Scala library should be in the classpath. All you should have to do is import the `me.frmr.wepay._` and `me.frmr.wepay.api_` packages. After you've got the library, you'll want to try getting started by running some operations on the API. The [GitHub Project Page](htttp://github.com/farmdawgnation/wepay-scala) has a decent description of how to do this for the time being. More work is forthcoming on that front, of course. Also of interest is the (now much more complete) [API Documentation](http://wepay-scala.frmr.me/api), which is also still a Work-in-Progress, but should give you a decent starting point.
+Now when you compile your project the WePay-Scala library should be in the classpath. All you should have to do is import the `me.frmr.wepay._` and `me.frmr.wepay.api_` packages. After you've got the library, you'll want to try getting started by running some operations on the API. The [GitHub Project Page](htttp://github.com/farmdawgnation/wepay-scala) has a decent description of how to do this for the time being. More work is forthcoming on that front, of course. Also of interest is the (now much more complete) [API Documentation](http://wepay-scala.frmr.me/api/0.8.2), which is also still a Work-in-Progress, but should give you a decent starting point.
 
 ## Roadmap Moving Forward
 
