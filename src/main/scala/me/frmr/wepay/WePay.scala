@@ -138,7 +138,7 @@ package me.frmr.wepay {
           ("code" -> oauthCode)
         ))
 
-        val tokenRequest = (uiEndpointBase / apiVersion / "oauth2" / "token" <:< defaultHeaders << requestBody).secure
+        val tokenRequest = (apiEndpointBase / apiVersion / "oauth2" / "token" <:< defaultHeaders << requestBody).secure
         responseForRequest[WePayToken](tokenRequest, (json) => json.extract[WePayToken])
       }
 
