@@ -48,7 +48,7 @@ WePay-Scala is available in the Maven Central repository. You can use it by addi
 the following line to the build.sbt file in your project.
 
 ```scala
-libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.8.2"
+libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.8.3"
 ```
 
 ### Defining the Required Properties
