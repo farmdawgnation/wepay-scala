@@ -33,12 +33,10 @@ crossScalaVersions := Seq("2.9.1", "2.9.2")
 
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases"
 
-resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
-
 libraryDependencies ++= Seq(
-  "net.liftweb" %% "lift-common" % "2.5-SNAPSHOT",
-  "net.liftweb" %% "lift-util" % "2.5-SNAPSHOT",
-  "net.liftweb" %% "lift-json" % "2.5-SNAPSHOT",
+  "net.liftweb" %% "lift-common" % "2.5-M1",
+  "net.liftweb" %% "lift-util" % "2.5-M1",
+  "net.liftweb" %% "lift-json" % "2.5-M1",
   "net.databinder.dispatch" %% "core" % "0.9.1",
   "net.databinder.dispatch" %% "lift-json" % "0.9.1" exclude("net.liftweb", "lift-json"),
   "joda-time" % "joda-time" % "2.1",
