@@ -1,6 +1,6 @@
 # WePay API for Scala
 
-[![Build Status](https://secure.travis-ci.org/farmdawgnation/wepay-scala.png?branch=master)](http://travis-ci.org/farmdawgnation/wepay-scala)
+[![Build Status](https://secure.travis-ci.org/farmdawgnation/wepay-scala.png?branch=0.9-SNAPSHOT)](http://travis-ci.org/farmdawgnation/wepay-scala)
 
 This project is an API for payment processing via WePay written in Scala, originally developed
 for [OpenStudy](http://openstudy.com) for use in [Catapult](http://catapult.openstudy.com). The
