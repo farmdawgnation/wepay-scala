@@ -17,7 +17,7 @@ package me.frmr.wepay.api {
         val theAddress = CreditCardAddress("75 5th St NW", None, "Atlanta", "GA", "US", "30308")
         val saveResponse = CreditCard("Burt Reynolds", "no-reply@google.com",
                                       Some("4003830171874018"), Some(1234),
-                                      Some(10), Some(2012), Some(theAddress)).save
+                                      Some(10), Some(2019), Some(theAddress)).save
 
         assert(saveResponse match {
           case Full(CreditCardResponse(ccId, _)) =>
