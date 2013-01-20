@@ -4,7 +4,7 @@ description := "A scala library for WePay payments processing."
 
 organization := "me.frmr.wepay-scala"
 
-version := "0.9.0"
+version := "0.9.1-SNAPSHOT"
 
 pomExtra :=
 <url>http://wepay-scala.frmr.me</url>
@@ -34,9 +34,9 @@ crossScalaVersions := Seq("2.9.1", "2.9.2")
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases"
 
 libraryDependencies ++= Seq(
-  "net.liftweb" %% "lift-common" % "2.5-M1",
-  "net.liftweb" %% "lift-util" % "2.5-M1",
-  "net.liftweb" %% "lift-json" % "2.5-M1",
+  "net.liftweb" %% "lift-common" % "2.5-M4",
+  "net.liftweb" %% "lift-util" % "2.5-M4",
+  "net.liftweb" %% "lift-json" % "2.5-M4",
   "net.databinder.dispatch" %% "core" % "0.9.1",
   "net.databinder.dispatch" %% "lift-json" % "0.9.1" exclude("net.liftweb", "lift-json"),
   "joda-time" % "joda-time" % "2.1",
