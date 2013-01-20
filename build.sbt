@@ -57,3 +57,12 @@ publishTo <<= version { (v: String) =>
 credentials += Credentials(Path.userHome / ".sonatype")
 
 parallelExecution in Test := false
+
+mappings in (Compile, packageBin) ~= { (ms: Seq[(File, String)]) =>
+  ms filter {
+    case (file, toPath) => {
+      val shouldExclude = """(.*?)\.(properties|props|conf|dsl|txt|xml)$""".r.pattern.matcher(file.getName).matches
+      ! shouldExclude
+    }
+  }
+}
