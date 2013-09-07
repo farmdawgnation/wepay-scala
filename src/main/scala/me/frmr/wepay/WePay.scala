@@ -197,13 +197,13 @@ package me.frmr.wepay {
     def executeAction(accessToken: Option[WePayToken], module: String, action: Option[String], requestJson: JValue = JObject(Nil)): Future[Box[JValue]] = {
       def doRequest(defaultHeaders: Map[String, String]) = {
         val requestTarget = action.toList.foldLeft(host(apiEndpointBase) / apiVersion / module)(_ / _).secure
-        val requestBody = compact(render(requestJson))
+        val requestBody = compact(render(underscoreJsonFieldNames(requestJson)))
         val headers = accessToken.map { token =>
           Map("Authorization" -> token.httpHeader)
         }.toList.foldLeft(defaultHeaders)(_ ++ _)
 
         val request = {
-          underscoreJsonFieldNames(requestJson) match {
+          requestJson match {
             case JObject(Nil) =>
               requestTarget <:< headers
             case _ =>
