@@ -44,6 +44,10 @@ libraryDependencies ++= Seq(
 
 scalacOptions in (Compile, doc) ++= Opts.doc.title("WePay-Scala API Reference")
 
+scalacOptions += "-deprecation"
+
+scalacOptions += "-feature"
+
 publishTo <<= version { (v: String) =>
   val nexus = "https://oss.sonatype.org/"
   if (v.trim.endsWith("SNAPSHOT")) 
