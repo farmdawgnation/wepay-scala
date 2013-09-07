@@ -1,9 +1,12 @@
 package me.frmr.wepay.api {
+  import scala.concurrent.Future
+
   import net.liftweb.json._
     import JsonDSL._
   import net.liftweb.common.Box
 
   import me.frmr.wepay._
+    import WePayHelpers._
 
   /**
    * The response type for Account API operations that don't return an Account, or some variation thereof.
@@ -50,11 +53,12 @@ package me.frmr.wepay.api {
      * Retrieve the current balance on the account.
     **/
     def balance(implicit authorizationToken:Option[WePayToken]) = {
-      for {
-        account_id <- (account_id:Box[Long]) ?~! "You can't retrieve the balance of an account with no ID."
-        result <- meta.balance(account_id)
-      } yield {
-        result
+      unwrapBoxOfFuture {
+        for {
+          account_id <- (account_id:Box[Long]) ?~! "You can't retrieve the balance of an account with no ID."
+        } yield {
+          meta.balance(account_id)
+        }
       }
     }
 
@@ -77,11 +81,12 @@ package me.frmr.wepay.api {
      * @param taxes The List describing the taxes you want to set for the account.
     **/
     def setTax(taxes:JArray)(implicit authorizationToken:Option[WePayToken]) = {
-      for {
-        account_id <- (account_id:Box[Long]) ?~! "You can't set tax information on an account with no ID."
-        result <- meta.setTax(account_id, taxes)
-      } yield {
-        result
+      unwrapBoxOfFuture {
+        for {
+          account_id <- (account_id:Box[Long]) ?~! "You can't set tax information on an account with no ID."
+        } yield {
+          meta.setTax(account_id, taxes)
+        }
       }
     }
 
@@ -92,11 +97,12 @@ package me.frmr.wepay.api {
      * the information is passed in for setTax.
     **/
     def getTax(implicit authorizationToken:Option[WePayToken]) = {
-      for {
-        account_id <- (account_id:Box[Long]) ?~! "You can't get tax information on an account with no ID."
-        result <- meta.getTax(account_id)
-      } yield {
-        result
+      unwrapBoxOfFuture {
+        for {
+          account_id <- (account_id:Box[Long]) ?~! "You can't get tax information on an account with no ID."
+        } yield {
+          meta.getTax(account_id)
+        }
       }
     }
   }
