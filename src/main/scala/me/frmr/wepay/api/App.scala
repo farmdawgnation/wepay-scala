@@ -1,10 +1,14 @@
 package me.frmr.wepay.api {
+  import scala.concurrent.Future
+
   import net.liftweb.json._
     import JsonDSL._
     import Extraction._
   import net.liftweb.common._
 
   import me.frmr.wepay._
+
+  import dispatch.Defaults._
 
   /**
    * Class describing instances of the App resource on WePay.
@@ -43,15 +47,22 @@ package me.frmr.wepay.api {
     def find = {
       implicit val authorizationToken = None //Not needed.
 
-      for {
+      val findResult = for {
         id <- WePay.clientId
         secret <- WePay.clientSecret
-        result <- query(None, (
+      } yield {
+        query(None, (
           ("client_id" -> id) ~
           ("client_secret" -> secret)
         ))
-      } yield {
-        result
+      }
+
+      findResult match {
+        case Full(future) =>
+          future
+
+        case somethingElse: EmptyBox =>
+          Future(somethingElse)
       }
     }
 
@@ -60,7 +71,7 @@ package me.frmr.wepay.api {
      * currently retrieve *other* apps by their ID, so this is a noop.
     **/
     override def find(id:Long)(implicit authorizationToken:Option[WePayToken]) =
-      Failure("You cannot find this resource by ID.")
+      Future(Failure("You cannot find this resource by ID."))
 
     /**
      * Save an instance of the App to WePay's server.
@@ -73,14 +84,21 @@ package me.frmr.wepay.api {
         case _ => JObject(Nil)
       }
 
-      for {
+      val saveResult = for {
         secret <- WePay.clientSecret
-        result <- query(Some("modify"), (
+      } yield {
+        query(Some("modify"), (
           ("client_secret" -> secret) ~
           decomposedObject
         ))
-      } yield {
-        result
+      }
+
+      saveResult match {
+        case Full(future) =>
+          future
+
+        case somethingElse: EmptyBox =>
+          Future(somethingElse)
       }
     }
   }
