@@ -1,4 +1,6 @@
 package me.frmr.wepay {
+  import scala.concurrent.Future
+
   import net.liftweb.common._
   import net.liftweb.util._
     import Helpers._
@@ -129,9 +131,7 @@ package me.frmr.wepay {
       // Run the query and then transform that into a WePay Response.
       val response = Http(request > AsWePayResponse).either
 
-      // Force the Promise to materialize, blocking this thread if need be.
-      // We may be able to delay the manifestation of this Promise.
-      response() match {
+      response.collect {
         case Right(WePayResponse(200, json)) => Full(handler(json))
 
         case Right(WePayResponse(code, json)) =>
@@ -155,7 +155,7 @@ package me.frmr.wepay {
      *
      * @param oauthCode The code passed in by WePay in the code GET parameter.
     **/
-    def retrieveToken(oauthCode:String) : Box[WePayToken] = {
+    def retrieveToken(oauthCode:String) : Future[Box[WePayToken]] = {
       def doRequest(clientId:String, redirectUrl:String, clientSecret:String, defaultHeaders:Map[String, String]) = {
         val requestBody : String = compact(render(
           ("client_id" -> clientId) ~
@@ -168,14 +168,21 @@ package me.frmr.wepay {
         responseForRequest[WePayToken](tokenRequest, (json) => json.extract[WePayToken])
       }
 
-      for {
+      val requestResult = for {
         clientId <- clientId
         oauthRedirectUrl <- oauthRedirectUrl
         clientSecret <- clientSecret
         defaultHeaders <- defaultHeaders
-        result <- doRequest(clientId, oauthRedirectUrl, clientSecret, defaultHeaders)
       } yield {
-        result
+        doRequest(clientId, oauthRedirectUrl, clientSecret, defaultHeaders)
+      }
+
+      requestResult match {
+        case Full(future) =>
+          future
+
+        case somethingElse: EmptyBox =>
+          Future(somethingElse)
       }
     }
 
@@ -190,7 +197,7 @@ package me.frmr.wepay {
      * @param action The action associated wiht this request. For "/checkout/create" it would be "create". Set to None for no action.
      * @param requestJson The request JSON to be transmitted in the body of the post. Defaults to JObject(Nil), which represents an empty request body.
     **/
-    def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue = JObject(Nil)) : Box[JValue] = {
+    def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue = JObject(Nil)) : Future[Box[JValue]] = {
       def doRequest(defaultHeaders:Map[String, String]) = {
         val requestTarget = action.toList.foldLeft(host(apiEndpointBase) / apiVersion / module)(_ / _).secure
         val requestBody = compact(render(requestJson))
@@ -209,11 +216,16 @@ package me.frmr.wepay {
         responseForRequest[JValue](request, (json) => json)
       }
 
-      for {
-        defaultHeaders <- defaultHeaders
-        result <- doRequest(defaultHeaders)
-      } yield {
-        result
+      val actionResponse = defaultHeaders.map { defaultHeaders =>
+        doRequest(defaultHeaders)
+      }
+
+      actionResponse match {
+        case Full(future) =>
+          future
+
+        case somethingElse: EmptyBox =>
+          Future(somethingElse)
       }
     }
   }

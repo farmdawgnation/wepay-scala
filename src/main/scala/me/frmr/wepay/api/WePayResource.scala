@@ -1,10 +1,14 @@
 package me.frmr.wepay.api {
   import me.frmr.wepay._
 
+  import scala.concurrent.Future
+
   import net.liftweb.common._
   import net.liftweb.json._
     import JsonDSL._
     import Extraction._
+
+  import dispatch.Defaults._
 
   /**
    * The base definition for any instance of an object stored on WePay.
@@ -47,10 +51,10 @@ package me.frmr.wepay.api {
      * @param requestBody The JValue object representing the request payload.
     **/
     protected def query(action:Option[String], requestBody:JValue = JObject(Nil))(implicit authorizationToken:Option[WePayToken] = None) = {
-      for {
-        resultingJson <- WePay.executeAction(authorizationToken, resource, action, requestBody)
-      } yield {
-        extract(resultingJson)
+      WePay.executeAction(authorizationToken, resource, action, requestBody).map { executionResult =>
+        executionResult.map { resultingJson =>
+          extract(resultingJson)
+        }
       }
     }
 
@@ -60,10 +64,10 @@ package me.frmr.wepay.api {
      * @param searchParameters The lift-json JValue representing the search parameters.
     **/
     protected def findQuery(searchParameters:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
-      for {
-        resultingJson <- WePay.executeAction(authorizationToken, resource, Some("find"), searchParameters)
-      } yield {
-        extractFindResults(resultingJson)
+      WePay.executeAction(authorizationToken, resource, Some("find"), searchParameters).map { executionResult=>
+        executionResult.map { resultingJson =>
+         extractFindResults(resultingJson)
+        }
       }
     }
 
@@ -117,10 +121,10 @@ package me.frmr.wepay.api {
      * Failure on error.
     **/
     protected def resultRetrievalQuery(action:Option[String], requestBody:JValue)(implicit authorizationToken:Option[WePayToken] = None) = {
-      for {
-        resultingJson <- WePay.executeAction(authorizationToken, resource, action, requestBody)
-      } yield {
-        extractCrudResponse(resultingJson)
+      WePay.executeAction(authorizationToken, resource, action, requestBody).map { executionResult =>
+        executionResult.map { resultingJson =>
+         extractCrudResponse(resultingJson)
+        }
       }
     }
 
@@ -131,9 +135,9 @@ package me.frmr.wepay.api {
      *
      * @param instance The $INSTANCE to save.
     **/
-    def save(instance:Model)(implicit authorizationToken:Option[WePayToken]) : Box[CrudResponseType] = {
+    def save(instance:Model)(implicit authorizationToken:Option[WePayToken]) : Future[Box[CrudResponseType]] = {
       instance._id match {
-        case Some(_) => Failure("You can't update an immutable resource.")
+        case Some(_) => Future(Failure("You can't update an immutable resource."))
         case _ => create(instance)
       }
     }
