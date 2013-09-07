@@ -90,7 +90,7 @@ package me.frmr.wepay {
       def apply(response: Response) = {
         WePayResponse(
           response.getStatusCode(),
-          as.lift.Json(response)
+          camelCaseJsonFieldNames(as.lift.Json(response))
         )
       }
     }
@@ -202,7 +202,7 @@ package me.frmr.wepay {
         }.toList.foldLeft(defaultHeaders)(_ ++ _)
 
         val request = {
-          requestJson match {
+          underscoreJsonFieldNames(requestJson) match {
             case JObject(Nil) =>
               requestTarget <:< headers
             case _ =>
