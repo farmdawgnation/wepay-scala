@@ -137,11 +137,12 @@ package me.frmr.wepay {
         case Right(WePayResponse(200, json)) => Full(handler(json))
 
         case Right(WePayResponse(code, json)) =>
+          val errorMsg = "WePay returned " + code + "."
           val error =
             {
               tryo(json.extract[WePayError])
-            } openOr {
-              "WePay returned a " + code + " without valid JSON."
+            } or {
+              Full(json)
             }
 
           ParamFailure(error.toString, Empty, Empty, error)
