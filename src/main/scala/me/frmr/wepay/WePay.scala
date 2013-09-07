@@ -10,7 +10,7 @@ package me.frmr.wepay {
 
   import dispatch._, Defaults._
 
-  import com.ning.http.client.{Request, RequestBuilder, Response}
+  import com.ning.http.client.Response
 
   /**
    * This class represents an error condition returned while
@@ -115,7 +115,7 @@ package me.frmr.wepay {
         val oauth_url = host(uiEndpointBase) / apiVersion / "oauth2" / "authorize" <<?
           Map("client_id" -> clientId, "redirect_uri" -> oauthRedirectUrl, "scope" -> oauthPermissions)
 
-        oauth_url.secure.build.getRawUrl
+        oauth_url.secure.toRequest.getRawUrl
       }
     }
 
@@ -123,7 +123,7 @@ package me.frmr.wepay {
      * Runs a query against the WePay API and passes the resulting JSON, if successful
      * to a handler that transforms the response into the appropreate type.
      *
-     * @param request The RequestBuilder object that should be used to make the request.
+     * @param request The Req object that should be used to make the request.
      * @param handler The function that will translate a Lift-JSON object to whatever type it should be.
      * @return A Full[T] on success. A ParamFailure in the event of an API error, and a Failure in the event of a Dispatch error.
     **/
