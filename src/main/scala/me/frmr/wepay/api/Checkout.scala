@@ -5,6 +5,7 @@ package me.frmr.wepay.api {
   import net.liftweb.common.Box
 
   import me.frmr.wepay._
+    import WePayHelpers._
 
   /**
    * The response type for API operations that don't return an instance of Checkout, or some variation
@@ -153,11 +154,12 @@ package me.frmr.wepay.api {
      * @param cancel_reason The reason the checkout is being canceled.
     **/
     def cancel(cancel_reason:String)(implicit authorizationToken:Option[WePayToken]) = {
-      for {
-        checkout_id <- (checkout_id:Box[Long]) ?~! "You can't cancel a checkout with no ID."
-        response <- meta.cancel(checkout_id, cancel_reason)
-      } yield {
-        response
+      unwrapBoxOfFuture {
+        for {
+          checkout_id <- (checkout_id:Box[Long]) ?~! "You can't cancel a checkout with no ID."
+        } yield {
+          meta.cancel(checkout_id, cancel_reason)
+        }
       }
     }
 
@@ -168,11 +170,12 @@ package me.frmr.wepay.api {
      * @param amount The amount of the refund. If set to None, it will be a full refund.
     **/
     def refund(refund_reason:String, amount:Option[Double])(implicit authorizationToken:Option[WePayToken]) = {
-      for {
-        checkout_id <- (checkout_id:Box[Long]) ?~! "You can't refund a checkout with no ID."
-        response <- meta.refund(checkout_id, refund_reason, amount)
-      } yield {
-        response
+      unwrapBoxOfFuture {
+        for {
+          checkout_id <- (checkout_id:Box[Long]) ?~! "You can't refund a checkout with no ID."
+        } yield {
+          meta.refund(checkout_id, refund_reason, amount)
+        }
       }
     }
 
@@ -180,11 +183,12 @@ package me.frmr.wepay.api {
      * Capture the payment for this checkout, if auto_capture was set to false when it was created.
     **/
     def capture(implicit authorizationToken:Option[WePayToken]) = {
-      for {
-        checkout_id <- (checkout_id:Box[Long]) ?~! "You can't cancel a checkout with no ID."
-        response <- meta.capture(checkout_id)
-      } yield {
-        response
+      unwrapBoxOfFuture {
+        for {
+          checkout_id <- (checkout_id:Box[Long]) ?~! "You can't cancel a checkout with no ID."
+        } yield {
+          meta.capture(checkout_id)
+        }
       }
     }
   }
