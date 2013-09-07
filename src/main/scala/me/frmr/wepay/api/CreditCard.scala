@@ -4,7 +4,8 @@ package me.frmr.wepay.api {
     import JsonDSL._
     import Extraction._
 
-  import me.frmr.wepay.{WePay, WePayToken}
+  import me.frmr.wepay._
+    import WePayHelpers._
 
   /**
    * Models a response from the credit_card API endpoints that don't
@@ -69,11 +70,12 @@ package me.frmr.wepay.api {
      * immediately run a checkout with the credit card.
     **/
     def authorize = {
-      for {
-        credit_card_id <- (credit_card_id:Box[Long]) ?~! "You cant authorize a card without an ID."
-        result <- meta.authorize(credit_card_id)
-      } yield {
-        result
+      unwrapBoxOfFuture {
+        for {
+          credit_card_id <- (credit_card_id:Box[Long]) ?~! "You cant authorize a card without an ID."
+        } yield {
+          meta.authorize(credit_card_id)
+        }
       }
     }
   }
@@ -96,15 +98,16 @@ package me.frmr.wepay.api {
      * @param credit_card_id The ID of the credit card to authorize.
     **/
     def authorize(credit_card_id:Long) = {
-      for {
-        clientId <- WePay.clientId
-        clientSecret <- WePay.clientSecret
-        result <- resultRetrievalQuery(Some("authorize"),
-                    ("client_id" -> clientId) ~
-                    ("client_secret" -> clientSecret) ~
-                    ("credit_card_id" -> credit_card_id))
-      } yield {
-        result
+      unwrapBoxOfFuture {
+        for {
+          clientId <- WePay.clientId
+          clientSecret <- WePay.clientSecret
+        } yield {
+          resultRetrievalQuery(Some("authorize"),
+                      ("client_id" -> clientId) ~
+                      ("client_secret" -> clientSecret) ~
+                      ("credit_card_id" -> credit_card_id))
+        }
       }
     }
 
@@ -114,12 +117,13 @@ package me.frmr.wepay.api {
         case _ => JObject(Nil)
       }
 
-      for {
-        clientId <- WePay.clientId
-        request = ("client_id" -> clientId) ~ decomposedObject
-        result <- resultRetrievalQuery(Some("create"), request)
-      } yield {
-        result
+      unwrapBoxOfFuture {
+        for {
+          clientId <- WePay.clientId
+          request = ("client_id" -> clientId) ~ decomposedObject
+        } yield {
+          resultRetrievalQuery(Some("create"), request)
+        }
       }
     }
   }
