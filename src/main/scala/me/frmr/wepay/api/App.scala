@@ -7,6 +7,7 @@ package me.frmr.wepay.api {
   import net.liftweb.common._
 
   import me.frmr.wepay._
+    import WePayHelpers._
 
   import dispatch.Defaults._
 
@@ -47,22 +48,16 @@ package me.frmr.wepay.api {
     def find = {
       implicit val authorizationToken = None //Not needed.
 
-      val findResult = for {
-        id <- WePay.clientId
-        secret <- WePay.clientSecret
-      } yield {
-        query(None, (
-          ("client_id" -> id) ~
-          ("client_secret" -> secret)
-        ))
-      }
-
-      findResult match {
-        case Full(future) =>
-          future
-
-        case somethingElse: EmptyBox =>
-          Future(somethingElse)
+      unwrapBoxOfFuture {
+        for {
+          id <- WePay.clientId
+          secret <- WePay.clientSecret
+        } yield {
+          query(None, (
+            ("client_id" -> id) ~
+            ("client_secret" -> secret)
+          ))
+        }
       }
     }
 
@@ -84,21 +79,15 @@ package me.frmr.wepay.api {
         case _ => JObject(Nil)
       }
 
-      val saveResult = for {
-        secret <- WePay.clientSecret
-      } yield {
-        query(Some("modify"), (
-          ("client_secret" -> secret) ~
-          decomposedObject
-        ))
-      }
-
-      saveResult match {
-        case Full(future) =>
-          future
-
-        case somethingElse: EmptyBox =>
-          Future(somethingElse)
+      unwrapBoxOfFuture {
+        for {
+          secret <- WePay.clientSecret
+        } yield {
+          query(Some("modify"), (
+            ("client_secret" -> secret) ~
+            decomposedObject
+          ))
+        }
       }
     }
   }
