@@ -48,7 +48,7 @@ WePay-Scala is available in the Maven Central repository. You can use it by addi
 the following line to the build.sbt file in your project.
 
 ```scala
-libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.9.0"
+libraryDependencies += "me.frmr.wepay-scala" %% "wepay-scala" % "0.9.1"
 ```
 
 ### Defining the Required Properties
@@ -71,7 +71,7 @@ Additionally, when you're ready to go into production, you'll need to define two
 ### Start Your Engines
 
 For brevety sake, I'm not going to go through the process of explaining WePay's entire API flow. Besides,
-[their documentatin](http://wepay.com/developer) does a much better job of that than I could right now.
+[their documentation](http://wepay.com/developer) does a much better job of that than I could right now.
 In the following sections, I'm going to show you how to do a few common tasks.
 
 #### Authorize after successful OAuth
