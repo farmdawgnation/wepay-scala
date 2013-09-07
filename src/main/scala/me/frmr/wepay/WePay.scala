@@ -6,7 +6,7 @@ package me.frmr.wepay {
     import Extraction._
     import JsonDSL._
 
-  import dispatch._
+  import dispatch._, Defaults._
 
   import com.ning.http.client.{Request, RequestBuilder, Response}
 
@@ -125,7 +125,7 @@ package me.frmr.wepay {
      * @param handler The function that will translate a Lift-JSON object to whatever type it should be.
      * @return A Full[T] on success. A ParamFailure in the event of an API error, and a Failure in the event of a Dispatch error.
     **/
-    protected def responseForRequest[T](request:RequestBuilder, handler:(JValue)=>T) = {
+    protected def responseForRequest[T](request: Req, handler:(JValue)=>T) = {
       // Run the query and then transform that into a WePay Response.
       val response = Http(request > AsWePayResponse).either
 
