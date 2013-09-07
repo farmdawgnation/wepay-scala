@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>me.frmr.wepay.api.WePayResource</title>
+          <title>me.frmr.wepay.api.WePayResourceMeta</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
@@ -16,7 +16,7 @@
       <div id="definition">
         <img src="../../../../lib/trait_big.png" />
         <p id="owner"><a name="me" class="extype" href="../../../package.html">me</a>.<a name="me.frmr" class="extype" href="../../package.html">frmr</a>.<a name="me.frmr.wepay" class="extype" href="../package.html">wepay</a>.<a name="me.frmr.wepay.api" class="extype" href="package.html">api</a></p>
-        <h1>WePayResource</h1>
+        <h1>WePayResourceMeta</h1>
       </div>
 
       <h4 class="signature" id="signature">
@@ -25,18 +25,20 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">WePayResource</span><span class="tparams">[<span name="MyType">MyType &lt;: <a name="me.frmr.wepay.api.WePayResource" class="extype" href="">WePayResource</a>[MyType]</span>]</span><span class="result"> extends AnyRef</span>
+        <span class="name">WePayResourceMeta</span><span class="tparams">[<span name="Model">Model &lt;: <a name="me.frmr.wepay.api.WePayResource" class="extype" href="WePayResource.html">WePayResource</a>[Model]</span>]</span><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>The base definition for any instance of an object stored on WePay.</p><p>This definition is the bare-bones least common denominator between all
-things stored on WePay and provides no predefined instance functionality.
-</p></div><dl class="attributes block"> <dt>Self Type</dt><dd>MyType</dd></dl><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>The Meta trait paired with the base WePayResource.</p><p>This Meta trait should be used in Meta Objects that are used in the
+retreival or manipulation of instances of WePay resources. This trait
+provides functionality for a meta object that is able to run a search based
+on some search parameters provided in the form of a lift-json object, run some
+arbitrary query, or retrieve an instance directly by its ID.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a name="me.frmr.wepay.api.Account" class="extype" href="Account.html">Account</a>, <a name="me.frmr.wepay.api.Checkout" class="extype" href="Checkout.html">Checkout</a>, <a name="me.frmr.wepay.api.CreditCard" class="extype" href="CreditCard.html">CreditCard</a>, <a name="me.frmr.wepay.api.ImmutableWePayResource" class="extype" href="ImmutableWePayResource.html">ImmutableWePayResource</a>, <a name="me.frmr.wepay.api.MutableWePayResource" class="extype" href="MutableWePayResource.html">MutableWePayResource</a>, <a name="me.frmr.wepay.api.Preapproval" class="extype" href="Preapproval.html">Preapproval</a>, <a name="me.frmr.wepay.api.User" class="extype" href="User.html">User</a>, <a name="me.frmr.wepay.api.Withdrawal" class="extype" href="Withdrawal.html">Withdrawal</a></div>
+          <div class="subClasses hiddenContent"><a name="me.frmr.wepay.api.Account" class="extype" href="Account$.html">Account</a>, <a name="me.frmr.wepay.api.App" class="extype" href="App$.html">App</a>, <a name="me.frmr.wepay.api.Checkout" class="extype" href="Checkout$.html">Checkout</a>, <a name="me.frmr.wepay.api.CreditCard" class="extype" href="CreditCard$.html">CreditCard</a>, <a name="me.frmr.wepay.api.ImmutableWePayResourceMeta" class="extype" href="ImmutableWePayResourceMeta.html">ImmutableWePayResourceMeta</a>, <a name="me.frmr.wepay.api.MutableWePayResourceMeta" class="extype" href="MutableWePayResourceMeta.html">MutableWePayResourceMeta</a>, <a name="me.frmr.wepay.api.Preapproval" class="extype" href="Preapproval$.html">Preapproval</a>, <a name="me.frmr.wepay.api.User" class="extype" href="User$.html">User</a>, <a name="me.frmr.wepay.api.Withdrawal" class="extype" href="Withdrawal$.html">Withdrawal</a></div>
         </div></div>
     
 
@@ -50,7 +52,7 @@ things stored on WePay and provides no predefined instance functionality.
               <span class="filtertype">Inherited</span>
               <ol><li class="hideall out"><span>Hide All</span></li>
               <li class="showall in"><span>Show all</span></li></ol>
-              <ol id="linearization"><li name="me.frmr.wepay.api.WePayResource" class="in"><span>WePayResource</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+              <ol id="linearization"><li name="me.frmr.wepay.api.WePayResourceMeta" class="in"><span>WePayResourceMeta</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
             </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -66,18 +68,30 @@ things stored on WePay and provides no predefined instance functionality.
 
         <div class="values members" id="values">
               <h3>Abstract Value Members</h3>
-              <ol><li visbl="pub" name="me.frmr.wepay.api.WePayResource#meta" data-isabs="true">
-      <a id="meta:WePayResourceMeta[MyType]"></a>
+              <ol><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#extract" data-isabs="true">
+      <a id="extract(JValue):Model"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">meta</span><span class="result">: <a name="me.frmr.wepay.api.WePayResourceMeta" class="extype" href="WePayResourceMeta.html">WePayResourceMeta</a>[MyType]</span>
+        <span class="name">extract</span><span class="params">(<span name="json">json: JValue</span>)</span><span class="result">: Model</span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#extractFindResults" data-isabs="true">
+      <a id="extractFindResults(JValue):List[Model]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">extractFindResults</span><span class="params">(<span name="json">json: JValue</span>)</span><span class="result">: List[Model]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li></ol>
             </div>
 
@@ -155,6 +169,18 @@ things stored on WePay and provides no predefined instance functionality.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#className" data-isabs="false">
+      <a id="className:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">className</span><span class="result">: String</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -209,6 +235,44 @@ things stored on WePay and provides no predefined instance functionality.
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#find" data-isabs="false">
+      <a id="find(Long)(Option[WePayToken]):Box[Model]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">find</span><span class="params">(<span name="id">id: <span name="scala.Long" class="extype">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>]</span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[Model]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Find a WePayResource in WePay's system by ID.</p>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#findQuery" data-isabs="false">
+      <a id="findQuery(JValue)(Option[WePayToken]):Box[List[Model]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findQuery</span><span class="params">(<span name="searchParameters">searchParameters: JValue</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[List[Model]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Run a search for all WePayResource matching the searchParameters.</p><div class="fullcomment"><div class="comment cmt"><p>Run a search for all WePayResource matching the searchParameters.
+</p></div><dl class="paramcmts block"><dt class="param">searchParameters</dt><dd class="cmt"><p>The lift-json JValue representing the search parameters.
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="pub" name="me.frmr.wepay.api.WePayResourceMeta#formats" data-isabs="false">
+      <a id="formats:Formats"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">formats</span><span class="result">: <span name="net.liftweb.json.Formats" class="extype">Formats</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -281,6 +345,44 @@ things stored on WePay and provides no predefined instance functionality.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#query" data-isabs="false">
+      <a id="query(Option[String],JValue)(Option[WePayToken]):Box[Model]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">query</span><span class="params">(<span name="action">action: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="requestBody">requestBody: JValue = <span class="symbol">JObject(Nil)</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span name="scala.Option" class="extype">Option</span>[<a name="me.frmr.wepay.WePayToken" class="extype" href="../WePayToken.html">WePayToken</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/package.html">None</a></span></span></span>)</span><span class="result">: <span name="net.liftweb.common.Box" class="extype">Box</span>[Model]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Run a query against the the child class resource using a JValue that will result in a Box[JValue].</p><div class="fullcomment"><div class="comment cmt"><p>Run a query against the the child class resource using a JValue that will result in a Box[JValue].
+</p></div><dl class="paramcmts block"><dt class="param">action</dt><dd class="cmt"><p>The action on the child class to request.</p></dd><dt class="param">requestBody</dt><dd class="cmt"><p>The JValue object representing the request payload.
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#resource" data-isabs="false">
+      <a id="resource:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resource</span><span class="result">: String</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li visbl="prt" name="me.frmr.wepay.api.WePayResourceMeta#resourceIdentifier" data-isabs="false">
+      <a id="resourceIdentifier:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resourceIdentifier</span><span class="result">: String</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
