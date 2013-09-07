@@ -8,6 +8,8 @@ package me.frmr.wepay {
     import Extraction._
     import JsonDSL._
 
+  import WePayHelpers._
+
   import dispatch._, Defaults._
 
   import com.ning.http.client.Response
@@ -168,21 +170,15 @@ package me.frmr.wepay {
         responseForRequest[WePayToken](tokenRequest, (json) => json.extract[WePayToken])
       }
 
-      val requestResult = for {
-        clientId <- clientId
-        oauthRedirectUrl <- oauthRedirectUrl
-        clientSecret <- clientSecret
-        defaultHeaders <- defaultHeaders
-      } yield {
-        doRequest(clientId, oauthRedirectUrl, clientSecret, defaultHeaders)
-      }
-
-      requestResult match {
-        case Full(future) =>
-          future
-
-        case somethingElse: EmptyBox =>
-          Future(somethingElse)
+      unwrapBoxOfFuture {
+        for {
+          clientId <- clientId
+          oauthRedirectUrl <- oauthRedirectUrl
+          clientSecret <- clientSecret
+          defaultHeaders <- defaultHeaders
+        } yield {
+          doRequest(clientId, oauthRedirectUrl, clientSecret, defaultHeaders)
+        }
       }
     }
 
@@ -216,16 +212,10 @@ package me.frmr.wepay {
         responseForRequest[JValue](request, (json) => json)
       }
 
-      val actionResponse = defaultHeaders.map { defaultHeaders =>
-        doRequest(defaultHeaders)
-      }
-
-      actionResponse match {
-        case Full(future) =>
-          future
-
-        case somethingElse: EmptyBox =>
-          Future(somethingElse)
+      unwrapBoxOfFuture {
+        defaultHeaders.map { defaultHeaders =>
+          doRequest(defaultHeaders)
+        }
       }
     }
   }
