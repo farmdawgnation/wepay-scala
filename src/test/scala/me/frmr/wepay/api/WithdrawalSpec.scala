@@ -1,6 +1,11 @@
 package me.frmr.wepay.api {
   import org.scalatest.FunSpec
 
+  import scala.concurrent._
+    import duration._
+
+  import language.postfixOps
+
   import net.liftweb.common._
 
   import me.frmr.wepay._
@@ -14,7 +19,7 @@ package me.frmr.wepay.api {
       var testWithdrawalId = 0l
 
       it("should be creatable") {
-        val saveResponse = Withdrawal(testAccountId).save
+        val saveResponse = Await.result(Withdrawal(testAccountId).save, 1 minute)
 
         assert(saveResponse match {
           case Full(WithdrawalResponse(withdrawal_id, _)) =>
@@ -26,7 +31,7 @@ package me.frmr.wepay.api {
       }
 
       it("should be retrievable after creation") {
-        val retrieval = Withdrawal.find(testWithdrawalId)
+        val retrieval = Await.result(Withdrawal.find(testWithdrawalId), 1 minute)
 
         assert(retrieval match {
           case Full(_:Withdrawal) =>

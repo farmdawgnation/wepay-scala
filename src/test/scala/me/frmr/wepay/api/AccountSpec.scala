@@ -1,6 +1,11 @@
 package me.frmr.wepay.api {
   import org.scalatest.FunSpec
 
+  import scala.concurrent._
+    import duration._
+
+  import language.postfixOps
+
   import net.liftweb.common._
 
   import me.frmr.wepay._
@@ -15,7 +20,7 @@ package me.frmr.wepay.api {
       var unitAccountInstance : Box[Account] = Empty
 
       it("should be createable") {
-        val saveResponse = Account("Unit Account", "An account created by unit testing.").save
+        val saveResponse = Await.result(Account("Unit Account", "An account created by unit testing.").save, 1 minute)
 
         assert(saveResponse match {
           case Full(accountResp:AccountResponse) =>
@@ -27,7 +32,7 @@ package me.frmr.wepay.api {
       }
 
       it("should be retrievable after creation") {
-        val retrieval = Account.find(unitAccountId)
+        val retrieval = Await.result(Account.find(unitAccountId), 1 minute)
         unitAccountInstance = retrieval
 
         assert(retrieval match {
@@ -39,7 +44,7 @@ package me.frmr.wepay.api {
       }
 
       it("should return a balance") {
-        val balanceRetrieval = Account.balance(unitAccountId)
+        val balanceRetrieval = Await.result(Account.balance(unitAccountId), 1 minute)
 
         assert(balanceRetrieval match {
           case Full(accountResp:AccountResponse) if accountResp.available_balance.isDefined =>
@@ -50,7 +55,9 @@ package me.frmr.wepay.api {
       }
 
       it("should be deleteable") {
-        val deletionResult = unitAccountInstance.flatMap(_.delete)
+        val deletionResult = unitAccountInstance.flatMap { account =>
+          Await.result(account.delete, 1 minute)
+        }
 
         assert(deletionResult match {
           case Full(accountResp:AccountResponse) if accountResp.account_id.isDefined =>

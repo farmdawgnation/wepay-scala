@@ -1,6 +1,11 @@
 package me.frmr.wepay.api {
   import org.scalatest.FunSpec
 
+  import scala.concurrent._
+    import duration._
+
+  import language.postfixOps
+
   import net.liftweb.common._
 
   import me.frmr.wepay._
@@ -15,9 +20,10 @@ package me.frmr.wepay.api {
 
       it("should be createable") {
         val theAddress = CreditCardAddress("75 5th St NW", None, "Atlanta", "GA", "US", "30308")
-        val saveResponse = CreditCard("Burt Reynolds", "no-reply@google.com",
+        val creditCard = CreditCard("Burt Reynolds", "no-reply@google.com",
                                       Some("4003830171874018"), Some(1234),
-                                      Some(10), Some(2019), Some(theAddress)).save
+                                      Some(10), Some(2019), Some(theAddress))
+        val saveResponse = Await.result(creditCard.save, 1 minute)
 
         assert(saveResponse match {
           case Full(CreditCardResponse(ccId, _)) =>
@@ -29,7 +35,7 @@ package me.frmr.wepay.api {
       }
 
       it("should be authorizeable") {
-        val authorizeResult = CreditCard.authorize(creditCardId)
+        val authorizeResult = Await.result(CreditCard.authorize(creditCardId), 1 minute)
 
         assert(authorizeResult match {
           case Full(CreditCardResponse(_, _)) =>
@@ -41,8 +47,9 @@ package me.frmr.wepay.api {
 
       it("should be able to authorize a checkout") {
         val authorization = CheckoutAuthorization(None, Some(creditCardId), Some("credit_card"))
-        val checkoutResponse = Checkout(testAccountId, "Test CC Checkout", "PERSONAL", 1.0,
-                                        authorization = Some(authorization)).save
+        val checkout = Checkout(testAccountId, "Test CC Checkout", "PERSONAL", 1.0,
+                                authorization = Some(authorization))
+        val checkoutResponse = Await.result(checkout.save, 1 minute)
 
         assert(checkoutResponse match {
           case Full(resp:CheckoutResponse) if resp.state == Some("authorized") =>

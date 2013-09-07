@@ -1,6 +1,11 @@
 package me.frmr.wepay.api {
   import org.scalatest.FunSpec
 
+  import scala.concurrent._
+    import duration._
+
+  import language.postfixOps
+
   import net.liftweb.common._
 
   import me.frmr.wepay._
@@ -14,7 +19,7 @@ package me.frmr.wepay.api {
       var testCheckoutId:Box[Long] = None
 
       it("should be createable") {
-        val saveResponse = Checkout(testAccountId, "A test checkout.", "PERSONAL", 10).save
+        val saveResponse = Await.result(Checkout(testAccountId, "A test checkout.", "PERSONAL", 10).save, 1 minute)
 
         assert(saveResponse match {
           case Full(CheckoutResponse(checkoutId, _, _)) =>
@@ -27,7 +32,7 @@ package me.frmr.wepay.api {
 
       it("should be retrievable after creation") {
         val retrieval = testCheckoutId.flatMap { checkoutId =>
-          Checkout.find(checkoutId)
+          Await.result(Checkout.find(checkoutId), 1 minute)
         }
 
         assert(retrieval match {
@@ -40,8 +45,10 @@ package me.frmr.wepay.api {
 
       it("should not be mutable after creation") {
         val saveResponse = testCheckoutId.flatMap { checkoutId =>
-          val testCheckout = Checkout.find(checkoutId)
-          testCheckout.flatMap(_.save)
+          val testCheckout = Await.result(Checkout.find(checkoutId), 1 minute)
+          testCheckout.flatMap { checkout =>
+            Await.result(checkout.save, 1 minute)
+          }
         }
 
         assert(saveResponse match {

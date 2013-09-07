@@ -1,6 +1,11 @@
 package me.frmr.wepay.api {
   import org.scalatest.FunSpec
 
+  import scala.concurrent._
+    import duration._
+
+  import language.postfixOps
+
   import net.liftweb.common._
 
   import me.frmr.wepay._
@@ -14,7 +19,7 @@ package me.frmr.wepay.api {
       var unitPreapprovalId = 0l
 
       it("should be creatable") {
-        val saveResponse = Preapproval(testAccountId, 10, "Unit Test Preapproval", "once").save
+        val saveResponse = Await.result(Preapproval(testAccountId, 10, "Unit Test Preapproval", "once").save, 1 minute)
 
         assert(saveResponse match {
           case Full(preapprovalResp:PreapprovalResponse) =>
@@ -26,7 +31,7 @@ package me.frmr.wepay.api {
       }
 
       it("should be retrievable after creation") {
-        val retrieval = Preapproval.find(unitPreapprovalId)
+        val retrieval = Await.result(Preapproval.find(unitPreapprovalId), 1 minute)
 
         assert(retrieval match {
           case Full(preapprovalInstance:Preapproval) =>
@@ -37,7 +42,7 @@ package me.frmr.wepay.api {
       }
 
       it("should be cancelable") {
-        val cancelResponse = Preapproval.cancel(unitPreapprovalId)
+        val cancelResponse = Await.result(Preapproval.cancel(unitPreapprovalId), 1 minute)
 
         assert(cancelResponse match {
           case Full(preapprovalResp:PreapprovalResponse) =>

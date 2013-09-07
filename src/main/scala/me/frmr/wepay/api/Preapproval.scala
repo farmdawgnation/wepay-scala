@@ -6,6 +6,7 @@ package me.frmr.wepay.api {
   import org.joda.time.DateTime
 
   import me.frmr.wepay._
+    import WePayHelpers._
 
   /**
    * The response type for Preapproval operations that don't return an instance of Preapproval.
@@ -65,11 +66,12 @@ package me.frmr.wepay.api {
      * Cancel the preapproval.
     **/
     def cancel(implicit authorizationToken:Option[WePayToken]) = {
-      for {
-        id <- (preapproval_id:Box[Long]) ?~! "You can't cancel a preapproval with no ID."
-        response <- meta.cancel(id)
-      } yield {
-        response
+      unwrapBoxOfFuture {
+        for {
+          id <- (preapproval_id:Box[Long]) ?~! "You can't cancel a preapproval with no ID."
+        } yield {
+          meta.cancel(id)
+        }
       }
     }
   }
