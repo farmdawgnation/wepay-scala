@@ -21,10 +21,10 @@ package me.frmr.wepay {
    * contain a WePayError.
    *
    * @param error The error type.
-   * @param error_description A friendlier, user readable error message.
+   * @param errorDescription A friendlier, user readable error message.
   **/
-  case class WePayError(error: String, error_description: String) {
-    override def toString = error + ": " + error_description
+  case class WePayError(error: String, errorDescription: String) {
+    override def toString = error + ": " + errorDescription
   }
 
   /**
