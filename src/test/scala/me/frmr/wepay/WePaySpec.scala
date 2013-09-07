@@ -1,5 +1,5 @@
-package me.frmr.mweay {
-  import org.scalatest.FunSpec
+package me.frmr.wepay {
+  import org.scalatest._
 
   import net.liftweb.common._
 
@@ -12,7 +12,9 @@ package me.frmr.mweay {
 
         assert(authorizeUrl match {
           case Full(url) => true
-          case _ => false
+          case somethingElse =>
+            fail(somethingElse.toString)
+            false
         })
       }
     }

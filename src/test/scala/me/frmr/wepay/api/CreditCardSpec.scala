@@ -41,7 +41,7 @@ package me.frmr.wepay.api {
 
       it("should be able to authorize a checkout") {
         val authorization = CheckoutAuthorization(None, Some(creditCardId), Some("credit_card"))
-        val checkoutResponse = Checkout(testAccountId, "Text CC Checkout", "PERSONAL", 1.0,
+        val checkoutResponse = Checkout(testAccountId, "Test CC Checkout", "PERSONAL", 1.0,
                                         authorization = Some(authorization)).save
 
         assert(checkoutResponse match {
