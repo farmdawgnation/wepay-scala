@@ -21,7 +21,7 @@ package me.frmr.wepay {
    * @param error The error type.
    * @param error_description A friendlier, user readable error message.
   **/
-  case class WePayError(error:String, error_description:String) {
+  case class WePayError(error: String, error_description: String) {
     override def toString = error + ": " + error_description
   }
 
@@ -35,14 +35,14 @@ package me.frmr.wepay {
    * @param token_type The type of token. Currently, always "BEARER"
    * @param expires_in An expiration date associated with the token, if any.
   **/
-  case class WePayToken(user_id:Long, access_token:String, token_type:String, expires_in:Option[String]) {
+  case class WePayToken(user_id: Long, access_token: String, token_type: String, expires_in: Option[String]) {
     /**
      * The HTTP header to be sent with requests using this token.
     **/
     val httpHeader = token_type.toLowerCase.capitalize + " " + access_token
   }
 
-  case class WePayResponse(code:Int, json:JValue)
+  case class WePayResponse(code: Int, json: JValue)
 
   /**
    * The Default WePay singleton with no additional functionality
@@ -85,10 +85,10 @@ package me.frmr.wepay {
      * Lift-JSON object.
     **/
     protected object AsWePayResponse extends (Response => WePayResponse) {
-      def apply(r:Response) = {
+      def apply(response: Response) = {
         WePayResponse(
-          r.getStatusCode(),
-          as.lift.Json(r)
+          response.getStatusCode(),
+          as.lift.Json(response)
         )
       }
     }
@@ -127,7 +127,7 @@ package me.frmr.wepay {
      * @param handler The function that will translate a Lift-JSON object to whatever type it should be.
      * @return A Full[T] on success. A ParamFailure in the event of an API error, and a Failure in the event of a Dispatch error.
     **/
-    protected def responseForRequest[T](request: Req, handler:(JValue)=>T) = {
+    protected def responseForRequest[T](request: Req, handler: (JValue)=>T) = {
       // Run the query and then transform that into a WePay Response.
       val response = Http(request > AsWePayResponse).either
 
@@ -155,9 +155,9 @@ package me.frmr.wepay {
      *
      * @param oauthCode The code passed in by WePay in the code GET parameter.
     **/
-    def retrieveToken(oauthCode:String) : Future[Box[WePayToken]] = {
-      def doRequest(clientId:String, redirectUrl:String, clientSecret:String, defaultHeaders:Map[String, String]) = {
-        val requestBody : String = compact(render(
+    def retrieveToken(oauthCode: String) : Future[Box[WePayToken]] = {
+      def doRequest(clientId: String, redirectUrl: String, clientSecret: String, defaultHeaders: Map[String, String]) = {
+        val requestBody: String = compact(render(
           ("client_id" -> clientId) ~
           ("redirect_uri" -> redirectUrl) ~
           ("client_secret" -> clientSecret) ~
@@ -197,8 +197,8 @@ package me.frmr.wepay {
      * @param action The action associated wiht this request. For "/checkout/create" it would be "create". Set to None for no action.
      * @param requestJson The request JSON to be transmitted in the body of the post. Defaults to JObject(Nil), which represents an empty request body.
     **/
-    def executeAction(accessToken:Option[WePayToken], module:String, action:Option[String], requestJson:JValue = JObject(Nil)) : Future[Box[JValue]] = {
-      def doRequest(defaultHeaders:Map[String, String]) = {
+    def executeAction(accessToken: Option[WePayToken], module: String, action: Option[String], requestJson: JValue = JObject(Nil)): Future[Box[JValue]] = {
+      def doRequest(defaultHeaders: Map[String, String]) = {
         val requestTarget = action.toList.foldLeft(host(apiEndpointBase) / apiVersion / module)(_ / _).secure
         val requestBody = compact(render(requestJson))
         val headers = accessToken.map { token =>
