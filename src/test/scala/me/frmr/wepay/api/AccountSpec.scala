@@ -24,7 +24,7 @@ package me.frmr.wepay.api {
 
         assert(saveResponse match {
           case Full(accountResp:AccountResponse) =>
-            unitAccountId = accountResp.account_id getOrElse 0l
+            unitAccountId = accountResp.accountId getOrElse 0l
             true
           case _ =>
             false
@@ -47,7 +47,7 @@ package me.frmr.wepay.api {
         val balanceRetrieval = Await.result(Account.balance(unitAccountId), 1 minute)
 
         assert(balanceRetrieval match {
-          case Full(accountResp:AccountResponse) if accountResp.available_balance.isDefined =>
+          case Full(accountResp:AccountResponse) if accountResp.availableBalance.isDefined =>
             true
           case _ =>
             false
@@ -60,7 +60,7 @@ package me.frmr.wepay.api {
         }
 
         assert(deletionResult match {
-          case Full(accountResp:AccountResponse) if accountResp.account_id.isDefined =>
+          case Full(accountResp:AccountResponse) if accountResp.accountId.isDefined =>
             true
           case _ =>
             false

@@ -11,21 +11,21 @@ package me.frmr.wepay.api {
   /**
    * The response type for Account API operations that don't return an Account, or some variation thereof.
    *
-   * @param account_id The Account ID of the account being considered.
+   * @param accountId The Account ID of the account being considered.
    * @param name The name of the account being considered.
    * @param description The description attached to the account.
-   * @param reference_id The reference ID assigne to the account by your application. Reference IDs must be unique per user per app.
-   * @param account_uri The URI to redirect the user to to view their account.
-   * @param payment_limit The maximum individual payment that can be made to this account. (deprecated, I think)
-   * @param gaq_domains A list of analytics domains assigned to this account, if any.
-   * @param pending_balance The amount on the account that is pending.
-   * @param available_balance The amount on the account that is available.
+   * @param referenceId The reference ID assigne to the account by your application. Reference IDs must be unique per user per app.
+   * @param accountUri The URI to redirect the user to to view their account.
+   * @param paymentLimit The maximum individual payment that can be made to this account. (deprecated, I think)
+   * @param gaqDomains A list of analytics domains assigned to this account, if any.
+   * @param pendingBalance The amount on the account that is pending.
+   * @param availableBalance The amount on the account that is available.
    * @param currency The currency of the account.
   **/
-  case class AccountResponse(account_id:Option[Long] = None, name:Option[String] = None, description:Option[String] = None,
-                             reference_id:Option[String] = None, account_uri:Option[String] = None,
-                             payment_limit:Option[Long] = None, gaq_domains:Option[List[String]] = None,
-                             pending_balance:Option[Double] = None, available_balance:Option[Double] = None,
+  case class AccountResponse(accountId:Option[Long] = None, name:Option[String] = None, description:Option[String] = None,
+                             referenceId:Option[String] = None, accountUri:Option[String] = None,
+                             paymentLimit:Option[Long] = None, gaqDomains:Option[List[String]] = None,
+                             pendingBalance:Option[Double] = None, availableBalance:Option[Double] = None,
                              currency:Option[String] = None)
 
   /**
@@ -35,19 +35,19 @@ package me.frmr.wepay.api {
    *
    * @param name The name of the account.
    * @param description The description of the account.
-   * @param account_id The Account ID, as determined by WePay. Your application should rarely need to set this value itself.
-   * @param reference_id A unique identifier of the account to your application. Must be unique per user per app.
-   * @param image_uri The URI to an image for the account.
-   * @param payment_limit The maximum individual payment that can be made to this account. (deprecated, I think)
-   * @param gaq_domains Domain for analytics tracking.
+   * @param accountId The Account ID, as determined by WePay. Your application should rarely need to set this value itself.
+   * @param referenceId A unique identifier of the account to your application. Must be unique per user per app.
+   * @param imageUri The URI to an image for the account.
+   * @param paymentLimit The maximum individual payment that can be made to this account. (deprecated, I think)
+   * @param gaqDomains Domain for analytics tracking.
    * @define THIS Account
   **/
-  case class Account(name:String, description:String, account_id:Option[Long] = None, reference_id:Option[String] = None,
-                     image_uri:Option[String] = None, payment_limit:Option[Long] = None,
-                     gaq_domains:Option[List[String]] = None) extends MutableWePayResource[Account, AccountResponse] {
+  case class Account(name:String, description:String, accountId:Option[Long] = None, referenceId:Option[String] = None,
+                     imageUri:Option[String] = None, paymentLimit:Option[Long] = None,
+                     gaqDomains:Option[List[String]] = None) extends MutableWePayResource[Account, AccountResponse] {
 
     val meta = Account
-    val _id = account_id
+    val _id = accountId
 
     /**
      * Retrieve the current balance on the account.
@@ -55,9 +55,9 @@ package me.frmr.wepay.api {
     def balance(implicit authorizationToken:Option[WePayToken]) = {
       unwrapBoxOfFuture {
         for {
-          account_id <- (account_id:Box[Long]) ?~! "You can't retrieve the balance of an account with no ID."
+          accountId <- (accountId:Box[Long]) ?~! "You can't retrieve the balance of an account with no ID."
         } yield {
-          meta.balance(account_id)
+          meta.balance(accountId)
         }
       }
     }
@@ -83,9 +83,9 @@ package me.frmr.wepay.api {
     def setTax(taxes:JArray)(implicit authorizationToken:Option[WePayToken]) = {
       unwrapBoxOfFuture {
         for {
-          account_id <- (account_id:Box[Long]) ?~! "You can't set tax information on an account with no ID."
+          accountId <- (accountId:Box[Long]) ?~! "You can't set tax information on an account with no ID."
         } yield {
-          meta.setTax(account_id, taxes)
+          meta.setTax(accountId, taxes)
         }
       }
     }
@@ -99,9 +99,9 @@ package me.frmr.wepay.api {
     def getTax(implicit authorizationToken:Option[WePayToken]) = {
       unwrapBoxOfFuture {
         for {
-          account_id <- (account_id:Box[Long]) ?~! "You can't get tax information on an account with no ID."
+          accountId <- (accountId:Box[Long]) ?~! "You can't get tax information on an account with no ID."
         } yield {
-          meta.getTax(account_id)
+          meta.getTax(accountId)
         }
       }
     }
@@ -125,8 +125,8 @@ package me.frmr.wepay.api {
      * @param name The name of the account to search for.
      * @param reference_id The Reference ID of the account to search for.
     **/
-    def find(name:Option[String] = None, reference_id:Option[String] = None)(implicit authorizationToken:Option[WePayToken]) = {
-      findQuery(("name" -> name) ~ ("reference_id" -> reference_id))
+    def find(name:Option[String] = None, referenceId:Option[String] = None)(implicit authorizationToken:Option[WePayToken]) = {
+      findQuery(("name" -> name) ~ ("referenceId" -> referenceId))
     }
 
     /**
@@ -135,10 +135,10 @@ package me.frmr.wepay.api {
      * This method is useful if you don't already have an account instance prepared, but still
      * want to check the account balance.
      *
-     * @param account_id The ID of the account you wish to check.
+     * @param accountId The ID of the account you wish to check.
     **/
-    def balance(account_id:Long)(implicit authorizationToken:Option[WePayToken]) = {
-      resultRetrievalQuery(Some("balance"), ("account_id" -> account_id))
+    def balance(accountId:Long)(implicit authorizationToken:Option[WePayToken]) = {
+      resultRetrievalQuery(Some("balance"), ("accountId" -> accountId))
     }
 
     /**
@@ -147,11 +147,11 @@ package me.frmr.wepay.api {
      * This method is useful if you don't already have an account instance prepared, but still
      * want to set the tax settings. Tax settings are passed in as described in Account.setTax().
      *
-     * @param account_id The account ID for which you would like to set the tax settings.
+     * @param accountId The account ID for which you would like to set the tax settings.
      * @param taxes The tax settings you wish to set.
     **/
-    def setTax(account_id:Long, taxes:JArray)(implicit authorizationToken:Option[WePayToken]) = {
-      resultRetrievalQuery(Some("set_tax"), ("account_id" -> account_id) ~ ("taxes" -> taxes))
+    def setTax(accountId:Long, taxes:JArray)(implicit authorizationToken:Option[WePayToken]) = {
+      resultRetrievalQuery(Some("set_tax"), ("accountId" -> accountId) ~ ("taxes" -> taxes))
     }
 
     /**
@@ -160,10 +160,10 @@ package me.frmr.wepay.api {
      * This method is useful for checking the tax settings on an account when all
      * you have is the ID.
      *
-     * @param account_id The Account ID for which you would like to check the tax settings.
+     * @param accountId The Account ID for which you would like to check the tax settings.
     **/
-    def getTax(account_id:Long)(implicit authorizationToken:Option[WePayToken]) = {
-      resultRetrievalQuery(Some("get_tax"), ("account_id" -> account_id))
+    def getTax(accountId:Long)(implicit authorizationToken:Option[WePayToken]) = {
+      resultRetrievalQuery(Some("get_tax"), ("accountId" -> accountId))
     }
   }
 }
