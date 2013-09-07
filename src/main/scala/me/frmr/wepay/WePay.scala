@@ -32,16 +32,16 @@ package me.frmr.wepay {
    * perform actions on behalf of a certain user on WePay's
    * servers.
    *
-   * @param user_id The ID of the uer this token relates to on WePay.
-   * @param access_token The actual token.
-   * @param token_type The type of token. Currently, always "BEARER"
-   * @param expires_in An expiration date associated with the token, if any.
+   * @param userId The ID of the uer this token relates to on WePay.
+   * @param accessToken The actual token.
+   * @param tokenType The type of token. Currently, always "BEARER"
+   * @param expiresIn An expiration date associated with the token, if any.
   **/
-  case class WePayToken(user_id: Long, access_token: String, token_type: String, expires_in: Option[String]) {
+  case class WePayToken(userId: Long, accessToken: String, tokenType: String, expiresIn: Option[String]) {
     /**
      * The HTTP header to be sent with requests using this token.
     **/
-    val httpHeader = token_type.toLowerCase.capitalize + " " + access_token
+    val httpHeader = tokenType.toLowerCase.capitalize + " " + accessToken
   }
 
   case class WePayResponse(code: Int, json: JValue)
