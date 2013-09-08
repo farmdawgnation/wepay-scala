@@ -52,7 +52,6 @@ class WePayHelpersSpec extends FunSpec {
         ("my_field_name" -> 2) ~
         ("my_sub_object" -> ("my_sub_field_name" -> "bacon"))
 
-      println(underscoreJsonFieldNames(input))
       assert(underscoreJsonFieldNames(input) == expected)
     }
   }
