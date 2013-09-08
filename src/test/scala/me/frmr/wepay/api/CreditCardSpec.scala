@@ -53,7 +53,7 @@ package me.frmr.wepay.api {
 
         assert(checkoutResponse match {
           case Full(resp:CheckoutResponse) if resp.state == Some("authorized") =>
-            Checkout.cancel(resp.checkout_id, "Just a unit test.")
+            Checkout.cancel(resp.checkoutId, "Just a unit test.")
             true
           case _ =>
             false

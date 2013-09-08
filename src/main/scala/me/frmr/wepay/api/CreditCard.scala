@@ -11,10 +11,10 @@ package me.frmr.wepay.api {
    * Models a response from the credit_card API endpoints that don't
    * return an instance of a Credit Card.
    *
-   * @param credit_card_id The ID of the CreditCard.
+   * @param creditCardId The ID of the CreditCard.
    * @param state The current state of the CreditCard
   **/
-  case class CreditCardResponse(credit_card_id:Long, state:String)
+  case class CreditCardResponse(creditCardId:Long, state:String)
 
   /**
    * A case class representing a billing address associated with the
@@ -38,32 +38,32 @@ package me.frmr.wepay.api {
    * in the description below. As always the most official docs are
    * [[https://www.wepay.com/developer/reference/credit_card WePay's]].
    *
-   * @param user_name The name of the cardholder.
+   * @param userName The name of the cardholder.
    * @param email The email of the cardholder.
-   * @param cc_number The Credit Card Number. (Not returned on retrieval.)
+   * @param ccNumber The Credit Card Number. (Not returned on retrieval.)
    * @param cvv The CVV number. (Not returned on retrieval.)
-   * @param expiration_month The month of CC expiration. (Not returned on retrieval.)
-   * @param expiration_year The year of the CC expiration. (Not returned on retrieval.)
+   * @param expirationMonth The month of CC expiration. (Not returned on retrieval.)
+   * @param expirationYear The year of the CC expiration. (Not returned on retrieval.)
    * @param address The billing address. (Not returned on retrieval.)
-   * @param credit_card_id The ID of the Credit Card assigned by WePay.
-   * @param credit_card_name The name of the Credit Card assigned by WePay.
+   * @param creditCardId The ID of the Credit Card assigned by WePay.
+   * @param creditCardName The name of the Credit Card assigned by WePay.
    * @param state The current state of the card.
-   * @param reference_id The Reference ID of the account the card is assoicated with.
+   * @param referenceId The Reference ID of the account the card is assoicated with.
    * @define THIS CreditCard
   **/
-  case class CreditCard(user_name:String, email:String,
-                        cc_number:Option[String] = None,
+  case class CreditCard(userName:String, email:String,
+                        ccNumber:Option[String] = None,
                         cvv:Option[Int] = None,
-                        expiration_month:Option[Int] = None,
-                        expiration_year:Option[Int] = None,
+                        expirationMonth:Option[Int] = None,
+                        expirationYear:Option[Int] = None,
                         address:Option[CreditCardAddress] = None,
-                        credit_card_id:Option[Long] = None,
-                        credit_card_name:Option[String] = None,
+                        creditCardId:Option[Long] = None,
+                        creditCardName:Option[String] = None,
                         state:Option[String] = None,
-                        reference_id:Option[String] = None) extends ImmutableWePayResource[CreditCard, CreditCardResponse] {
+                        referenceId:Option[String] = None) extends ImmutableWePayResource[CreditCard, CreditCardResponse] {
 
     val meta = CreditCard
-    val _id = credit_card_id
+    val _id = creditCardId
 
     /**
      * Authorize a card for use sometime in the future. Use this if you're not going to
@@ -72,9 +72,9 @@ package me.frmr.wepay.api {
     def authorize = {
       unwrapBoxOfFuture {
         for {
-          credit_card_id <- (credit_card_id:Box[Long]) ?~! "You cant authorize a card without an ID."
+          creditCardId <- (creditCardId:Box[Long]) ?~! "You cant authorize a card without an ID."
         } yield {
-          meta.authorize(credit_card_id)
+          meta.authorize(creditCardId)
         }
       }
     }
@@ -95,9 +95,9 @@ package me.frmr.wepay.api {
      * Authorize a card for use sometime in the future. Use this if you're not going to
      * immediately run a checkout with the credit card.
      *
-     * @param credit_card_id The ID of the credit card to authorize.
+     * @param creditCardId The ID of the credit card to authorize.
     **/
-    def authorize(credit_card_id:Long) = {
+    def authorize(creditCardId:Long) = {
       unwrapBoxOfFuture {
         for {
           clientId <- WePay.clientId
@@ -105,8 +105,8 @@ package me.frmr.wepay.api {
         } yield {
           resultRetrievalQuery(Some("authorize"),
                       ("client_id" -> clientId) ~
-                      ("client_secret" -> clientSecret) ~
-                      ("credit_card_id" -> credit_card_id))
+                      ("clientSecret" -> clientSecret) ~
+                      ("creditCardId" -> creditCardId))
         }
       }
     }
@@ -120,7 +120,7 @@ package me.frmr.wepay.api {
       unwrapBoxOfFuture {
         for {
           clientId <- WePay.clientId
-          request = ("client_id" -> clientId) ~ decomposedObject
+          request = ("clientId" -> clientId) ~ decomposedObject
         } yield {
           resultRetrievalQuery(Some("create"), request)
         }
