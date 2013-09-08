@@ -18,12 +18,12 @@ package me.frmr.wepay.api {
    * and allows you to pragmatically manipulate elements shuch at the theme of your pages and
    * analytics tracking codes.
    *
-   * @param client_id The client ID of the application.
+   * @param clientId The client ID of the application.
    * @param state The approval state of the application.
-   * @param theme_object An object describing the current theme of the application.
-   * @param gaq_domains A list of UA-XXXX code for analytics tracking.
+   * @param themeObject An object describing the current theme of the application.
+   * @param gaqDomains A list of UA-XXXX code for analytics tracking.
   **/
-  case class App(client_id:Long, state:String, theme_object:JObject, gaq_domains:List[String]) extends WePayResource[App] {
+  case class App(clientId:Long, state:String, themeObject:JObject, gaqDomains:List[String]) extends WePayResource[App] {
     val meta = App
 
     /**
@@ -54,8 +54,8 @@ package me.frmr.wepay.api {
           secret <- WePay.clientSecret
         } yield {
           query(None, (
-            ("client_id" -> id) ~
-            ("client_secret" -> secret)
+            ("clientId" -> id) ~
+            ("clientSecret" -> secret)
           ))
         }
       }
@@ -84,7 +84,7 @@ package me.frmr.wepay.api {
           secret <- WePay.clientSecret
         } yield {
           query(Some("modify"), (
-            ("client_secret" -> secret) ~
+            ("clientSecret" -> secret) ~
             decomposedObject
           ))
         }
