@@ -22,8 +22,8 @@ package me.frmr.wepay.api {
         val saveResponse = Await.result(Withdrawal(testAccountId).save, 1 minute)
 
         assert(saveResponse match {
-          case Full(WithdrawalResponse(withdrawal_id, _)) =>
-            testWithdrawalId = withdrawal_id
+          case Full(WithdrawalResponse(withdrawalId, _)) =>
+            testWithdrawalId = withdrawalId
             true
           case resp @ _ =>
             false

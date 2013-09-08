@@ -2,31 +2,31 @@ package me.frmr.wepay.api {
   import net.liftweb.json._
     import JsonDSL._
 
-  case class WithdrawalResponse(withdrawal_id:Long, withdrawal_uri:Option[String] = None)
+  case class WithdrawalResponse(withdrawalId: Long, withdrawalUri: Option[String] = None)
 
   /**
    * Represents an instance of a Withdrawal.
    *
-   * @param account_id The WePay Account ID associated with the Withdrawal.
+   * @param accountId The WePay Account ID associated with the Withdrawal.
    * @param amount The withdrawal amount.
-   * @param redirect_uri The URI to redirect users to when finishing the Withdraw flow.
-   * @param callback_uri The URI for WePay to send IPN messages to.
+   * @param redirectUri The URI to redirect users to when finishing the Withdraw flow.
+   * @param callbackUri The URI for WePay to send IPN messages to.
    * @param note The note to be attached to the withdrawal.
-   * @param withdrawal_id The ID of the Withdrawal on WePay's system. This should only be populated by WePay.
+   * @param withdrawalId The ID of the Withdrawal on WePay's system. This should only be populated by WePay.
    * @param state The current state of the Withdrawal.
-   * @param withdrawal_uri URI to view the Withdrawal on WePay's site.
-   * @param recipient_confirmed Actually, I'm not entirely sure what this represents. Ooops.
-   * @param create_time The time of creation, ya dig?
+   * @param withdrawalUri URI to view the Withdrawal on WePay's site.
+   * @param recipientConfirmed Actually, I'm not entirely sure what this represents. Ooops.
+   * @param createTime The time of creation, ya dig?
    * @define THIS Withdrawal
   **/
-  case class Withdrawal(account_id:Long, amount:Option[Double] = None, redirect_uri:Option[String] = None,
-                        callback_uri:Option[String] = None, note:Option[String] = None,
-                        withdrawal_id:Option[Long] = None, state:Option[String] = None,
-                        withdrawal_uri:Option[String] = None, recipient_confirmed:Option[Boolean] = None,
-                        create_time:Option[Long] = None) extends ImmutableWePayResource[Withdrawal, WithdrawalResponse] {
+  case class Withdrawal(accountId:Long, amount:Option[Double] = None, redirectUri:Option[String] = None,
+                        callbackUri:Option[String] = None, note:Option[String] = None,
+                        withdrawalId:Option[Long] = None, state:Option[String] = None,
+                        withdrawalUri:Option[String] = None, recipientConfirmed:Option[Boolean] = None,
+                        createTime:Option[Long] = None) extends ImmutableWePayResource[Withdrawal, WithdrawalResponse] {
 
     val meta = Withdrawal
-    val _id = withdrawal_id
+    val _id = withdrawalId
   }
 
   /**
@@ -49,9 +49,9 @@ package me.frmr.wepay.api {
      * @param start The number of Withdrawals to skip in the result set. Optional.
      * @return A Box containing a List of matching Withdrawal instances.
     **/
-    def find(account_id:Long, state:Option[String] = None, limit:Option[Long] = None, start:Option[Long] = None) =
+    def find(accountId:Long, state:Option[String] = None, limit:Option[Long] = None, start:Option[Long] = None) =
       findQuery(
-        ("account_id" -> account_id) ~
+        ("accountId" -> accountId) ~
         ("state" -> state) ~
         ("limit" -> limit) ~
         ("start" -> start)
