@@ -1,0 +1,692 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Account - WePay-Scala API Reference - me.frmr.wepay.api.Account</title>
+          <meta name="description" content="Account - WePay - Scala API Reference - me.frmr.wepay.api.Account" />
+          <meta name="keywords" content="Account WePay Scala API Reference me.frmr.wepay.api.Account" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'me.frmr.wepay.api.Account$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <a href="Account.html" title="Go to companion"><img src="../../../../lib/object_to_class_big.png" /></a>
+        <p id="owner"><a href="../../../package.html" class="extype" name="me">me</a>.<a href="../../package.html" class="extype" name="me.frmr">frmr</a>.<a href="../package.html" class="extype" name="me.frmr.wepay">wepay</a>.<a href="package.html" class="extype" name="me.frmr.wepay.api">api</a></p>
+        <h1><a href="Account.html" title="Go to companion">Account</a></h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Account</span><span class="result"> extends <a href="MutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta">MutableWePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>, <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Meta object for finding and manipulating Account instances on WePay.</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="MutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta">MutableWePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>, <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>], <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>, <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>], <a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="me.frmr.wepay.api.Account"><span>Account</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="me.frmr.wepay.api.MutableWePayResourceMeta"><span>MutableWePayResourceMeta</span></li><li class="in" name="me.frmr.wepay.api.ImmutableWePayResourceMeta"><span>ImmutableWePayResourceMeta</span></li><li class="in" name="me.frmr.wepay.api.WePayResourceMeta"><span>WePayResourceMeta</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Account#balance" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="balance(accountId:Long)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[me.frmr.wepay.api.AccountResponse]]"></a>
+      <a id="balance(Long)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">balance</span><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Retrieve the balance of an account by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Retrieve the balance of an account by ID.</p><p>This method is useful if you don't already have an account instance prepared, but still
+want to check the account balance.
+</p></div><dl class="paramcmts block"><dt class="param">accountId</dt><dd class="cmt"><p>The ID of the account you wish to check.
+</p></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta#className" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="className:String"></a>
+      <a id="className:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">className</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="me.frmr.wepay.api.ImmutableWePayResourceMeta#create" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="create(instance:Model)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[CrudResponseType]]"></a>
+      <a id="create(Account)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">create</span><span class="params">(<span name="instance">instance: <a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.MutableWePayResourceMeta#delete" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="delete(instance:Model)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[CrudResponseType]]"></a>
+      <a id="delete(Account)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">delete</span><span class="params">(<span name="instance">instance: <a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Delete the Account on the server.</p><div class="fullcomment"><div class="comment cmt"><p>Delete the Account on the server.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta">MutableWePayResourceMeta</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Account#extract" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="extract(json:net.liftweb.json.JValue):me.frmr.wepay.api.Account"></a>
+      <a id="extract(JValue):Account"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">extract</span><span class="params">(<span name="json">json: <span class="extype" name="net.liftweb.json.JValue">JValue</span></span>)</span><span class="result">: <a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="me.frmr.wepay.api.Account">Account</a> → <a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Account#extractCrudResponse" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="extractCrudResponse(json:net.liftweb.json.JValue):me.frmr.wepay.api.AccountResponse"></a>
+      <a id="extractCrudResponse(JValue):AccountResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">extractCrudResponse</span><span class="params">(<span name="json">json: <span class="extype" name="net.liftweb.json.JValue">JValue</span></span>)</span><span class="result">: <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="me.frmr.wepay.api.Account">Account</a> → <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Account#extractFindResults" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="extractFindResults(json:net.liftweb.json.JValue):List[me.frmr.wepay.api.Account]"></a>
+      <a id="extractFindResults(JValue):List[Account]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">extractFindResults</span><span class="params">(<span name="json">json: <span class="extype" name="net.liftweb.json.JValue">JValue</span></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="me.frmr.wepay.api.Account">Account</a> → <a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Account#find" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="find(name:Option[String],referenceId:Option[String])(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[List[me.frmr.wepay.api.Account]]]"></a>
+      <a id="find(Option[String],Option[String])(Option[WePayToken]):Future[Box[List[Account]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">find</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<span class="extype" name="scala.List">List</span>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>]]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Find an account by name or reference_id.</p><div class="fullcomment"><div class="comment cmt"><p>Find an account by name or reference_id. One of the two fields must be specified, or WePay
+will return a failure.
+</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>The name of the account to search for.</p></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta#find" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="find(id:Long)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[Model]]"></a>
+      <a id="find(Long)(Option[WePayToken]):Future[Box[Account]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">find</span><span class="params">(<span name="id">id: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Find a Account in WePay's system by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Find a Account in WePay's system by ID.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta#findQuery" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="findQuery(searchParameters:net.liftweb.json.JValue)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[List[Model]]]"></a>
+      <a id="findQuery(JValue)(Option[WePayToken]):Future[Box[List[Account]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findQuery</span><span class="params">(<span name="searchParameters">searchParameters: <span class="extype" name="net.liftweb.json.JValue">JValue</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>] = <span class="symbol">None</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<span class="extype" name="scala.List">List</span>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>]]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Run a search for all Account matching the searchParameters.</p><div class="fullcomment"><div class="comment cmt"><p>Run a search for all Account matching the searchParameters.
+</p></div><dl class="paramcmts block"><dt class="param">searchParameters</dt><dd class="cmt"><p>The lift-json JValue representing the search parameters.
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta#formats" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formats:net.liftweb.json.Formats"></a>
+      <a id="formats:Formats"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">formats</span><span class="result">: <span class="extype" name="net.liftweb.json.Formats">Formats</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Account#getTax" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getTax(accountId:Long)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[me.frmr.wepay.api.AccountResponse]]"></a>
+      <a id="getTax(Long)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getTax</span><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Retrieve tax settings for an account by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Retrieve tax settings for an account by ID.</p><p>This method is useful for checking the tax settings on an account when all
+you have is the ID.
+</p></div><dl class="paramcmts block"><dt class="param">accountId</dt><dd class="cmt"><p>The Account ID for which you would like to check the tax settings.
+</p></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.MutableWePayResourceMeta#modify" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="modify(instance:Model)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[CrudResponseType]]"></a>
+      <a id="modify(Account)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">modify</span><span class="params">(<span name="instance">instance: <a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="MutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta">MutableWePayResourceMeta</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta#query" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="query(action:Option[String],requestBody:net.liftweb.json.JValue)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[Model]]"></a>
+      <a id="query(Option[String],JValue)(Option[WePayToken]):Future[Box[Account]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">query</span><span class="params">(<span name="action">action: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="requestBody">requestBody: <span class="extype" name="net.liftweb.json.JValue">JValue</span> = <span class="symbol">JObject(Nil)</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>] = <span class="symbol">None</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Run a query against the the child class resource using a JValue that will result in a Box[JValue].</p><div class="fullcomment"><div class="comment cmt"><p>Run a query against the the child class resource using a JValue that will result in a Box[JValue].
+</p></div><dl class="paramcmts block"><dt class="param">action</dt><dd class="cmt"><p>The action on the child class to request.</p></dd><dt class="param">requestBody</dt><dd class="cmt"><p>The JValue object representing the request payload.
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta#resource" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource:String"></a>
+      <a id="resource:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resource</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta#resourceIdentifier" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resourceIdentifier:String"></a>
+      <a id="resourceIdentifier:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resourceIdentifier</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.ImmutableWePayResourceMeta#resultRetrievalQuery" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resultRetrievalQuery(action:Option[String],requestBody:net.liftweb.json.JValue)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[CrudResponseType]]"></a>
+      <a id="resultRetrievalQuery(Option[String],JValue)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resultRetrievalQuery</span><span class="params">(<span name="action">action: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="requestBody">requestBody: <span class="extype" name="net.liftweb.json.JValue">JValue</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>] = <span class="symbol">None</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Run some query against WePay that will result in a a Full Box containing AccountResponse on success, or a
+Failure on error.</p><div class="fullcomment"><div class="comment cmt"><p>Run some query against WePay that will result in a a Full Box containing AccountResponse on success, or a
+Failure on error.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.MutableWePayResourceMeta#save" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="save(instance:Model)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[CrudResponseType]]"></a>
+      <a id="save(Account)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">save</span><span class="params">(<span name="instance">instance: <a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Create the Account on the server if it does not exist.</p><div class="fullcomment"><div class="comment cmt"><p>Create the Account on the server if it does not exist. If it does exist, update it.
+</p></div><dl class="paramcmts block"><dt class="param">instance</dt><dd class="cmt"><p>The Account to save.
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta">MutableWePayResourceMeta</a> → <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Account#setTax" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setTax(accountId:Long,taxes:net.liftweb.json.JArray)(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[me.frmr.wepay.api.AccountResponse]]"></a>
+      <a id="setTax(Long,JArray)(Option[WePayToken]):Future[Box[AccountResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setTax</span><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>, <span name="taxes">taxes: <span class="extype" name="net.liftweb.json.JArray">JArray</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Set the tax settings on an account by ID.</p><div class="fullcomment"><div class="comment cmt"><p>Set the tax settings on an account by ID.</p><p>This method is useful if you don't already have an account instance prepared, but still
+want to set the tax settings. Tax settings are passed in as described in Account.setTax().
+</p></div><dl class="paramcmts block"><dt class="param">accountId</dt><dd class="cmt"><p>The account ID for which you would like to set the tax settings.</p></dd><dt class="param">taxes</dt><dd class="cmt"><p>The tax settings you wish to set.
+</p></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="me.frmr.wepay.api.MutableWePayResourceMeta">
+              <h3>Inherited from <a href="MutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta">MutableWePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>, <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]</h3>
+            </div><div class="parent" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">
+              <h3>Inherited from <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>, <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>]</h3>
+            </div><div class="parent" name="me.frmr.wepay.api.WePayResourceMeta">
+              <h3>Inherited from <a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

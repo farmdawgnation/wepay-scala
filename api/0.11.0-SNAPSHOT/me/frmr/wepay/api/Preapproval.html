@@ -1,0 +1,746 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Preapproval - WePay-Scala API Reference - me.frmr.wepay.api.Preapproval</title>
+          <meta name="description" content="Preapproval - WePay - Scala API Reference - me.frmr.wepay.api.Preapproval" />
+          <meta name="keywords" content="Preapproval WePay Scala API Reference me.frmr.wepay.api.Preapproval" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'me.frmr.wepay.api.Preapproval';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="Preapproval$.html" title="Go to companion"><img src="../../../../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="../../../package.html" class="extype" name="me">me</a>.<a href="../../package.html" class="extype" name="me.frmr">frmr</a>.<a href="../package.html" class="extype" name="me.frmr.wepay">wepay</a>.<a href="package.html" class="extype" name="me.frmr.wepay.api">api</a></p>
+        <h1><a href="Preapproval$.html" title="Go to companion">Preapproval</a></h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Preapproval</span><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>, <span name="amount">amount: <span class="extype" name="scala.Double">Double</span></span>, <span name="shortDescription">shortDescription: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="period">period: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="preapprovalId">preapprovalId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="appFee">appFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="feePayer">feePayer: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="redirectUri">redirectUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="callbackUri">callbackUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="requireShipping">requireShipping: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="shippingFee">shippingFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="chargeTax">chargeTax: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="payerEmailMessage">payerEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="payeeEmailMessage">payeeEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="longDescription">longDescription: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="frequency">frequency: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="startTime">startTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="endTime">endTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="autoRecur">autoRecur: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="mode">mode: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<a href="" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>, <a href="PreapprovalResponse.html" class="extype" name="me.frmr.wepay.api.PreapprovalResponse">PreapprovalResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>An instance of a WePay Preapproval.</p><p>Preapprovals are used to, well, preapprove payments within a certain date range and amount.
+Useful for kickstarter-like applications or subscription-based services.
+</p></div><dl class="paramcmts block"><dt class="param">accountId</dt><dd class="cmt"><p>The Account ID that will be receiving the payment from this preapproval.</p></dd><dt class="param">shortDescription</dt><dd class="cmt"><p>The short description of what the user will be paying for.</p></dd><dt class="param">period</dt><dd class="cmt"><p>How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.</p></dd><dt class="param">preapprovalId</dt><dd class="cmt"><p>The preapproval ID assigned by WePay. Should rarely ever be set by your app.</p></dd><dt class="param">referenceId</dt><dd class="cmt"><p>The reference ID of the preapproval. Should be unique per app per account.</p></dd><dt class="param">appFee</dt><dd class="cmt"><p>The fee your application will take on this transaction.</p></dd><dt class="param">feePayer</dt><dd class="cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></dd><dt class="param">redirectUri</dt><dd class="cmt"><p>The URI that the user will be redirected to for completing the Preapproval flow.</p></dd><dt class="param">callbackUri</dt><dd class="cmt"><p>The URI that IPN notifications will be directed to.</p></dd><dt class="param">requireShipping</dt><dd class="cmt"><p>If true, the user will be required to enter shipping information.</p></dd><dt class="param">shippingFee</dt><dd class="cmt"><p>The fee for shipping.</p></dd><dt class="param">chargeTax</dt><dd class="cmt"><p>If set to true, tax will be charged.</p></dd><dt class="param">payerEmailMessage</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payer.</p></dd><dt class="param">payeeEmailMessage</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payee.</p></dd><dt class="param">longDescription</dt><dd class="cmt"><p>The long description of the transaction.</p></dd><dt class="param">frequency</dt><dd class="cmt"><p>The number of times this preapproval can be used per period.</p></dd><dt class="param">startTime</dt><dd class="cmt"><p>When the API can start charging using this preapproval.</p></dd><dt class="param">endTime</dt><dd class="cmt"><p>The date the API can no longer charge using this preapproval.</p></dd><dt class="param">autoRecur</dt><dd class="cmt"><p>Determines whether or not this is an auto-recurring Peapproval.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The state of the Preapproval.</p></dd><dt class="param">mode</dt><dd class="cmt"><p>The mode the preapproval will run in. Can be &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.
+</p></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<a href="" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>, <a href="PreapprovalResponse.html" class="extype" name="me.frmr.wepay.api.PreapprovalResponse">PreapprovalResponse</a>], <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a>[<a href="" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="me.frmr.wepay.api.Preapproval"><span>Preapproval</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="me.frmr.wepay.api.ImmutableWePayResource"><span>ImmutableWePayResource</span></li><li class="in" name="me.frmr.wepay.api.WePayResource"><span>WePayResource</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="me.frmr.wepay.api.Preapproval#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(accountId:Long,amount:Double,shortDescription:String,period:String,preapprovalId:Option[Long],referenceId:Option[String],appFee:Option[Double],feePayer:Option[String],redirectUri:Option[String],callbackUri:Option[String],requireShipping:Option[Boolean],shippingFee:Option[Double],chargeTax:Option[Boolean],payerEmailMessage:Option[String],payeeEmailMessage:Option[String],longDescription:Option[String],frequency:Option[Int],startTime:Option[org.joda.time.DateTime],endTime:Option[org.joda.time.DateTime],autoRecur:Option[Boolean],state:Option[String],mode:Option[String]):me.frmr.wepay.api.Preapproval"></a>
+      <a id="&lt;init&gt;:Preapproval"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Preapproval</span><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>, <span name="amount">amount: <span class="extype" name="scala.Double">Double</span></span>, <span name="shortDescription">shortDescription: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="period">period: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="preapprovalId">preapprovalId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="appFee">appFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="feePayer">feePayer: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="redirectUri">redirectUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="callbackUri">callbackUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="requireShipping">requireShipping: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="shippingFee">shippingFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="chargeTax">chargeTax: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="payerEmailMessage">payerEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="payeeEmailMessage">payeeEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="longDescription">longDescription: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="frequency">frequency: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="startTime">startTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="endTime">endTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="autoRecur">autoRecur: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="mode">mode: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">accountId</dt><dd class="cmt"><p>The Account ID that will be receiving the payment from this preapproval.</p></dd><dt class="param">shortDescription</dt><dd class="cmt"><p>The short description of what the user will be paying for.</p></dd><dt class="param">period</dt><dd class="cmt"><p>How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.</p></dd><dt class="param">preapprovalId</dt><dd class="cmt"><p>The preapproval ID assigned by WePay. Should rarely ever be set by your app.</p></dd><dt class="param">referenceId</dt><dd class="cmt"><p>The reference ID of the preapproval. Should be unique per app per account.</p></dd><dt class="param">appFee</dt><dd class="cmt"><p>The fee your application will take on this transaction.</p></dd><dt class="param">feePayer</dt><dd class="cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></dd><dt class="param">redirectUri</dt><dd class="cmt"><p>The URI that the user will be redirected to for completing the Preapproval flow.</p></dd><dt class="param">callbackUri</dt><dd class="cmt"><p>The URI that IPN notifications will be directed to.</p></dd><dt class="param">requireShipping</dt><dd class="cmt"><p>If true, the user will be required to enter shipping information.</p></dd><dt class="param">shippingFee</dt><dd class="cmt"><p>The fee for shipping.</p></dd><dt class="param">chargeTax</dt><dd class="cmt"><p>If set to true, tax will be charged.</p></dd><dt class="param">payerEmailMessage</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payer.</p></dd><dt class="param">payeeEmailMessage</dt><dd class="cmt"><p>A message from you that will be included in the confirmation email to the payee.</p></dd><dt class="param">longDescription</dt><dd class="cmt"><p>The long description of the transaction.</p></dd><dt class="param">frequency</dt><dd class="cmt"><p>The number of times this preapproval can be used per period.</p></dd><dt class="param">startTime</dt><dd class="cmt"><p>When the API can start charging using this preapproval.</p></dd><dt class="param">endTime</dt><dd class="cmt"><p>The date the API can no longer charge using this preapproval.</p></dd><dt class="param">autoRecur</dt><dd class="cmt"><p>Determines whether or not this is an auto-recurring Peapproval.</p></dd><dt class="param">state</dt><dd class="cmt"><p>The state of the Preapproval.</p></dd><dt class="param">mode</dt><dd class="cmt"><p>The mode the preapproval will run in. Can be &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.
+</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#_id" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_id:Option[Long]"></a>
+      <a id="_id:Option[Long]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">_id</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a> → <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#accountId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="accountId:Long"></a>
+      <a id="accountId:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">accountId</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The Account ID that will be receiving the payment from this preapproval.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#amount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="amount:Double"></a>
+      <a id="amount:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">amount</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="me.frmr.wepay.api.Preapproval#appFee" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="appFee:Option[Double]"></a>
+      <a id="appFee:Option[Double]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">appFee</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The fee your application will take on this transaction.</p>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#autoRecur" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="autoRecur:Option[Boolean]"></a>
+      <a id="autoRecur:Option[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">autoRecur</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines whether or not this is an auto-recurring Peapproval.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#callbackUri" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="callbackUri:Option[String]"></a>
+      <a id="callbackUri:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">callbackUri</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The URI that IPN notifications will be directed to.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#cancel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cancel(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[me.frmr.wepay.api.PreapprovalResponse]]"></a>
+      <a id="cancel(Option[WePayToken]):Future[Box[PreapprovalResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cancel</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="PreapprovalResponse.html" class="extype" name="me.frmr.wepay.api.PreapprovalResponse">PreapprovalResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Cancel the preapproval.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#chargeTax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="chargeTax:Option[Boolean]"></a>
+      <a id="chargeTax:Option[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">chargeTax</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">If set to true, tax will be charged.</p>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#endTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="endTime:Option[org.joda.time.DateTime]"></a>
+      <a id="endTime:Option[DateTime]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">endTime</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The date the API can no longer charge using this preapproval.</p>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#feePayer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="feePayer:Option[String]"></a>
+      <a id="feePayer:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">feePayer</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The person who pays transaction fee.</p><div class="fullcomment"><div class="comment cmt"><p>The person who pays transaction fee. One of &quot;Payee&quot; or &quot;Payer&quot;. Defaults to &quot;Payer&quot;.</p></div></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#frequency" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="frequency:Option[Int]"></a>
+      <a id="frequency:Option[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">frequency</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The number of times this preapproval can be used per period.</p>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#longDescription" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="longDescription:Option[String]"></a>
+      <a id="longDescription:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">longDescription</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The long description of the transaction.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#meta" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="meta:me.frmr.wepay.api.Preapproval.type"></a>
+      <a id="meta:Preapproval.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">meta</span><span class="result">: <a href="Preapproval$.html" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>.type</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a> → <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a> → <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#mode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mode:Option[String]"></a>
+      <a id="mode:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mode</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The mode the preapproval will run in.</p><div class="fullcomment"><div class="comment cmt"><p>The mode the preapproval will run in. Can be &quot;regular&quot; or &quot;iframe&quot;. Defaults to &quot;regular&quot;.
+</p></div></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#payeeEmailMessage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="payeeEmailMessage:Option[String]"></a>
+      <a id="payeeEmailMessage:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">payeeEmailMessage</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">A message from you that will be included in the confirmation email to the payee.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#payerEmailMessage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="payerEmailMessage:Option[String]"></a>
+      <a id="payerEmailMessage:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">payerEmailMessage</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">A message from you that will be included in the confirmation email to the payer.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#period" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="period:String"></a>
+      <a id="period:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">period</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">How frequently the user can be charged.</p><div class="fullcomment"><div class="comment cmt"><p>How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.</p></div></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#preapprovalId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preapprovalId:Option[Long]"></a>
+      <a id="preapprovalId:Option[Long]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">preapprovalId</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The preapproval ID assigned by WePay.</p><div class="fullcomment"><div class="comment cmt"><p>The preapproval ID assigned by WePay. Should rarely ever be set by your app.</p></div></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#redirectUri" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="redirectUri:Option[String]"></a>
+      <a id="redirectUri:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">redirectUri</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The URI that the user will be redirected to for completing the Preapproval flow.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#referenceId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="referenceId:Option[String]"></a>
+      <a id="referenceId:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">referenceId</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The reference ID of the preapproval.</p><div class="fullcomment"><div class="comment cmt"><p>The reference ID of the preapproval. Should be unique per app per account.</p></div></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#requireShipping" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="requireShipping:Option[Boolean]"></a>
+      <a id="requireShipping:Option[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requireShipping</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">If true, the user will be required to enter shipping information.</p>
+    </li><li name="me.frmr.wepay.api.ImmutableWePayResource#save" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="save(implicitauthorizationToken:Option[me.frmr.wepay.WePayToken]):scala.concurrent.Future[net.liftweb.common.Box[CrudResponseType]]"></a>
+      <a id="save(Option[WePayToken]):Future[Box[PreapprovalResponse]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">save</span><span class="params">(<span class="implicit">implicit </span><span name="authorizationToken">authorizationToken: <span class="extype" name="scala.Option">Option</span>[<a href="../WePayToken.html" class="extype" name="me.frmr.wepay.WePayToken">WePayToken</a>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="net.liftweb.common.Box">Box</span>[<a href="PreapprovalResponse.html" class="extype" name="me.frmr.wepay.api.PreapprovalResponse">PreapprovalResponse</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Save an instance of the Preapproval to WePay's server.</p><div class="fullcomment"><div class="comment cmt"><p>Save an instance of the Preapproval to WePay's server. If the Preapproval already exists, this will result in a Failure.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a></dd></dl></div>
+    </li><li name="me.frmr.wepay.api.Preapproval#shippingFee" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="shippingFee:Option[Double]"></a>
+      <a id="shippingFee:Option[Double]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shippingFee</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The fee for shipping.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#shortDescription" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="shortDescription:String"></a>
+      <a id="shortDescription:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shortDescription</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The short description of what the user will be paying for.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#startTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="startTime:Option[org.joda.time.DateTime]"></a>
+      <a id="startTime:Option[DateTime]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">startTime</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">When the API can start charging using this preapproval.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval#state" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="state:Option[String]"></a>
+      <a id="state:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">state</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The state of the Preapproval.</p>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="me.frmr.wepay.api.ImmutableWePayResource">
+              <h3>Inherited from <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<a href="" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>, <a href="PreapprovalResponse.html" class="extype" name="me.frmr.wepay.api.PreapprovalResponse">PreapprovalResponse</a>]</h3>
+            </div><div class="parent" name="me.frmr.wepay.api.WePayResource">
+              <h3>Inherited from <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a>[<a href="" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

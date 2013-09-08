@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>api - WePay-Scala API Reference - me.frmr.wepay.api</title>
+          <meta name="description" content="api - WePay - Scala API Reference - me.frmr.wepay.api" />
+          <meta name="keywords" content="api WePay Scala API Reference me.frmr.wepay.api" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'me.frmr.wepay.api.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="me">me</a>.<a href="../../package.html" class="extype" name="me.frmr">frmr</a>.<a href="../package.html" class="extype" name="me.frmr.wepay">wepay</a></p>
+        <h1>api</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">api</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="me.frmr.wepay.api.Account" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AccountextendsMutableWePayResource[me.frmr.wepay.api.Account,me.frmr.wepay.api.AccountResponse]withProductwithSerializable"></a>
+      <a id="Account:Account"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Account.html"><span class="name">Account</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="accountId">accountId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="imageUri">imageUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="paymentLimit">paymentLimit: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="gaqDomains">gaqDomains: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="MutableWePayResource.html" class="extype" name="me.frmr.wepay.api.MutableWePayResource">MutableWePayResource</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>, <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An instance of an Account.</p>
+    </li><li name="me.frmr.wepay.api.AccountResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AccountResponseextendsProductwithSerializable"></a>
+      <a id="AccountResponse:AccountResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AccountResponse.html"><span class="name">AccountResponse</span></a><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="description">description: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="accountUri">accountUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="paymentLimit">paymentLimit: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="gaqDomains">gaqDomains: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]] = <span class="symbol">scala.None</span></span>, <span name="pendingBalance">pendingBalance: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="availableBalance">availableBalance: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="currency">currency: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The response type for Account API operations that don't return an Account, or some variation thereof.</p>
+    </li><li name="me.frmr.wepay.api.App" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AppextendsWePayResource[me.frmr.wepay.api.App]withProductwithSerializable"></a>
+      <a id="App:App"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="App.html"><span class="name">App</span></a><span class="params">(<span name="clientId">clientId: <span class="extype" name="scala.Long">Long</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="themeObject">themeObject: <span class="extype" name="net.liftweb.json.JObject">JObject</span></span>, <span name="gaqDomains">gaqDomains: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a>[<a href="App.html" class="extype" name="me.frmr.wepay.api.App">App</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Class describing instances of the App resource on WePay.</p>
+    </li><li name="me.frmr.wepay.api.Checkout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CheckoutextendsImmutableWePayResource[me.frmr.wepay.api.Checkout,me.frmr.wepay.api.CheckoutResponse]withProductwithSerializable"></a>
+      <a id="Checkout:Checkout"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Checkout.html"><span class="name">Checkout</span></a><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>, <span name="shortDescription">shortDescription: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="type">type: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="amount">amount: <span class="extype" name="scala.Double">Double</span></span>, <span name="checkoutId">checkoutId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="longDescription">longDescription: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="payerEmailMessage">payerEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="payeeEmailMessage">payeeEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="appFee">appFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="feePayer">feePayer: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="redirectUri">redirectUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="callbackUri">callbackUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="autoCapture">autoCapture: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="requireShipping">requireShipping: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="shippingFee">shippingFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="chargeTax">chargeTax: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="mode">mode: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="prefillInfo">prefillInfo: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="net.liftweb.json.JObject">JObject</span>] = <span class="symbol">scala.None</span></span>, <span name="fundingSources">fundingSources: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="authorization">authorization: <span class="extype" name="scala.Option">Option</span>[<a href="CheckoutAuthorization.html" class="extype" name="me.frmr.wepay.api.CheckoutAuthorization">CheckoutAuthorization</a>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<a href="Checkout.html" class="extype" name="me.frmr.wepay.api.Checkout">Checkout</a>, <a href="CheckoutResponse.html" class="extype" name="me.frmr.wepay.api.CheckoutResponse">CheckoutResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An instance of the Checkout class.</p>
+    </li><li name="me.frmr.wepay.api.CheckoutAuthorization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CheckoutAuthorizationextendsProductwithSerializable"></a>
+      <a id="CheckoutAuthorization:CheckoutAuthorization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CheckoutAuthorization.html"><span class="name">CheckoutAuthorization</span></a><span class="params">(<span name="preapprovalId">preapprovalId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="paymentMethodId">paymentMethodId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="paymentMethodType">paymentMethodType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Case class representing a payment authorization from the preapproval or tokenization API.</p>
+    </li><li name="me.frmr.wepay.api.CheckoutResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CheckoutResponseextendsProductwithSerializable"></a>
+      <a id="CheckoutResponse:CheckoutResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CheckoutResponse.html"><span class="name">CheckoutResponse</span></a><span class="params">(<span name="checkoutId">checkoutId: <span class="extype" name="scala.Long">Long</span></span>, <span name="checkoutUri">checkoutUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The response type for API operations that don't return an instance of Checkout, or some variation
+thereof.</p>
+    </li><li name="me.frmr.wepay.api.CreditCard" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CreditCardextendsImmutableWePayResource[me.frmr.wepay.api.CreditCard,me.frmr.wepay.api.CreditCardResponse]withProductwithSerializable"></a>
+      <a id="CreditCard:CreditCard"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CreditCard.html"><span class="name">CreditCard</span></a><span class="params">(<span name="userName">userName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="email">email: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ccNumber">ccNumber: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="cvv">cvv: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="expirationMonth">expirationMonth: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="expirationYear">expirationYear: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="address">address: <span class="extype" name="scala.Option">Option</span>[<a href="CreditCardAddress.html" class="extype" name="me.frmr.wepay.api.CreditCardAddress">CreditCardAddress</a>] = <span class="symbol">scala.None</span></span>, <span name="creditCardId">creditCardId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="creditCardName">creditCardName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<a href="CreditCard.html" class="extype" name="me.frmr.wepay.api.CreditCard">CreditCard</a>, <a href="CreditCardResponse.html" class="extype" name="me.frmr.wepay.api.CreditCardResponse">CreditCardResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An instance of a Credit Card on WePay.</p>
+    </li><li name="me.frmr.wepay.api.CreditCardAddress" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CreditCardAddressextendsProductwithSerializable"></a>
+      <a id="CreditCardAddress:CreditCardAddress"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CreditCardAddress.html"><span class="name">CreditCardAddress</span></a><span class="params">(<span name="address1">address1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="address2">address2: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="city">city: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="country">country: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zip">zip: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A case class representing a billing address associated with the
+credit card.</p>
+    </li><li name="me.frmr.wepay.api.CreditCardResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CreditCardResponseextendsProductwithSerializable"></a>
+      <a id="CreditCardResponse:CreditCardResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CreditCardResponse.html"><span class="name">CreditCardResponse</span></a><span class="params">(<span name="creditCardId">creditCardId: <span class="extype" name="scala.Long">Long</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Models a response from the credit_card API endpoints that don't
+return an instance of a Credit Card.</p>
+    </li><li name="me.frmr.wepay.api.ImmutableWePayResource" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImmutableWePayResource[MyType&lt;:me.frmr.wepay.api.ImmutableWePayResource[MyType,CrudResponseType],CrudResponseType]extendsWePayResource[MyType]"></a>
+      <a id="ImmutableWePayResource[MyType&lt;:ImmutableWePayResource[MyType,CrudResponseType],CrudResponseType]:ImmutableWePayResource[MyType,CrudResponseType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ImmutableWePayResource.html"><span class="name">ImmutableWePayResource</span></a><span class="tparams">[<span name="MyType">MyType &lt;: <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<span class="extype" name="me.frmr.wepay.api.ImmutableWePayResource.MyType">MyType</span>, <span class="extype" name="me.frmr.wepay.api.ImmutableWePayResource.CrudResponseType">CrudResponseType</span>]</span>, <span name="CrudResponseType">CrudResponseType</span>]</span><span class="result"> extends <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a>[<span class="extype" name="me.frmr.wepay.api.ImmutableWePayResource.MyType">MyType</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">This is the parent class of WePayResources that can be saved to the server, but cannot be modified after
+their initial save.</p>
+    </li><li name="me.frmr.wepay.api.ImmutableWePayResourceMeta" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImmutableWePayResourceMeta[Model&lt;:me.frmr.wepay.api.ImmutableWePayResource[Model,CrudResponseType],CrudResponseType]extendsWePayResourceMeta[Model]"></a>
+      <a id="ImmutableWePayResourceMeta[Model&lt;:ImmutableWePayResource[Model,CrudResponseType],CrudResponseType]:ImmutableWePayResourceMeta[Model,CrudResponseType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ImmutableWePayResourceMeta.html"><span class="name">ImmutableWePayResourceMeta</span></a><span class="tparams">[<span name="Model">Model &lt;: <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<span class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta.Model">Model</span>, <span class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta.CrudResponseType">CrudResponseType</span>]</span>, <span name="CrudResponseType">CrudResponseType</span>]</span><span class="result"> extends <a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a>[<span class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta.Model">Model</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Children of this trait are meta objects used to find or save resource instances that cannot be modified
+after their creation.</p>
+    </li><li name="me.frmr.wepay.api.MutableWePayResource" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MutableWePayResource[MyType&lt;:me.frmr.wepay.api.MutableWePayResource[MyType,CrudResponseType],CrudResponseType]extendsImmutableWePayResource[MyType,CrudResponseType]"></a>
+      <a id="MutableWePayResource[MyType&lt;:MutableWePayResource[MyType,CrudResponseType],CrudResponseType]:MutableWePayResource[MyType,CrudResponseType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MutableWePayResource.html"><span class="name">MutableWePayResource</span></a><span class="tparams">[<span name="MyType">MyType &lt;: <a href="MutableWePayResource.html" class="extype" name="me.frmr.wepay.api.MutableWePayResource">MutableWePayResource</a>[<span class="extype" name="me.frmr.wepay.api.MutableWePayResource.MyType">MyType</span>, <span class="extype" name="me.frmr.wepay.api.MutableWePayResource.CrudResponseType">CrudResponseType</span>]</span>, <span name="CrudResponseType">CrudResponseType</span>]</span><span class="result"> extends <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<span class="extype" name="me.frmr.wepay.api.MutableWePayResource.MyType">MyType</span>, <span class="extype" name="me.frmr.wepay.api.MutableWePayResource.CrudResponseType">CrudResponseType</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">This trait defines those resources that can be altered and deleted after creation.</p>
+    </li><li name="me.frmr.wepay.api.MutableWePayResourceMeta" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MutableWePayResourceMeta[Model&lt;:me.frmr.wepay.api.MutableWePayResource[Model,CrudResponseType],CrudResponseType]extendsImmutableWePayResourceMeta[Model,CrudResponseType]"></a>
+      <a id="MutableWePayResourceMeta[Model&lt;:MutableWePayResource[Model,CrudResponseType],CrudResponseType]:MutableWePayResourceMeta[Model,CrudResponseType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MutableWePayResourceMeta.html"><span class="name">MutableWePayResourceMeta</span></a><span class="tparams">[<span name="Model">Model &lt;: <a href="MutableWePayResource.html" class="extype" name="me.frmr.wepay.api.MutableWePayResource">MutableWePayResource</a>[<span class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta.Model">Model</span>, <span class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta.CrudResponseType">CrudResponseType</span>]</span>, <span name="CrudResponseType">CrudResponseType</span>]</span><span class="result"> extends <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a>[<span class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta.Model">Model</span>, <span class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta.CrudResponseType">CrudResponseType</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">This trait defined the meta behavior for MutableWePayResources, and can be used to find and manipulate them.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PreapprovalextendsImmutableWePayResource[me.frmr.wepay.api.Preapproval,me.frmr.wepay.api.PreapprovalResponse]withProductwithSerializable"></a>
+      <a id="Preapproval:Preapproval"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Preapproval.html"><span class="name">Preapproval</span></a><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>, <span name="amount">amount: <span class="extype" name="scala.Double">Double</span></span>, <span name="shortDescription">shortDescription: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="period">period: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="preapprovalId">preapprovalId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="referenceId">referenceId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="appFee">appFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="feePayer">feePayer: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="redirectUri">redirectUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="callbackUri">callbackUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="requireShipping">requireShipping: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="shippingFee">shippingFee: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="chargeTax">chargeTax: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="payerEmailMessage">payerEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="payeeEmailMessage">payeeEmailMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="longDescription">longDescription: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="frequency">frequency: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="startTime">startTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="endTime">endTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>] = <span class="symbol">scala.None</span></span>, <span name="autoRecur">autoRecur: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="mode">mode: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<a href="Preapproval.html" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>, <a href="PreapprovalResponse.html" class="extype" name="me.frmr.wepay.api.PreapprovalResponse">PreapprovalResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An instance of a WePay Preapproval.</p>
+    </li><li name="me.frmr.wepay.api.PreapprovalResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PreapprovalResponseextendsProductwithSerializable"></a>
+      <a id="PreapprovalResponse:PreapprovalResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="PreapprovalResponse.html"><span class="name">PreapprovalResponse</span></a><span class="params">(<span name="preapprovalId">preapprovalId: <span class="extype" name="scala.Long">Long</span></span>, <span name="preapprovalUri">preapprovalUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The response type for Preapproval operations that don't return an instance of Preapproval.</p>
+    </li><li name="me.frmr.wepay.api.User" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UserextendsWePayResource[me.frmr.wepay.api.User]withProductwithSerializable"></a>
+      <a id="User:User"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="User.html"><span class="name">User</span></a><span class="params">(<span name="userId">userId: <span class="extype" name="scala.Long">Long</span></span>, <span name="firstName">firstName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="lastName">lastName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="email">email: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a>[<a href="User.html" class="extype" name="me.frmr.wepay.api.User">User</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A class representing a User object on WePay's server.</p>
+    </li><li name="me.frmr.wepay.api.WePayResource" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WePayResource[MyType&lt;:me.frmr.wepay.api.WePayResource[MyType]]extendsAnyRef"></a>
+      <a id="WePayResource[MyType&lt;:WePayResource[MyType]]:WePayResource[MyType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WePayResource.html"><span class="name">WePayResource</span></a><span class="tparams">[<span name="MyType">MyType &lt;: <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a>[<span class="extype" name="me.frmr.wepay.api.WePayResource.MyType">MyType</span>]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The base definition for any instance of an object stored on WePay.</p>
+    </li><li name="me.frmr.wepay.api.WePayResourceMeta" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WePayResourceMeta[Model&lt;:me.frmr.wepay.api.WePayResource[Model]]extendsAnyRef"></a>
+      <a id="WePayResourceMeta[Model&lt;:WePayResource[Model]]:WePayResourceMeta[Model]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WePayResourceMeta.html"><span class="name">WePayResourceMeta</span></a><span class="tparams">[<span name="Model">Model &lt;: <a href="WePayResource.html" class="extype" name="me.frmr.wepay.api.WePayResource">WePayResource</a>[<span class="extype" name="me.frmr.wepay.api.WePayResourceMeta.Model">Model</span>]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The Meta trait paired with the base WePayResource.</p>
+    </li><li name="me.frmr.wepay.api.Withdrawal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WithdrawalextendsImmutableWePayResource[me.frmr.wepay.api.Withdrawal,me.frmr.wepay.api.WithdrawalResponse]withProductwithSerializable"></a>
+      <a id="Withdrawal:Withdrawal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Withdrawal.html"><span class="name">Withdrawal</span></a><span class="params">(<span name="accountId">accountId: <span class="extype" name="scala.Long">Long</span></span>, <span name="amount">amount: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>] = <span class="symbol">scala.None</span></span>, <span name="redirectUri">redirectUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="callbackUri">callbackUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="note">note: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="withdrawalId">withdrawalId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="state">state: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="withdrawalUri">withdrawalUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="recipientConfirmed">recipientConfirmed: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="createTime">createTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="ImmutableWePayResource.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResource">ImmutableWePayResource</a>[<a href="Withdrawal.html" class="extype" name="me.frmr.wepay.api.Withdrawal">Withdrawal</a>, <a href="WithdrawalResponse.html" class="extype" name="me.frmr.wepay.api.WithdrawalResponse">WithdrawalResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Represents an instance of a Withdrawal.</p>
+    </li><li name="me.frmr.wepay.api.WithdrawalResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WithdrawalResponseextendsProductwithSerializable"></a>
+      <a id="WithdrawalResponse:WithdrawalResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WithdrawalResponse.html"><span class="name">WithdrawalResponse</span></a><span class="params">(<span name="withdrawalId">withdrawalId: <span class="extype" name="scala.Long">Long</span></span>, <span name="withdrawalUri">withdrawalUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="me.frmr.wepay.api.Account" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Account"></a>
+      <a id="Account:Account"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Account$.html"><span class="name">Account</span></a><span class="result"> extends <a href="MutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.MutableWePayResourceMeta">MutableWePayResourceMeta</a>[<a href="Account.html" class="extype" name="me.frmr.wepay.api.Account">Account</a>, <a href="AccountResponse.html" class="extype" name="me.frmr.wepay.api.AccountResponse">AccountResponse</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Meta object for finding and manipulating Account instances on WePay.</p>
+    </li><li name="me.frmr.wepay.api.App" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="App"></a>
+      <a id="App:App"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="App$.html"><span class="name">App</span></a><span class="result"> extends <a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a>[<a href="App.html" class="extype" name="me.frmr.wepay.api.App">App</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The Meta object for accessing the App resource.</p>
+    </li><li name="me.frmr.wepay.api.Checkout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Checkout"></a>
+      <a id="Checkout:Checkout"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Checkout$.html"><span class="name">Checkout</span></a><span class="result"> extends <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a>[<a href="Checkout.html" class="extype" name="me.frmr.wepay.api.Checkout">Checkout</a>, <a href="CheckoutResponse.html" class="extype" name="me.frmr.wepay.api.CheckoutResponse">CheckoutResponse</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Meta object for finding and manipulating Checkout instances on WePay.</p>
+    </li><li name="me.frmr.wepay.api.CheckoutSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CheckoutSerializer"></a>
+      <a id="CheckoutSerializer:CheckoutSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CheckoutSerializer$.html"><span class="name">CheckoutSerializer</span></a><span class="result"> extends <span class="extype" name="net.liftweb.json.Serializer">Serializer</span>[<a href="Checkout.html" class="extype" name="me.frmr.wepay.api.Checkout">Checkout</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">The JSON Serializer and deserializer for the Checkout case class.</p>
+    </li><li name="me.frmr.wepay.api.CreditCard" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CreditCard"></a>
+      <a id="CreditCard:CreditCard"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CreditCard$.html"><span class="name">CreditCard</span></a><span class="result"> extends <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a>[<a href="CreditCard.html" class="extype" name="me.frmr.wepay.api.CreditCard">CreditCard</a>, <a href="CreditCardResponse.html" class="extype" name="me.frmr.wepay.api.CreditCardResponse">CreditCardResponse</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Meta object for manipulating CreditCard resources on WePay.</p>
+    </li><li name="me.frmr.wepay.api.Preapproval" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Preapproval"></a>
+      <a id="Preapproval:Preapproval"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Preapproval$.html"><span class="name">Preapproval</span></a><span class="result"> extends <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a>[<a href="Preapproval.html" class="extype" name="me.frmr.wepay.api.Preapproval">Preapproval</a>, <a href="PreapprovalResponse.html" class="extype" name="me.frmr.wepay.api.PreapprovalResponse">PreapprovalResponse</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The meta object for finding and manipulating Preapproval instances.</p>
+    </li><li name="me.frmr.wepay.api.User" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="User"></a>
+      <a id="User:User"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="User$.html"><span class="name">User</span></a><span class="result"> extends <a href="WePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.WePayResourceMeta">WePayResourceMeta</a>[<a href="User.html" class="extype" name="me.frmr.wepay.api.User">User</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Meta object for retrieving Users from WePay.</p>
+    </li><li name="me.frmr.wepay.api.Withdrawal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Withdrawal"></a>
+      <a id="Withdrawal:Withdrawal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Withdrawal$.html"><span class="name">Withdrawal</span></a><span class="result"> extends <a href="ImmutableWePayResourceMeta.html" class="extype" name="me.frmr.wepay.api.ImmutableWePayResourceMeta">ImmutableWePayResourceMeta</a>[<a href="Withdrawal.html" class="extype" name="me.frmr.wepay.api.Withdrawal">Withdrawal</a>, <a href="WithdrawalResponse.html" class="extype" name="me.frmr.wepay.api.WithdrawalResponse">WithdrawalResponse</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Manupluates, retrieves, and searches for Withdrawal objects on WePay's system.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

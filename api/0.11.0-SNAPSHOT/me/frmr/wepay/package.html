@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>wepay - WePay-Scala API Reference - me.frmr.wepay</title>
+          <meta name="description" content="wepay - WePay - Scala API Reference - me.frmr.wepay" />
+          <meta name="keywords" content="wepay WePay Scala API Reference me.frmr.wepay" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'me.frmr.wepay.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="me">me</a>.<a href="../package.html" class="extype" name="me.frmr">frmr</a></p>
+        <h1>wepay</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wepay</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="me.frmr.wepay.WePayError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WePayErrorextendsProductwithSerializable"></a>
+      <a id="WePayError:WePayError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WePayError.html"><span class="name">WePayError</span></a><span class="params">(<span name="error">error: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="errorDescription">errorDescription: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">This class represents an error condition returned while
+attempting to run an operation against WePay's API.</p>
+    </li><li name="me.frmr.wepay.WePayImpl" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WePayImplextendsAnyRef"></a>
+      <a id="WePayImpl:WePayImpl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WePayImpl.html"><span class="name">WePayImpl</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The base WePay implementation.</p>
+    </li><li name="me.frmr.wepay.WePayResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WePayResponseextendsProductwithSerializable"></a>
+      <a id="WePayResponse:WePayResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WePayResponse.html"><span class="name">WePayResponse</span></a><span class="params">(<span name="code">code: <span class="extype" name="scala.Int">Int</span></span>, <span name="json">json: <span class="extype" name="net.liftweb.json.JValue">JValue</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="me.frmr.wepay.WePayToken" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WePayTokenextendsProductwithSerializable"></a>
+      <a id="WePayToken:WePayToken"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WePayToken.html"><span class="name">WePayToken</span></a><span class="params">(<span name="userId">userId: <span class="extype" name="scala.Long">Long</span></span>, <span name="accessToken">accessToken: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tokenType">tokenType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="expiresIn">expiresIn: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An access token that authenticates your application to
+perform actions on behalf of a certain user on WePay's
+servers.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="me.frmr.wepay.WePay" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WePay"></a>
+      <a id="WePay:WePay"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WePay$.html"><span class="name">WePay</span></a><span class="result"> extends <a href="WePayImpl.html" class="extype" name="me.frmr.wepay.WePayImpl">WePayImpl</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The Default WePay singleton with no additional functionality
+over WePayImpl.</p>
+    </li><li name="me.frmr.wepay.WePayHelpers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WePayHelpers"></a>
+      <a id="WePayHelpers:WePayHelpers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WePayHelpers$.html"><span class="name">WePayHelpers</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="me.frmr.wepay.api" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="api"></a>
+      <a id="api:api"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="api/package.html"><span class="name">api</span></a>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
