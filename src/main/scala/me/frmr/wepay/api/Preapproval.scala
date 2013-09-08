@@ -11,11 +11,11 @@ package me.frmr.wepay.api {
   /**
    * The response type for Preapproval operations that don't return an instance of Preapproval.
    *
-   * @param preapproval_id The ID of the preapproval, assigned by WePay.
-   * @param preapproval_uri The URI to direct the user to when they need to authorize the preapproval.
+   * @param preapprovalId The ID of the preapproval, assigned by WePay.
+   * @param preapprovalUri The URI to direct the user to when they need to authorize the preapproval.
    * @param state The state of the Preapproval.
   **/
-  case class PreapprovalResponse(preapproval_id:Long, preapproval_uri:Option[String] = None,
+  case class PreapprovalResponse(preapprovalId:Long, preapprovalUri:Option[String] = None,
                                  state:Option[String] = None)
 
   /**
@@ -24,43 +24,43 @@ package me.frmr.wepay.api {
    * Preapprovals are used to, well, preapprove payments within a certain date range and amount.
    * Useful for kickstarter-like applications or subscription-based services.
    *
-   * @param account_id The Account ID that will be receiving the payment from this preapproval.
-   * @param short_description The short description of what the user will be paying for.
+   * @param accountId The Account ID that will be receiving the payment from this preapproval.
+   * @param shortDescription The short description of what the user will be paying for.
    * @param period How frequently the user can be charged. Can be: hourly, daily, weekly, biweekly, monthly, bimonthly, quarterly, yearly, or once.
-   * @param preapproval_id The preapproval ID assigned by WePay. Should rarely ever be set by your app.
-   * @param reference_id The reference ID of the preapproval. Should be unique per app per account.
-   * @param app_fee The fee your application will take on this transaction.
-   * @param fee_payer The person who pays transaction fee. One of "Payee" or "Payer". Defaults to "Payer".
-   * @param redirect_uri The URI that the user will be redirected to for completing the Preapproval flow.
-   * @param callback_uri The URI that IPN notifications will be directed to.
-   * @param require_shipping If true, the user will be required to enter shipping information.
-   * @param shipping_fee The fee for shipping.
-   * @param charge_tax If set to true, tax will be charged.
-   * @param payer_email_message A message from you that will be included in the confirmation email to the payer.
-   * @param payee_email_message A message from you that will be included in the confirmation email to the payee.
-   * @param long_description The long description of the transaction.
+   * @param preapprovalId The preapproval ID assigned by WePay. Should rarely ever be set by your app.
+   * @param referenceId The reference ID of the preapproval. Should be unique per app per account.
+   * @param appFee The fee your application will take on this transaction.
+   * @param feePayer The person who pays transaction fee. One of "Payee" or "Payer". Defaults to "Payer".
+   * @param redirectUri The URI that the user will be redirected to for completing the Preapproval flow.
+   * @param callbackUri The URI that IPN notifications will be directed to.
+   * @param requireShipping If true, the user will be required to enter shipping information.
+   * @param shippingFee The fee for shipping.
+   * @param chargeTax If set to true, tax will be charged.
+   * @param payerEmailMessage A message from you that will be included in the confirmation email to the payer.
+   * @param payeeEmailMessage A message from you that will be included in the confirmation email to the payee.
+   * @param longDescription The long description of the transaction.
    * @param frequency The number of times this preapproval can be used per period.
-   * @param start_time When the API can start charging using this preapproval.
-   * @param end_time The date the API can no longer charge using this preapproval.
-   * @param auto_recur Determines whether or not this is an auto-recurring Peapproval.
+   * @param startTime When the API can start charging using this preapproval.
+   * @param endTime The date the API can no longer charge using this preapproval.
+   * @param autoRecur Determines whether or not this is an auto-recurring Peapproval.
    * @param state The state of the Preapproval.
    * @param mode The mode the preapproval will run in. Can be "regular" or "iframe". Defaults to "regular".
    * @define THIS Preapproval
   **/
-  case class Preapproval(account_id:Long, amount:Double, short_description:String, period:String,
-                         preapproval_id:Option[Long] = None, reference_id:Option[String] = None,
-                         app_fee:Option[Double] = None, fee_payer:Option[String] = None,
-                         redirect_uri:Option[String] = None, callback_uri:Option[String] = None,
-                         require_shipping:Option[Boolean] = None, shipping_fee:Option[Double] = None,
-                         charge_tax:Option[Boolean] = None, payer_email_message:Option[String] = None,
-                         payee_email_message:Option[String] = None, long_description:Option[String] = None,
-                         frequency:Option[Int] = None, start_time:Option[DateTime] = None,
-                         end_time:Option[DateTime] = None, auto_recur:Option[Boolean] = None,
+  case class Preapproval(accountId:Long, amount:Double, shortDescription:String, period:String,
+                         preapprovalId:Option[Long] = None, referenceId:Option[String] = None,
+                         appFee:Option[Double] = None, feePayer:Option[String] = None,
+                         redirectUri:Option[String] = None, callbackUri:Option[String] = None,
+                         requireShipping:Option[Boolean] = None, shippingFee:Option[Double] = None,
+                         chargeTax:Option[Boolean] = None, payerEmailMessage:Option[String] = None,
+                         payeeEmailMessage:Option[String] = None, longDescription:Option[String] = None,
+                         frequency:Option[Int] = None, startTime:Option[DateTime] = None,
+                         endTime:Option[DateTime] = None, autoRecur:Option[Boolean] = None,
                          state:Option[String] = None, mode:Option[String] = None)
                          extends ImmutableWePayResource[Preapproval, PreapprovalResponse] {
 
     val meta = Preapproval
-    val _id = preapproval_id
+    val _id = preapprovalId
 
     /**
      * Cancel the preapproval.
@@ -68,7 +68,7 @@ package me.frmr.wepay.api {
     def cancel(implicit authorizationToken:Option[WePayToken]) = {
       unwrapBoxOfFuture {
         for {
-          id <- (preapproval_id:Box[Long]) ?~! "You can't cancel a preapproval with no ID."
+          id <- (preapprovalId:Box[Long]) ?~! "You can't cancel a preapproval with no ID."
         } yield {
           meta.cancel(id)
         }
@@ -91,22 +91,22 @@ package me.frmr.wepay.api {
      * Find a preapproval based on some search parameters.
      *
      * @param state The state of the preapproval you're looking for.
-     * @param reference_id The reference ID of the preapproval you're looking for.
+     * @param referenceId The reference ID of the preapproval you're looking for.
     **/
-    def find(state:Option[String] = None, reference_id:Option[String] = None)(implicit authorizationToken:Option[WePayToken]) = {
+    def find(state:Option[String] = None, referenceId:Option[String] = None)(implicit authorizationToken:Option[WePayToken]) = {
       findQuery(
         ("state" -> state) ~
-        ("reference_id" -> reference_id)
+        ("referenceId" -> referenceId)
       )
     }
 
     /**
      * Cancel a preapproval by ID. Useful if you don't already have an instance avaialable.
      *
-     * @param preapproval_id The ID of the preapproval to cancel.
+     * @param preapprovalId The ID of the preapproval to cancel.
     **/
-    def cancel(preapproval_id:Long)(implicit authorizationToken:Option[WePayToken]) = {
-      resultRetrievalQuery(Some("cancel"), ("preapproval_id" -> preapproval_id))
+    def cancel(preapprovalId:Long)(implicit authorizationToken:Option[WePayToken]) = {
+      resultRetrievalQuery(Some("cancel"), ("preapprovalId" -> preapprovalId))
     }
   }
 

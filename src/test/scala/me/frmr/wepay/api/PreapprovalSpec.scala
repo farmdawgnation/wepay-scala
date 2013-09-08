@@ -22,8 +22,8 @@ package me.frmr.wepay.api {
         val saveResponse = Await.result(Preapproval(testAccountId, 10, "Unit Test Preapproval", "once").save, 1 minute)
 
         assert(saveResponse match {
-          case Full(preapprovalResp:PreapprovalResponse) =>
-            unitPreapprovalId = preapprovalResp.preapproval_id
+          case Full(preapprovalResp: PreapprovalResponse) =>
+            unitPreapprovalId = preapprovalResp.preapprovalId
             true
           case _ =>
             false
@@ -34,7 +34,7 @@ package me.frmr.wepay.api {
         val retrieval = Await.result(Preapproval.find(unitPreapprovalId), 1 minute)
 
         assert(retrieval match {
-          case Full(preapprovalInstance:Preapproval) =>
+          case Full(preapprovalInstance: Preapproval) =>
             true
           case _ =>
             false
@@ -45,7 +45,7 @@ package me.frmr.wepay.api {
         val cancelResponse = Await.result(Preapproval.cancel(unitPreapprovalId), 1 minute)
 
         assert(cancelResponse match {
-          case Full(preapprovalResp:PreapprovalResponse) =>
+          case Full(preapprovalResp: PreapprovalResponse) =>
             true
           case _ =>
             false
