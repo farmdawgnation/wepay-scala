@@ -19,11 +19,16 @@ package me.frmr.wepay.api {
    * analytics tracking codes.
    *
    * @param clientId The client ID of the application.
-   * @param state The approval state of the application.
+   * @param status The approval state of the application.
    * @param themeObject An object describing the current theme of the application.
    * @param gaqDomains A list of UA-XXXX code for analytics tracking.
   **/
-  case class App(clientId:Long, state:String, themeObject:JObject, gaqDomains:List[String]) extends WePayResource[App] {
+  case class App(
+    clientId: Long,
+    status: String,
+    themeObject: JObject,
+    gaqDomains: List[String]
+  ) extends WePayResource[App] {
     val meta = App
 
     /**
