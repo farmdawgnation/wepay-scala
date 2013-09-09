@@ -14,9 +14,13 @@ package me.frmr.wepay.api {
    * @param email The user's email.
    * @param state The state of the User's account.
   **/
-  case class User(userId:Long, firstName:String, lastName:String, email:String, state:String)
-    extends WePayResource[User] {
-
+  case class User(
+    userId: Long,
+    firstName: String,
+    lastName: String,
+    email: String,
+    state: String
+  ) extends WePayResource[User] {
     val meta = User
     val _id = userId
   }
