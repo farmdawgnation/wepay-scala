@@ -41,5 +41,15 @@ package me.frmr.wepay.api {
      * Retrieve the current user based on the authorization token provided.
     **/
     def find(implicit authorizationToken:Option[WePayToken]) = query(None)
+
+    /**
+     * Set the callback URI for the current user. If you add a callback URI, you
+     * will receive IPN's with the user id each time the user recovkes their access
+     * token or is deleted.
+     *
+     * @param callbackUri The callback URI you want to receive IPNs on.
+    **/
+    def setCallbackUri(callbackUri: Option[String]) =
+      query(Some("modify"), ("callbackUri" -> callbackUri))
   }
 }
