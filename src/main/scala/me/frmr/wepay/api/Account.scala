@@ -22,11 +22,18 @@ package me.frmr.wepay.api {
    * @param availableBalance The amount on the account that is available.
    * @param currency The currency of the account.
   **/
-  case class AccountResponse(accountId:Option[Long] = None, name:Option[String] = None, description:Option[String] = None,
-                             referenceId:Option[String] = None, accountUri:Option[String] = None,
-                             paymentLimit:Option[Long] = None, gaqDomains:Option[List[String]] = None,
-                             pendingBalance:Option[Double] = None, availableBalance:Option[Double] = None,
-                             currency:Option[String] = None)
+  case class AccountResponse(
+    accountId: Option[Long] = None,
+    name: Option[String] = None,
+    description: Option[String] = None,
+    referenceId: Option[String] = None,
+    accountUri: Option[String] = None,
+    paymentLimit: Option[Long] = None,
+    gaqDomains: Option[List[String]] = None,
+    pendingBalance: Option[Double] = None,
+    availableBalance: Option[Double] = None,
+    currency:Option[String] = None
+  )
 
   /**
    * An instance of an Account.
@@ -42,9 +49,15 @@ package me.frmr.wepay.api {
    * @param gaqDomains Domain for analytics tracking.
    * @define THIS Account
   **/
-  case class Account(name:String, description:String, accountId:Option[Long] = None, referenceId:Option[String] = None,
-                     imageUri:Option[String] = None, paymentLimit:Option[Long] = None,
-                     gaqDomains:Option[List[String]] = None) extends MutableWePayResource[Account, AccountResponse] {
+  case class Account(
+    name: String,
+    description: String,
+    accountId: Option[Long] = None,
+    referenceId: Option[String] = None,
+    imageUri: Option[String] = None,
+    paymentLimit: Option[Long] = None,
+    gaqDomains: Option[List[String]] = None
+  ) extends MutableWePayResource[Account, AccountResponse] {
 
     val meta = Account
     val _id = accountId
@@ -52,7 +65,7 @@ package me.frmr.wepay.api {
     /**
      * Retrieve the current balance on the account.
     **/
-    def balance(implicit authorizationToken:Option[WePayToken]) = {
+    def balance(implicit authorizationToken: Option[WePayToken]) = {
       unwrapBoxOfFuture {
         for {
           accountId <- (accountId:Box[Long]) ?~! "You can't retrieve the balance of an account with no ID."
@@ -80,10 +93,10 @@ package me.frmr.wepay.api {
      *
      * @param taxes The List describing the taxes you want to set for the account.
     **/
-    def setTax(taxes:JArray)(implicit authorizationToken:Option[WePayToken]) = {
+    def setTax(taxes: JArray)(implicit authorizationToken: Option[WePayToken]) = {
       unwrapBoxOfFuture {
         for {
-          accountId <- (accountId:Box[Long]) ?~! "You can't set tax information on an account with no ID."
+          accountId <- (accountId: Box[Long]) ?~! "You can't set tax information on an account with no ID."
         } yield {
           meta.setTax(accountId, taxes)
         }
@@ -96,10 +109,10 @@ package me.frmr.wepay.api {
      * Tax information will be returned as a JArray of JObjects in the same format that
      * the information is passed in for setTax.
     **/
-    def getTax(implicit authorizationToken:Option[WePayToken]) = {
+    def getTax(implicit authorizationToken: Option[WePayToken]) = {
       unwrapBoxOfFuture {
         for {
-          accountId <- (accountId:Box[Long]) ?~! "You can't get tax information on an account with no ID."
+          accountId <- (accountId: Box[Long]) ?~! "You can't get tax information on an account with no ID."
         } yield {
           meta.getTax(accountId)
         }
@@ -114,9 +127,9 @@ package me.frmr.wepay.api {
    * @define CRUDRESPONSETYPE AccountResponse
   **/
   object Account extends MutableWePayResourceMeta[Account, AccountResponse] {
-    protected def extract(json:JValue) = json.extract[Account]
-    protected def extractFindResults(json:JValue) = json.extract[List[Account]]
-    protected def extractCrudResponse(json:JValue) = json.extract[AccountResponse]
+    protected def extract(json: JValue) = json.extract[Account]
+    protected def extractFindResults(json: JValue) = json.extract[List[Account]]
+    protected def extractCrudResponse(json: JValue) = json.extract[AccountResponse]
 
     /**
      * Find an account by name or reference_id. One of the two fields must be specified, or WePay
@@ -125,7 +138,7 @@ package me.frmr.wepay.api {
      * @param name The name of the account to search for.
      * @param reference_id The Reference ID of the account to search for.
     **/
-    def find(name:Option[String] = None, referenceId:Option[String] = None)(implicit authorizationToken:Option[WePayToken]) = {
+    def find(name: Option[String] = None, referenceId: Option[String] = None)(implicit authorizationToken: Option[WePayToken]) = {
       findQuery(("name" -> name) ~ ("referenceId" -> referenceId))
     }
 
@@ -137,7 +150,7 @@ package me.frmr.wepay.api {
      *
      * @param accountId The ID of the account you wish to check.
     **/
-    def balance(accountId:Long)(implicit authorizationToken:Option[WePayToken]) = {
+    def balance(accountId: Long)(implicit authorizationToken: Option[WePayToken]) = {
       resultRetrievalQuery(Some("balance"), ("accountId" -> accountId))
     }
 
@@ -150,7 +163,7 @@ package me.frmr.wepay.api {
      * @param accountId The account ID for which you would like to set the tax settings.
      * @param taxes The tax settings you wish to set.
     **/
-    def setTax(accountId:Long, taxes:JArray)(implicit authorizationToken:Option[WePayToken]) = {
+    def setTax(accountId: Long, taxes: JArray)(implicit authorizationToken: Option[WePayToken]) = {
       resultRetrievalQuery(Some("set_tax"), ("accountId" -> accountId) ~ ("taxes" -> taxes))
     }
 
@@ -162,7 +175,7 @@ package me.frmr.wepay.api {
      *
      * @param accountId The Account ID for which you would like to check the tax settings.
     **/
-    def getTax(accountId:Long)(implicit authorizationToken:Option[WePayToken]) = {
+    def getTax(accountId: Long)(implicit authorizationToken: Option[WePayToken]) = {
       resultRetrievalQuery(Some("get_tax"), ("accountId" -> accountId))
     }
   }
