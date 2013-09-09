@@ -13,7 +13,7 @@ package me.frmr.wepay.api {
    * @param firstName The user's first name.
    * @param lastName The user's last name.
    * @param email The user's email.
-   * @param state The state of the User's account.
+   * @param state Either "registered" if the user has registered, or "pending" if the user still needs to confirm their registration.
   **/
   case class User(
     userId: Long,
