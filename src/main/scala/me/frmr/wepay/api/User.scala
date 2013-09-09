@@ -9,6 +9,7 @@ package me.frmr.wepay.api {
    * These are read only, and the use of their data is restricted by the WePay Developer TOS.
    *
    * @param userId The user's unique ID.
+   * @param userName The full name of the user.
    * @param firstName The user's first name.
    * @param lastName The user's last name.
    * @param email The user's email.
@@ -16,6 +17,7 @@ package me.frmr.wepay.api {
   **/
   case class User(
     userId: Long,
+    userName: String,
     firstName: String,
     lastName: String,
     email: String,
